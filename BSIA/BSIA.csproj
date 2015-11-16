@@ -170,6 +170,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Content\custom.css" />
     <Content Include="Create.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />

@@ -13,5 +13,18 @@ namespace BSIA
         {
 
         }
+
+        protected void btn_calendar_Click(object sender, EventArgs e)
+        {
+            calendar.Visible = true;
+        }
+
+        protected void calendar_SelectionChanged(object sender, EventArgs e)
+        {
+            txt_inspectionDate.Text = calendar.SelectedDate.ToShortDateString();
+            calendar.Visible = false;
+        }
+
+
     }
 }
