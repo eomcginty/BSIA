@@ -130,6 +130,42 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_ballJoints;
         
         /// <summary>
+        /// cb_right_ballJoints control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_ballJoints;
+        
+        /// <summary>
+        /// cb_left_ballJoints control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_ballJoints;
+        
+        /// <summary>
+        /// cb_tighten_ballJoints control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_ballJoints;
+        
+        /// <summary>
+        /// cb_replace_ballJoints control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_ballJoints;
+        
+        /// <summary>
         /// txt_comments_ballJoints control.
         /// </summary>
         /// <remarks>
@@ -155,6 +191,42 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_dragLink;
+        
+        /// <summary>
+        /// cb_adjust_dragLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_dragLink;
+        
+        /// <summary>
+        /// cb_tighten_dragLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_dragLink;
+        
+        /// <summary>
+        /// cb_replace_dragLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_dragLink;
+        
+        /// <summary>
+        /// cb_18_dragLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_18_dragLink;
         
         /// <summary>
         /// txt_comments_dragLink control.
@@ -184,6 +256,69 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_tieRods;
         
         /// <summary>
+        /// cb_end_tieRods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_end_tieRods;
+        
+        /// <summary>
+        /// cb_right_tieRods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_tieRods;
+        
+        /// <summary>
+        /// cb_left_tieRods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_tieRods;
+        
+        /// <summary>
+        /// cb_adjust_tieRods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_tieRods;
+        
+        /// <summary>
+        /// cb_tighten_tieRods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_tieRods;
+        
+        /// <summary>
+        /// cb_replace_tieRods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_tieRods;
+        
+        /// <summary>
+        /// cb_18_tieRods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_18_tieRods;
+        
+        /// <summary>
         /// txt_comments_tieRods control.
         /// </summary>
         /// <remarks>
@@ -211,6 +346,51 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_springs;
         
         /// <summary>
+        /// cb_front_springs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_springs;
+        
+        /// <summary>
+        /// cb_rear_springs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_springs;
+        
+        /// <summary>
+        /// cb_right_springs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_springs;
+        
+        /// <summary>
+        /// cb_left_springs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_springs;
+        
+        /// <summary>
+        /// cb_manual_springs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_manual_springs;
+        
+        /// <summary>
         /// txt_comments_springs control.
         /// </summary>
         /// <remarks>
@@ -236,6 +416,42 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_shackles;
+        
+        /// <summary>
+        /// cb_front_shackles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_shackles;
+        
+        /// <summary>
+        /// cb_rear_shackles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_shackles;
+        
+        /// <summary>
+        /// cb_right_shackles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_shackles;
+        
+        /// <summary>
+        /// cb_left_shackles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_shackles;
         
         /// <summary>
         /// txt_comments_shackles control.
@@ -319,6 +535,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_kingPin;
         
         /// <summary>
+        /// cb_right_kingPins control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_kingPins;
+        
+        /// <summary>
+        /// cb_left_kingPins control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_kingPins;
+        
+        /// <summary>
+        /// cb_replace_kingPins control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_kingPins;
+        
+        /// <summary>
         /// txt_comments_kingPins control.
         /// </summary>
         /// <remarks>
@@ -371,6 +614,33 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_steeringGearBox;
+        
+        /// <summary>
+        /// cb_adjust_steeringGearBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_steeringGearBox;
+        
+        /// <summary>
+        /// cb_tighten_steeringGearBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_steeringGearBox;
+        
+        /// <summary>
+        /// cb_replace_steeringGearBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_steeringGearBox;
         
         /// <summary>
         /// txt_comments_steeringGearBox control.
@@ -427,6 +697,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_powerSteering;
         
         /// <summary>
+        /// cb_adjust_powerSteering control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_powerSteering;
+        
+        /// <summary>
+        /// cb_replace_powerSteering control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_powerSteering;
+        
+        /// <summary>
+        /// cb_exposed_powerSteering control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_exposed_powerSteering;
+        
+        /// <summary>
         /// txt_comments_powerSteering control.
         /// </summary>
         /// <remarks>
@@ -481,6 +778,78 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_service;
         
         /// <summary>
+        /// cb_adjust_service control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_service;
+        
+        /// <summary>
+        /// cb_recline_service control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_recline_service;
+        
+        /// <summary>
+        /// cb_squeak_service control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_squeak_service;
+        
+        /// <summary>
+        /// cb_grab_service control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_grab_service;
+        
+        /// <summary>
+        /// cb_front_service control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_service;
+        
+        /// <summary>
+        /// cb_rear_service control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_service;
+        
+        /// <summary>
+        /// cb_right_service control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_service;
+        
+        /// <summary>
+        /// cb_left_service control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_service;
+        
+        /// <summary>
         /// txt_comments_service control.
         /// </summary>
         /// <remarks>
@@ -506,6 +875,24 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_parking;
+        
+        /// <summary>
+        /// cb_adjust_parking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_parking;
+        
+        /// <summary>
+        /// cb_recline_parking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_recline_parking;
         
         /// <summary>
         /// txt_comments_parking control.
@@ -535,6 +922,24 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_booster;
         
         /// <summary>
+        /// cb_leak_booster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_leak_booster;
+        
+        /// <summary>
+        /// cb_replace_booster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_booster;
+        
+        /// <summary>
         /// txt_comments_booster control.
         /// </summary>
         /// <remarks>
@@ -560,6 +965,24 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_lowIndicator;
+        
+        /// <summary>
+        /// cb_air_lowIndicator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_air_lowIndicator;
+        
+        /// <summary>
+        /// cb_vacuum_lowIndicator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_vacuum_lowIndicator;
         
         /// <summary>
         /// txt_comments_lowIndicator control.
@@ -616,6 +1039,51 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_brakeLines;
         
         /// <summary>
+        /// cb_front_brakeLines control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_brakeLines;
+        
+        /// <summary>
+        /// cb_rear_brakeLines control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_brakeLines;
+        
+        /// <summary>
+        /// cb_right_brakeLines control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_brakeLines;
+        
+        /// <summary>
+        /// cb_left_brakeLines control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_brakeLines;
+        
+        /// <summary>
+        /// cb_damage_brakeLines control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_damage_brakeLines;
+        
+        /// <summary>
         /// txt_comments_brakeLines control.
         /// </summary>
         /// <remarks>
@@ -641,6 +1109,42 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_brakeDrums;
+        
+        /// <summary>
+        /// cb_front_brakeDrums control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_brakeDrums;
+        
+        /// <summary>
+        /// cb_rear_brakeDrums control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_brakeDrums;
+        
+        /// <summary>
+        /// cb_right_brakeDrums control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_brakeDrums;
+        
+        /// <summary>
+        /// cb_left_brakeDrums control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_brakeDrums;
         
         /// <summary>
         /// txt_comments_brakeDrums control.
@@ -670,6 +1174,42 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_masterCylinder;
         
         /// <summary>
+        /// cb_leak_masterCylinder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_leak_masterCylinder;
+        
+        /// <summary>
+        /// cb_break_masterCylinder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_break_masterCylinder;
+        
+        /// <summary>
+        /// cb_hose_masterCylinder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_hose_masterCylinder;
+        
+        /// <summary>
+        /// CheckBox4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
+        
+        /// <summary>
         /// txt_comments_masterCylinder control.
         /// </summary>
         /// <remarks>
@@ -695,6 +1235,51 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_wheelCylinder;
+        
+        /// <summary>
+        /// cb_leak_wheelCylinder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_leak_wheelCylinder;
+        
+        /// <summary>
+        /// cb_front_wheelCylinder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_wheelCylinder;
+        
+        /// <summary>
+        /// cb_rear_wheelCylinder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_wheelCylinder;
+        
+        /// <summary>
+        /// cb_right_wheelCylinder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_wheelCylinder;
+        
+        /// <summary>
+        /// cb_left_wheelCylinder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_wheelCylinder;
         
         /// <summary>
         /// txt_comments_wheelCylinder control.
@@ -724,6 +1309,51 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_wheelBearing;
         
         /// <summary>
+        /// cb_right_wheelBearing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_wheelBearing;
+        
+        /// <summary>
+        /// cb_left_wheelBearing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_wheelBearing;
+        
+        /// <summary>
+        /// cb_adjust_wheelBearing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_wheelBearing;
+        
+        /// <summary>
+        /// cb_replace_wheelBearing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_wheelBearing;
+        
+        /// <summary>
+        /// cb_18_wheelBearing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_18_wheelBearing;
+        
+        /// <summary>
         /// txt_comments_wheelBearing control.
         /// </summary>
         /// <remarks>
@@ -749,6 +1379,24 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_wheelLugNuts;
+        
+        /// <summary>
+        /// cb_loose_wheelLugNuts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_loose_wheelLugNuts;
+        
+        /// <summary>
+        /// cb_missing_wheelLugNuts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_missing_wheelLugNuts;
         
         /// <summary>
         /// txt_comments_wheelLugNuts control.
@@ -778,6 +1426,78 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_tires;
         
         /// <summary>
+        /// cb_front_tires control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_tires;
+        
+        /// <summary>
+        /// cb_rear_tires control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_tires;
+        
+        /// <summary>
+        /// cb_right_tires control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_tires;
+        
+        /// <summary>
+        /// cb_left_tires control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_tires;
+        
+        /// <summary>
+        /// cb_rro_tires control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rro_tires;
+        
+        /// <summary>
+        /// cb_rri_tires control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rri_tires;
+        
+        /// <summary>
+        /// cb_lro_tires control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_lro_tires;
+        
+        /// <summary>
+        /// cb_lri_tires control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_lri_tires;
+        
+        /// <summary>
         /// txt_comments_tires control.
         /// </summary>
         /// <remarks>
@@ -803,6 +1523,42 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_disc;
+        
+        /// <summary>
+        /// cb_pads_disc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_pads_disc;
+        
+        /// <summary>
+        /// cb_rotors_disc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rotors_disc;
+        
+        /// <summary>
+        /// cb_calipers_disc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_calipers_disc;
+        
+        /// <summary>
+        /// cb_232_disc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_232_disc;
         
         /// <summary>
         /// txt_comments_disc control.
@@ -859,6 +1615,24 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_valveStem;
         
         /// <summary>
+        /// cb_misaligned_valveStem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_misaligned_valveStem;
+        
+        /// <summary>
+        /// cb_replace_valveStem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_valveStem;
+        
+        /// <summary>
         /// txt_comments_valveStem control.
         /// </summary>
         /// <remarks>
@@ -884,6 +1658,42 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_airCleaner;
+        
+        /// <summary>
+        /// cb_tighten_airCleaner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_airCleaner;
+        
+        /// <summary>
+        /// cb_clean_airCleaner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_clean_airCleaner;
+        
+        /// <summary>
+        /// cb_repair_airCleaner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_repair_airCleaner;
+        
+        /// <summary>
+        /// CheckBox5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox5;
         
         /// <summary>
         /// txt_comments_airCleaner control.
@@ -913,6 +1723,24 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_alternator;
         
         /// <summary>
+        /// cb_tighten_alternator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_alternator;
+        
+        /// <summary>
+        /// cb_replace_alternator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_alternator;
+        
+        /// <summary>
         /// txt_comments_alternator control.
         /// </summary>
         /// <remarks>
@@ -938,6 +1766,33 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_battery;
+        
+        /// <summary>
+        /// cb_tighten_battery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_battery;
+        
+        /// <summary>
+        /// cb_clean_battery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_clean_battery;
+        
+        /// <summary>
+        /// cb_replace_battery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_battery;
         
         /// <summary>
         /// txt_comments_battery control.
@@ -967,6 +1822,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_driveBelts;
         
         /// <summary>
+        /// cb_adjust_driveBelts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_driveBelts;
+        
+        /// <summary>
+        /// cb_replace_driveBelts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_driveBelts;
+        
+        /// <summary>
+        /// cb_all_driveBelts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_all_driveBelts;
+        
+        /// <summary>
         /// txt_comments_driveBelts control.
         /// </summary>
         /// <remarks>
@@ -992,6 +1874,33 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_fuelLeaks;
+        
+        /// <summary>
+        /// cb_carburetor_fuelLeaks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_carburetor_fuelLeaks;
+        
+        /// <summary>
+        /// cb_fuelPump_fuelLeaks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_fuelPump_fuelLeaks;
+        
+        /// <summary>
+        /// cb_tank_fuelLeaks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tank_fuelLeaks;
         
         /// <summary>
         /// txt_comments_fuelLeaks control.
@@ -1046,6 +1955,42 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_radiatorHose;
+        
+        /// <summary>
+        /// cb_top_radiatorHose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_top_radiatorHose;
+        
+        /// <summary>
+        /// cb_bottom_radiatorHose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_bottom_radiatorHose;
+        
+        /// <summary>
+        /// cb_tighten_radiatorHose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_radiatorHose;
+        
+        /// <summary>
+        /// cb_replace_radiatorHose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_radiatorHose;
         
         /// <summary>
         /// txt_comments_radiatorHose control.
@@ -1129,6 +2074,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_clutch;
         
         /// <summary>
+        /// cb_adjust_clutch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adjust_clutch;
+        
+        /// <summary>
+        /// cb_slipping_clutch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_slipping_clutch;
+        
+        /// <summary>
+        /// cb_replace_clutch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_clutch;
+        
+        /// <summary>
         /// txt_comments_clutch control.
         /// </summary>
         /// <remarks>
@@ -1154,6 +2126,51 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_engineClean;
+        
+        /// <summary>
+        /// cb_oilLeak_engineClean control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_oilLeak_engineClean;
+        
+        /// <summary>
+        /// cb_valveCover_engineClean control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_valveCover_engineClean;
+        
+        /// <summary>
+        /// cb_right_engineClean control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_engineClean;
+        
+        /// <summary>
+        /// cb_left_engineClean control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_engineClean;
+        
+        /// <summary>
+        /// cb_filter_engineClean control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_filter_engineClean;
         
         /// <summary>
         /// txt_comments_engineClean control.
@@ -1183,6 +2200,24 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_manifoldLeak;
         
         /// <summary>
+        /// cb_tighten_manifoldLeak control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_manifoldLeak;
+        
+        /// <summary>
+        /// cb_replace_manifoldLeak control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_manifoldLeak;
+        
+        /// <summary>
         /// txt_comments_manifoldLeak control.
         /// </summary>
         /// <remarks>
@@ -1210,6 +2245,42 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_exhaust;
         
         /// <summary>
+        /// cb_leak_exhaust control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_leak_exhaust;
+        
+        /// <summary>
+        /// cb_length_exhaust control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_length_exhaust;
+        
+        /// <summary>
+        /// cb_tighten_exhaust control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_exhaust;
+        
+        /// <summary>
+        /// cb_replace_exhaust control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_exhaust;
+        
+        /// <summary>
         /// txt_comments_exhaust control.
         /// </summary>
         /// <remarks>
@@ -1235,6 +2306,24 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_muffler;
+        
+        /// <summary>
+        /// cb_tighten_muffler control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_muffler;
+        
+        /// <summary>
+        /// cb_replace_muffler control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_muffler;
         
         /// <summary>
         /// txt_comments_muffler control.
@@ -1291,6 +2380,42 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_head;
         
         /// <summary>
+        /// cb_right_head control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_head;
+        
+        /// <summary>
+        /// cb_left_head control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_head;
+        
+        /// <summary>
+        /// cb_tighten_head control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_head;
+        
+        /// <summary>
+        /// cb_replace_head control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_head;
+        
+        /// <summary>
         /// txt_comments_head control.
         /// </summary>
         /// <remarks>
@@ -1316,6 +2441,24 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_stopTail;
+        
+        /// <summary>
+        /// cb_right_stopTail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_stopTail;
+        
+        /// <summary>
+        /// cb_left_stopTail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_stopTail;
         
         /// <summary>
         /// txt_comments_stopTail control.
@@ -1345,6 +2488,42 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_warningFlasher;
         
         /// <summary>
+        /// cb_front_warningFlasher control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_warningFlasher;
+        
+        /// <summary>
+        /// cb_rear_warningFlasher control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_warningFlasher;
+        
+        /// <summary>
+        /// cb_right_warningFlasher control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_warningFlasher;
+        
+        /// <summary>
+        /// cb_left_warningFlasher control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_warningFlasher;
+        
+        /// <summary>
         /// txt_comments_warningFlasher control.
         /// </summary>
         /// <remarks>
@@ -1370,6 +2549,51 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_clearance;
+        
+        /// <summary>
+        /// cb_front_clearance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_clearance;
+        
+        /// <summary>
+        /// cb_rear_clearance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_clearance;
+        
+        /// <summary>
+        /// cb_right_clearance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_clearance;
+        
+        /// <summary>
+        /// cb_left_clearance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_clearance;
+        
+        /// <summary>
+        /// cb_center_clearance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_center_clearance;
         
         /// <summary>
         /// txt_comments_clearance control.
@@ -1399,6 +2623,60 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_turnSignal;
         
         /// <summary>
+        /// cb_front_turnSignal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_front_turnSignal;
+        
+        /// <summary>
+        /// cb_rear_turnSignal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rear_turnSignal;
+        
+        /// <summary>
+        /// cb_right_turnSignal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_turnSignal;
+        
+        /// <summary>
+        /// cb_left_turnSignal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_turnSignal;
+        
+        /// <summary>
+        /// cb_bodySide_turnSignal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_bodySide_turnSignal;
+        
+        /// <summary>
+        /// cb_indicator_turnSignal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_indicator_turnSignal;
+        
+        /// <summary>
         /// txt_comment_turnSignal control.
         /// </summary>
         /// <remarks>
@@ -1426,6 +2704,15 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_interior;
         
         /// <summary>
+        /// cb_stepWell_interior control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_stepWell_interior;
+        
+        /// <summary>
         /// txt_comments_interior control.
         /// </summary>
         /// <remarks>
@@ -1451,6 +2738,33 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_backUp;
+        
+        /// <summary>
+        /// cb_right_backUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_backUp;
+        
+        /// <summary>
+        /// cb_left_backUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_backUp;
+        
+        /// <summary>
+        /// cb_alarm_backUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_alarm_backUp;
         
         /// <summary>
         /// txt_comments_backUp control.
@@ -1507,6 +2821,15 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_instrumental;
         
         /// <summary>
+        /// cb_wiring_instrumental control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_wiring_instrumental;
+        
+        /// <summary>
         /// txt_comments_instrumental control.
         /// </summary>
         /// <remarks>
@@ -1534,6 +2857,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_glass;
         
         /// <summary>
+        /// cb_window_glass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_window_glass;
+        
+        /// <summary>
+        /// cb_doors_glass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_doors_glass;
+        
+        /// <summary>
+        /// cb_windshield_glass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_windshield_glass;
+        
+        /// <summary>
         /// txt_comments_glass control.
         /// </summary>
         /// <remarks>
@@ -1559,6 +2909,24 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_windshieldWipers;
+        
+        /// <summary>
+        /// cb_blades_windshieldWipers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_blades_windshieldWipers;
+        
+        /// <summary>
+        /// cb_washers_windshieldWipers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_washers_windshieldWipers;
         
         /// <summary>
         /// txt_comments_windshieldWipers control.
@@ -1669,6 +3037,24 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_fireExt;
         
         /// <summary>
+        /// cb_tighten_fireExt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_fireExt;
+        
+        /// <summary>
+        /// cb_replace_fireExt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_fireExt;
+        
+        /// <summary>
         /// txt_comments_fireExt control.
         /// </summary>
         /// <remarks>
@@ -1696,6 +3082,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_firstAid;
         
         /// <summary>
+        /// cb_cleanliness_firstAid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_cleanliness_firstAid;
+        
+        /// <summary>
+        /// cb_refill_firstAid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_refill_firstAid;
+        
+        /// <summary>
+        /// cb_replace_firstAid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_firstAid;
+        
+        /// <summary>
         /// txt_comments_firstAid control.
         /// </summary>
         /// <remarks>
@@ -1721,6 +3134,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_fuses;
+        
+        /// <summary>
+        /// CheckBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
         
         /// <summary>
         /// txt_comments_fuses control.
@@ -1768,6 +3190,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_bodyFluidsKit;
         
         /// <summary>
+        /// ddl_bodyFluidsKit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_bodyFluidsKit;
+        
+        /// <summary>
+        /// cb_refill_bodyFluidSki control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_refill_bodyFluidSki;
+        
+        /// <summary>
+        /// cb_replace_bodyFluidSki control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_bodyFluidSki;
+        
+        /// <summary>
         /// txt_comments_bodyFluidsKit control.
         /// </summary>
         /// <remarks>
@@ -1784,6 +3233,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_strobeLight;
+        
+        /// <summary>
+        /// ddl_strobeLight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_strobeLight;
         
         /// <summary>
         /// txt_comments_strobeLight control.
@@ -1804,6 +3262,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_roofHatch;
         
         /// <summary>
+        /// ddl_roofHatch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_roofHatch;
+        
+        /// <summary>
+        /// cb_alarm_roofHatch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_alarm_roofHatch;
+        
+        /// <summary>
+        /// cb_handle_roofHatch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_handle_roofHatch;
+        
+        /// <summary>
         /// txt_comments_roofHatch control.
         /// </summary>
         /// <remarks>
@@ -1820,6 +3305,33 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_emergencyWindow;
+        
+        /// <summary>
+        /// ddl_emergencyWindow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_emergencyWindow;
+        
+        /// <summary>
+        /// cb_alarm_emergencyWindow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_alarm_emergencyWindow;
+        
+        /// <summary>
+        /// cb_arm_emergencyWindow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_arm_emergencyWindow;
         
         /// <summary>
         /// txt_comments_emergencyWindow control.
@@ -1840,6 +3352,42 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_body;
         
         /// <summary>
+        /// ddl_body control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_body;
+        
+        /// <summary>
+        /// cb_paint_body control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_paint_body;
+        
+        /// <summary>
+        /// cb_condition_body control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_condition_body;
+        
+        /// <summary>
+        /// cb_repair_body control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_repair_body;
+        
+        /// <summary>
         /// txt_comments_body control.
         /// </summary>
         /// <remarks>
@@ -1856,6 +3404,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_lettering;
+        
+        /// <summary>
+        /// ddl_lettering control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_lettering;
         
         /// <summary>
         /// txt_comments_lettering control.
@@ -1876,6 +3433,87 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_mirror;
         
         /// <summary>
+        /// ddl_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_mirror;
+        
+        /// <summary>
+        /// cb_right_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_right_mirror;
+        
+        /// <summary>
+        /// cb_left_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_left_mirror;
+        
+        /// <summary>
+        /// cb_exterior_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_exterior_mirror;
+        
+        /// <summary>
+        /// cb_interior_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_interior_mirror;
+        
+        /// <summary>
+        /// cb_crossover_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_crossover_mirror;
+        
+        /// <summary>
+        /// cb_damaged_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_damaged_mirror;
+        
+        /// <summary>
+        /// cb_tighten_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_mirror;
+        
+        /// <summary>
+        /// cb_replace_mirror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_mirror;
+        
+        /// <summary>
         /// txt_comments_mirror control.
         /// </summary>
         /// <remarks>
@@ -1892,6 +3530,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_serviceDoor;
+        
+        /// <summary>
+        /// ddl_serviceDoor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_serviceDoor;
         
         /// <summary>
         /// txt_comments_serviceDoor control.
@@ -1912,6 +3559,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_emergencyDoor;
         
         /// <summary>
+        /// ddl_emergencyDoor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_emergencyDoor;
+        
+        /// <summary>
+        /// cb_buzzer_emergencyDoor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_buzzer_emergencyDoor;
+        
+        /// <summary>
+        /// cb_latch_emergencyDoor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_latch_emergencyDoor;
+        
+        /// <summary>
         /// txt_comments_emergencyDoor control.
         /// </summary>
         /// <remarks>
@@ -1928,6 +3602,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_emergencyExit;
+        
+        /// <summary>
+        /// ddl_emergencyExit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_emergencyExit;
         
         /// <summary>
         /// txt_comments_emergencyExit control.
@@ -1948,6 +3631,51 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_heater;
         
         /// <summary>
+        /// ddl_heater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_heater;
+        
+        /// <summary>
+        /// cb_switch_heater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_switch_heater;
+        
+        /// <summary>
+        /// cb_motor_heater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_motor_heater;
+        
+        /// <summary>
+        /// cb_tighten_heater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_tighten_heater;
+        
+        /// <summary>
+        /// cb_replace_heater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_heater;
+        
+        /// <summary>
         /// txt_comments_heater control.
         /// </summary>
         /// <remarks>
@@ -1964,6 +3692,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_horns;
+        
+        /// <summary>
+        /// ddl_horns control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_horns;
         
         /// <summary>
         /// txt_comments_horns control.
@@ -1984,6 +3721,231 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_uphSeat;
         
         /// <summary>
+        /// ddl_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_uphSeat;
+        
+        /// <summary>
+        /// cb_p_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p_uphSeat;
+        
+        /// <summary>
+        /// cb_p1_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p1_uphSeat;
+        
+        /// <summary>
+        /// cb_p2_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p2_uphSeat;
+        
+        /// <summary>
+        /// cb_p3_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p3_uphSeat;
+        
+        /// <summary>
+        /// cb_p4_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p4_uphSeat;
+        
+        /// <summary>
+        /// cb_p5_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p5_uphSeat;
+        
+        /// <summary>
+        /// cb_p6_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p6_uphSeat;
+        
+        /// <summary>
+        /// cb_p7_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p7_uphSeat;
+        
+        /// <summary>
+        /// cb_p8_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p8_uphSeat;
+        
+        /// <summary>
+        /// cb_p9_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p9_uphSeat;
+        
+        /// <summary>
+        /// cb_p10_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p10_uphSeat;
+        
+        /// <summary>
+        /// cb_p11_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p11_uphSeat;
+        
+        /// <summary>
+        /// cb_d_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d_uphSeat;
+        
+        /// <summary>
+        /// cb_d1_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d1_uphSeat;
+        
+        /// <summary>
+        /// cb_d2_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d2_uphSeat;
+        
+        /// <summary>
+        /// cb_d3_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d3_uphSeat;
+        
+        /// <summary>
+        /// cb_d4_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d4_uphSeat;
+        
+        /// <summary>
+        /// cb_d5_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d5_uphSeat;
+        
+        /// <summary>
+        /// cb_d6_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d6_uphSeat;
+        
+        /// <summary>
+        /// cb_d7_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d7_uphSeat;
+        
+        /// <summary>
+        /// cb_d8_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d8_uphSeat;
+        
+        /// <summary>
+        /// cb_d9_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d9_uphSeat;
+        
+        /// <summary>
+        /// cb_d10_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d10_uphSeat;
+        
+        /// <summary>
+        /// cb_d11_uphSeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d11_uphSeat;
+        
+        /// <summary>
         /// txt_comments_uphSeat control.
         /// </summary>
         /// <remarks>
@@ -2000,6 +3962,231 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_uphBack;
+        
+        /// <summary>
+        /// ddl_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_uphBack;
+        
+        /// <summary>
+        /// cb_p_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p_uphBack;
+        
+        /// <summary>
+        /// cb_p1_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p1_uphBack;
+        
+        /// <summary>
+        /// cb_p2_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p2_uphBack;
+        
+        /// <summary>
+        /// cb_p3_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p3_uphBack;
+        
+        /// <summary>
+        /// cb_p4_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p4_uphBack;
+        
+        /// <summary>
+        /// cb_p5_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p5_uphBack;
+        
+        /// <summary>
+        /// cb_p6_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p6_uphBack;
+        
+        /// <summary>
+        /// cb_p7_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p7_uphBack;
+        
+        /// <summary>
+        /// cb_p8_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p8_uphBack;
+        
+        /// <summary>
+        /// cb_p9_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p9_uphBack;
+        
+        /// <summary>
+        /// cb_p10_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p10_uphBack;
+        
+        /// <summary>
+        /// cb_p11_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_p11_uphBack;
+        
+        /// <summary>
+        /// cb_d_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d_uphBack;
+        
+        /// <summary>
+        /// cb_d1_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d1_uphBack;
+        
+        /// <summary>
+        /// cb_d2_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d2_uphBack;
+        
+        /// <summary>
+        /// cb_d3_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d3_uphBack;
+        
+        /// <summary>
+        /// cb_d4_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d4_uphBack;
+        
+        /// <summary>
+        /// cb_d5_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d5_uphBack;
+        
+        /// <summary>
+        /// cb_d6_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d6_uphBack;
+        
+        /// <summary>
+        /// cb_d7_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d7_uphBack;
+        
+        /// <summary>
+        /// cb_d8_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d8_uphBack;
+        
+        /// <summary>
+        /// cb_d9_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d9_uphBack;
+        
+        /// <summary>
+        /// cb_d10_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d10_uphBack;
+        
+        /// <summary>
+        /// cb_d11_uphBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_d11_uphBack;
         
         /// <summary>
         /// uphBack control.
@@ -2020,6 +4207,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_floor;
         
         /// <summary>
+        /// ddl_floor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_floor;
+        
+        /// <summary>
+        /// cb_cement_floor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_cement_floor;
+        
+        /// <summary>
+        /// cb_replace_floor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_replace_floor;
+        
+        /// <summary>
         /// txt_comments_floor control.
         /// </summary>
         /// <remarks>
@@ -2036,6 +4250,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_driverSeatBelt;
+        
+        /// <summary>
+        /// ddl_driverSeatBelt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_driverSeatBelt;
         
         /// <summary>
         /// txt_comments_driverSeatBelt control.
@@ -2056,6 +4279,15 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_extCondition;
         
         /// <summary>
+        /// ddl_extCondition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_extCondition;
+        
+        /// <summary>
         /// txt_comments_extCondition control.
         /// </summary>
         /// <remarks>
@@ -2072,6 +4304,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_interiorCondition;
+        
+        /// <summary>
+        /// ddl_interiorCondition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_interiorCondition;
         
         /// <summary>
         /// txt_comments_interiorCondition control.
@@ -2092,6 +4333,33 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_chains;
         
         /// <summary>
+        /// ddl_chains control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_chains;
+        
+        /// <summary>
+        /// cb_automatic_chains control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_automatic_chains;
+        
+        /// <summary>
+        /// cb_manual_chains control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_manual_chains;
+        
+        /// <summary>
         /// txt_comments_chains control.
         /// </summary>
         /// <remarks>
@@ -2108,6 +4376,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_fail_misc;
+        
+        /// <summary>
+        /// ddl_misc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_misc;
         
         /// <summary>
         /// txt_comments_misc control.

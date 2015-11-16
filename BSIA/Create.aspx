@@ -153,10 +153,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_right_ballJoints" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_ballJoints" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_ballJoints" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_ballJoints" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_ballJoints" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -172,10 +172,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">+1/8"</label>
+                                            <asp:CheckBox id="cb_adjust_dragLink" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_dragLink" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_dragLink" Text="&nbsp;Replace" runat="server" />
+                                            <asp:CheckBox id="cb_18_dragLink" Text="&nbsp;+1/8" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_dragLink" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -191,13 +191,13 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">End</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">+1/8"</label>
+                                            <asp:CheckBox id="cb_end_tieRods" Text="&nbsp;End" runat="server" />
+                                            <asp:CheckBox id="cb_right_tieRods" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_tieRods" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_adjust_tieRods" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_tieRods" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_tieRods" Text="&nbsp;Replace" runat="server" />
+                                            <asp:CheckBox id="cb_18_tieRods" Text="&nbsp;+1/8" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_tieRods" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -213,11 +213,11 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Refer to Manual</label>
+                                            <asp:CheckBox id="cb_front_springs" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_springs" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_springs" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_springs" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_manual_springs" Text="&nbsp;Refer to Manual" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_springs" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -233,10 +233,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
+                                            <asp:CheckBox id="cb_front_shackles" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_shackles" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_shackles" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_shackles" Text="&nbsp;Left" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_shackles" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -284,9 +284,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_right_kingPins" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_kingPins" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_replace_kingPins" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_kingPins" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -318,9 +318,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_adjust_steeringGearBox" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_steeringGearBox" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_steeringGearBox" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_steeringGearBox" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -352,9 +352,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Exposed Cord Body</label>
+                                            <asp:CheckBox id="cb_adjust_powerSteering" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_replace_powerSteering" Text="&nbsp;Replace" runat="server" />
+                                            <asp:CheckBox id="cb_exposed_powerSteering" Text="&nbsp;Exposed Cord Body" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_powerSteering" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -403,14 +403,14 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Recline</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Squeak</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Grab</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
+                                            <asp:CheckBox id="cb_adjust_service" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_recline_service" Text="&nbsp;Recline" runat="server" />
+                                            <asp:CheckBox id="cb_squeak_service" Text="&nbsp;Squeak" runat="server" />
+                                            <asp:CheckBox id="cb_grab_service" Text="&nbsp;Grab" runat="server" />
+                                            <asp:CheckBox id="cb_front_service" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_service" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_service" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_service" Text="&nbsp;Left" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_service" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -426,9 +426,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Recline</label>
-                                           </div>
+                                            <asp:CheckBox id="cb_adjust_parking" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_recline_parking" Text="&nbsp;Recline" runat="server" />
+                                        </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_parking" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
@@ -443,8 +443,8 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Leak</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_leak_booster" Text="&nbsp;Leak" runat="server" />
+                                            <asp:CheckBox id="cb_replace_booster" Text="&nbsp;Replace" runat="server" />
                                          </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_booster" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -460,8 +460,8 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Air</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Vacuum</label>
+                                            <asp:CheckBox id="cb_air_lowIndicator" Text="&nbsp;Air" runat="server" />
+                                            <asp:CheckBox id="cb_vacuum_lowIndicator" Text="&nbsp;Vacuu " runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_lowIndicator" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -493,11 +493,11 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Inner Cord Damage or Defects</label>
+                                            <asp:CheckBox id="cb_front_brakeLines" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_brakeLines" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_brakeLines" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_brakeLines" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_damage_brakeLines" Text="&nbsp;Inner Cord Damage or Defects" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_brakeLines" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -513,10 +513,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
+                                            <asp:CheckBox id="cb_front_brakeDrums" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_brakeDrums" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_brakeDrums" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_brakeDrums" Text="&nbsp;Left" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_brakeDrums" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -532,9 +532,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Leak</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Break</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Hose</label>
+                                            <asp:CheckBox id="cb_leak_masterCylinder" Text="&nbsp;Leak" runat="server" />
+                                            <asp:CheckBox id="cb_break_masterCylinder" Text="&nbsp;Break" runat="server" />
+                                            <asp:CheckBox id="cb_hose_masterCylinder" Text="&nbsp;Host" runat="server" />
+                                            <asp:CheckBox id="CheckBox4" Text="&nbsp;Left" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_masterCylinder" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -550,11 +551,11 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Leak</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
+                                            <asp:CheckBox id="cb_leak_wheelCylinder" Text="&nbsp;Leak" runat="server" />
+                                            <asp:CheckBox id="cb_front_wheelCylinder" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_wheelCylinder" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_wheelCylinder" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_wheelCylinder" Text="&nbsp;Left" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_wheelCylinder" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -570,11 +571,11 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">+1/8"</label>
+                                            <asp:CheckBox id="cb_right_wheelBearing" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_wheelBearing" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_adjust_wheelBearing" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_replace_wheelBearing" Text="&nbsp;Replace" runat="server" />
+                                            <asp:CheckBox id="cb_18_wheelBearing" Text="&nbsp;+1/8" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_wheelBearing" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -590,8 +591,8 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Loose</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Missing</label>
+                                            <asp:CheckBox id="cb_loose_wheelLugNuts" Text="&nbsp;Loose" runat="server" />
+                                            <asp:CheckBox id="cb_missing_wheelLugNuts" Text="&nbsp;Missing" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_wheelLugNuts" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -607,14 +608,14 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">R.R.O</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">R.R.I</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">L.R.O</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">L.R.I</label>
+                                            <asp:CheckBox id="cb_front_tires" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_tires" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_tires" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_tires" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_rro_tires" Text="&nbsp;R.R.O" runat="server" />
+                                            <asp:CheckBox id="cb_rri_tires" Text="&nbsp;R.R.I" runat="server" />
+                                            <asp:CheckBox id="cb_lro_tires" Text="&nbsp;L.R.O" runat="server" />
+                                            <asp:CheckBox id="cb_lri_tires" Text="&nbsp;L.R.I" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_tires" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -630,10 +631,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Pads</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rotors</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Calipers</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">-2/32"</label>
+                                            <asp:CheckBox id="cb_pads_disc" Text="&nbsp;Pads" runat="server" />
+                                            <asp:CheckBox id="cb_rotors_disc" Text="&nbsp;Rotors" runat="server" />
+                                            <asp:CheckBox id="cb_calipers_disc" Text="&nbsp;Calipers" runat="server" />
+                                            <asp:CheckBox id="cb_232_disc" Text="&nbsp;-2/32" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_disc" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -665,8 +666,8 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Misaligned</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_misaligned_valveStem" Text="&nbsp;Misaligned" runat="server" />
+                                            <asp:CheckBox id="cb_replace_valveStem" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_valveStem" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -699,9 +700,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Clean</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Repair</label>
+                                            <asp:CheckBox id="cb_tighten_airCleaner" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_clean_airCleaner" Text="&nbsp;Clean" runat="server" />
+                                            <asp:CheckBox id="cb_repair_airCleaner" Text="&nbsp;Repair" runat="server" />
+                                            <asp:CheckBox id="CheckBox5" Text="&nbsp;Left" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_airCleaner" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -717,9 +719,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                                  </div>
+                                            <asp:CheckBox id="cb_tighten_alternator" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_alternator" Text="&nbsp;Replace" runat="server" />
+                                        </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_alternator" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
@@ -734,9 +736,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Clean</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Repalce</label>
+                                            <asp:CheckBox id="cb_tighten_battery" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_clean_battery" Text="&nbsp;Clean" runat="server" />
+                                            <asp:CheckBox id="cb_replace_battery" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_battery" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -752,9 +754,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">All</label>
+                                            <asp:CheckBox id="cb_adjust_driveBelts" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_replace_driveBelts" Text="&nbsp;Replace" runat="server" />
+                                            <asp:CheckBox id="cb_all_driveBelts" Text="&nbsp;All" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_driveBelts" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -770,9 +772,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Carburetor</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Fuel Pump</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tank</label>
+                                            <asp:CheckBox id="cb_carburetor_fuelLeaks" Text="&nbsp;Carburetor" runat="server" />
+                                            <asp:CheckBox id="cb_fuelPump_fuelLeaks" Text="&nbsp;Fuel Pump" runat="server" />
+                                            <asp:CheckBox id="cb_tank_fuelLeaks" Text="&nbsp;Tank" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_fuelLeaks" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -804,10 +806,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Top</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Bottom</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_top_radiatorHose" Text="&nbsp;Top" runat="server" />
+                                            <asp:CheckBox id="cb_bottom_radiatorHose" Text="&nbsp;Bottom" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_radiatorHose" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_radiatorHose" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_radiatorHose" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -855,10 +857,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Adjust</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Slipping</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
-                                           </div>
+                                            <asp:CheckBox id="cb_adjust_clutch" Text="&nbsp;Adjust" runat="server" />
+                                            <asp:CheckBox id="cb_slipping_clutch" Text="&nbsp;Slipping" runat="server" />
+                                            <asp:CheckBox id="cb_replace_clutch" Text="&nbsp;Replace" runat="server" />
+                                        </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_clutch" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
@@ -873,12 +875,12 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Oil Leak</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Valve Cover</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Filter</label>
-                                        </div>
+                                            <asp:CheckBox id="cb_oilLeak_engineClean" Text="&nbsp;Oil Leak" runat="server" />
+                                            <asp:CheckBox id="cb_valveCover_engineClean" Text="&nbsp;Valve Cover" runat="server" />
+                                            <asp:CheckBox id="cb_right_engineClean" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_engineClean" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_filter_engineClean" Text="&nbsp;Filter" runat="server" />
+                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_engineClean" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
@@ -893,9 +895,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
-                                               </div>
+                                            <asp:CheckBox id="cb_tighten_manifoldLeak" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_manifoldLeak" Text="&nbsp;Replace" runat="server" />
+                                        </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_manifoldLeak" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
@@ -910,10 +912,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Leak</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Length</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_leak_exhaust" Text="&nbsp;Leak" runat="server" />
+                                            <asp:CheckBox id="cb_length_exhaust" Text="&nbsp;Length" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_exhaust" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_exhaust" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_exhaust" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -929,8 +931,8 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_tighten_muffler" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_muffler" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_muffler" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -979,10 +981,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_right_head" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_head" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_head" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_head" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_head" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -998,8 +1000,8 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
+                                            <asp:CheckBox id="cb_right_stopTail" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_stopTail" Text="&nbsp;Left" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_stopTail" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1015,10 +1017,10 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
+                                            <asp:CheckBox id="cb_front_warningFlasher" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_warningFlasher" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_warningFlasher" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_warningFlasher" Text="&nbsp;Left" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_warningFlasher" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1034,11 +1036,11 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Center</label>
+                                            <asp:CheckBox id="cb_front_clearance" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_clearance" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_clearance" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_clearance" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_center_clearance" Text="&nbsp;Center" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_clearance" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1054,12 +1056,13 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Front</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Rear</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Body Side</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Indicator</label>
+                                            <asp:CheckBox id="cb_front_turnSignal" Text="&nbsp;Front" runat="server" />
+                                            <asp:CheckBox id="cb_rear_turnSignal" Text="&nbsp;Rear" runat="server" />
+                                            <asp:CheckBox id="cb_right_turnSignal" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_turnSignal" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_bodySide_turnSignal" Text="&nbsp;Body Side" runat="server" />
+                                            <asp:CheckBox id="cb_indicator_turnSignal" Text="&nbsp;Indicator" runat="server" />
+
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comment_turnSignal" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1075,7 +1078,7 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Step Well</label>
+                                            <asp:CheckBox id="cb_stepWell_interior" Text="&nbsp;Step Well" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_interior" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1091,9 +1094,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Alarm</label>
+                                            <asp:CheckBox id="cb_right_backUp" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_backUp" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_alarm_backUp" Text="&nbsp;Alarm" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_backUp" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1125,7 +1128,7 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Wiring</label>
+                                            <asp:CheckBox id="cb_wiring_instrumental" Text="&nbsp;Wiring" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_instrumental" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1141,9 +1144,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Window</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Doors</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Windshield</label>
+                                            <asp:CheckBox id="cb_window_glass" Text="&nbsp;Window" runat="server" />
+                                            <asp:CheckBox id="cb_doors_glass" Text="&nbsp;Doors" runat="server" />
+                                            <asp:CheckBox id="cb_windshield_glass" Text="&nbsp;Windshield" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_glass" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1159,8 +1162,8 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Blades</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Washers</label>
+                                            <asp:CheckBox id="cb_blades_windshieldWipers" Text="&nbsp;Blades" runat="server" />
+                                            <asp:CheckBox id="cb_washers_windshieldWipers" Text="&nbsp;Washers" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_windshieldWipers" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1241,8 +1244,8 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_tighten_fireExt" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_fireExt" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_fireExt" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1258,9 +1261,9 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Cleanliness</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Refill</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_cleanliness_firstAid" Text="&nbsp;Cleanliness" runat="server" />
+                                            <asp:CheckBox id="cb_refill_firstAid" Text="&nbsp;Refill" runat="server" />
+                                            <asp:CheckBox id="cb_replace_firstAid" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_firstAid" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1276,6 +1279,7 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
+                                            <asp:CheckBox id="CheckBox1" Text="&nbsp;Replace" runat="server" />
                                             <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_fuses" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
@@ -1301,15 +1305,15 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_bodyFluidsKit" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_bodyFluidsKit" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_bodyFluidsKit" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_bodyFluidsKit" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_bodyFluidsKit" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_bodyFluidsKit" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Refill</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_refill_bodyFluidSki" Text="&nbsp;Refill" runat="server" />
+                                            <asp:CheckBox id="cb_replace_bodyFluidSki" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_bodyFluidsKit" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1318,11 +1322,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_strobeLight" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_strobeLight" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_strobeLight" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_strobeLight" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_strobeLight" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_strobeLight" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
 
@@ -1334,15 +1338,15 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_roofHatch" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_roofHatch" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_roofHatch" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_roofHatch" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_roofHatch" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_roofHatch" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Alarm</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Handle</label>
+                                            <asp:CheckBox id="cb_alarm_roofHatch" Text="&nbsp;Alarm" runat="server" />
+                                            <asp:CheckBox id="cb_handle_roofHatch" Text="&nbsp;Handle" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_roofHatch" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1351,15 +1355,15 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_emergencyWindow" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_emergencyWindow" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_emergencyWindow" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_emergencyWindow" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_emergencyWindow" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_emergencyWindow" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Alarm</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Arm</label>
+                                            <asp:CheckBox id="cb_alarm_emergencyWindow" Text="&nbsp;Alarm" runat="server" />
+                                            <asp:CheckBox id="cb_arm_emergencyWindow" Text="&nbsp;Arm" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_emergencyWindow" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1385,16 +1389,16 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_body" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_body" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_body" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_body" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_body" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_body" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Paint</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Condition</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Repair</label>
+                                            <asp:CheckBox id="cb_paint_body" Text="&nbsp;Paint" runat="server" />
+                                            <asp:CheckBox id="cb_condition_body" Text="&nbsp;Condition" runat="server" />
+                                            <asp:CheckBox id="cb_repair_body" Text="&nbsp;Repair" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_body" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1403,11 +1407,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_lettering" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_lettering" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_lettering" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_lettering" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_lettering" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_lettering" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
  
@@ -1419,21 +1423,21 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_mirror" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_mirror" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_mirror" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_mirror" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_mirror" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_mirror" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Right</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Left</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Exterior</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Interior</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Crossover</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Damaged</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_right_mirror" Text="&nbsp;Right" runat="server" />
+                                            <asp:CheckBox id="cb_left_mirror" Text="&nbsp;Left" runat="server" />
+                                            <asp:CheckBox id="cb_exterior_mirror" Text="&nbsp;Exterior" runat="server" />
+                                            <asp:CheckBox id="cb_interior_mirror" Text="&nbsp;Interior" runat="server" />
+                                            <asp:CheckBox id="cb_crossover_mirror" Text="&nbsp;Crossover" runat="server" />
+                                            <asp:CheckBox id="cb_damaged_mirror" Text="&nbsp;Damaged" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_mirror" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_mirror" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_mirror" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1442,11 +1446,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_serviceDoor" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_serviceDoor" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_serviceDoor" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_serviceDoor" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_serviceDoor" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_serviceDoor" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
 
@@ -1458,15 +1462,15 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_emergencyDoor" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_emergencyDoor" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_emergencyDoor" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_emergencyDoor" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_emergencyDoor" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_emergencyDoor" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Buzzer</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Latch</label>        
+                                            <asp:CheckBox id="cb_buzzer_emergencyDoor" Text="&nbsp;Buzzer" runat="server" />
+                                            <asp:CheckBox id="cb_latch_emergencyDoor" Text="&nbsp;Latch" runat="server" />     
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_emergencyDoor" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1475,11 +1479,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_emergencyExit" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_emergencyExit" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_emergencyExit" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_emergencyExit" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_emergencyExit" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_emergencyExit" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
 
@@ -1491,17 +1495,17 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_heater" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_heater" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_heater" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_heater" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_heater" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_heater" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Switch</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Motor</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Tighten</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_switch_heater" Text="&nbsp;Switch" runat="server" />
+                                            <asp:CheckBox id="cb_motor_heater" Text="&nbsp;Motor" runat="server" />
+                                            <asp:CheckBox id="cb_tighten_heater" Text="&nbsp;Tighten" runat="server" />
+                                            <asp:CheckBox id="cb_replace_heater" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_heater" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1510,11 +1514,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_horns" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_horns" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_horns" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_horns" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_horns" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_horns" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
 
@@ -1526,37 +1530,37 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_uphSeat" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_uphSeat" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_uphSeat" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_uphSeat" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_uphSeat" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_uphSeat" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P1</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P2</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P3</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P4</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P5</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P6</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P7</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P8</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P9</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P10</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P11</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D1</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D2</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D3</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D4</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D5</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D6</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D7</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D8</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D9</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D10</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D11</label>
+                                            <asp:CheckBox id="cb_p_uphSeat" Text="&nbsp;P" runat="server" />
+                                            <asp:CheckBox id="cb_p1_uphSeat" Text="&nbsp;P1" runat="server" />
+                                            <asp:CheckBox id="cb_p2_uphSeat" Text="&nbsp;P2" runat="server" />
+                                            <asp:CheckBox id="cb_p3_uphSeat" Text="&nbsp;P3" runat="server" />
+                                            <asp:CheckBox id="cb_p4_uphSeat" Text="&nbsp;P4" runat="server" />
+                                            <asp:CheckBox id="cb_p5_uphSeat" Text="&nbsp;P5" runat="server" />
+                                            <asp:CheckBox id="cb_p6_uphSeat" Text="&nbsp;P6" runat="server" />
+                                            <asp:CheckBox id="cb_p7_uphSeat" Text="&nbsp;P7" runat="server" />
+                                            <asp:CheckBox id="cb_p8_uphSeat" Text="&nbsp;P8" runat="server" />
+                                            <asp:CheckBox id="cb_p9_uphSeat" Text="&nbsp;P9" runat="server" />
+                                            <asp:CheckBox id="cb_p10_uphSeat" Text="&nbsp;P10" runat="server" />
+                                            <asp:CheckBox id="cb_p11_uphSeat" Text="&nbsp;P11" runat="server" />
+                                            <asp:CheckBox id="cb_d_uphSeat" Text="&nbsp;D" runat="server" />
+                                            <asp:CheckBox id="cb_d1_uphSeat" Text="&nbsp;D1" runat="server" />
+                                            <asp:CheckBox id="cb_d2_uphSeat" Text="&nbsp;D2" runat="server" />
+                                            <asp:CheckBox id="cb_d3_uphSeat" Text="&nbsp;D3" runat="server" />
+                                            <asp:CheckBox id="cb_d4_uphSeat" Text="&nbsp;D4" runat="server" />
+                                            <asp:CheckBox id="cb_d5_uphSeat" Text="&nbsp;D5" runat="server" />
+                                            <asp:CheckBox id="cb_d6_uphSeat" Text="&nbsp;D6" runat="server" />
+                                            <asp:CheckBox id="cb_d7_uphSeat" Text="&nbsp;D7" runat="server" />
+                                            <asp:CheckBox id="cb_d8_uphSeat" Text="&nbsp;D8" runat="server" />
+                                            <asp:CheckBox id="cb_d9_uphSeat" Text="&nbsp;D9" runat="server" />
+                                            <asp:CheckBox id="cb_d10_uphSeat" Text="&nbsp;D10" runat="server" />
+                                            <asp:CheckBox id="cb_d11_uphSeat" Text="&nbsp;D11" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_uphSeat" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1565,37 +1569,37 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_uphBack" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_uphBack" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_uphBack" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_uphBack" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_uphBack" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_uphBack" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P1</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P2</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P3</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P4</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P5</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P6</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P7</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P8</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P9</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P10</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">P11</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D1</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D2</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D3</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D4</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D5</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D6</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D7</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D8</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D9</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D10</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">D11</label>
+                                            <asp:CheckBox id="cb_p_uphBack" Text="&nbsp;P" runat="server" />
+                                            <asp:CheckBox id="cb_p1_uphBack" Text="&nbsp;P1" runat="server" />
+                                            <asp:CheckBox id="cb_p2_uphBack" Text="&nbsp;P2" runat="server" />
+                                            <asp:CheckBox id="cb_p3_uphBack" Text="&nbsp;P3" runat="server" />
+                                            <asp:CheckBox id="cb_p4_uphBack" Text="&nbsp;P4" runat="server" />
+                                            <asp:CheckBox id="cb_p5_uphBack" Text="&nbsp;P5" runat="server" />
+                                            <asp:CheckBox id="cb_p6_uphBack" Text="&nbsp;P6" runat="server" />
+                                            <asp:CheckBox id="cb_p7_uphBack" Text="&nbsp;P7" runat="server" />
+                                            <asp:CheckBox id="cb_p8_uphBack" Text="&nbsp;P8" runat="server" />
+                                            <asp:CheckBox id="cb_p9_uphBack" Text="&nbsp;P9" runat="server" />
+                                            <asp:CheckBox id="cb_p10_uphBack" Text="&nbsp;P10" runat="server" />
+                                            <asp:CheckBox id="cb_p11_uphBack" Text="&nbsp;P11" runat="server" />
+                                            <asp:CheckBox id="cb_d_uphBack" Text="&nbsp;D" runat="server" />
+                                            <asp:CheckBox id="cb_d1_uphBack" Text="&nbsp;D1" runat="server" />
+                                            <asp:CheckBox id="cb_d2_uphBack" Text="&nbsp;D2" runat="server" />
+                                            <asp:CheckBox id="cb_d3_uphBack" Text="&nbsp;D3" runat="server" />
+                                            <asp:CheckBox id="cb_d4_uphBack" Text="&nbsp;D4" runat="server" />
+                                            <asp:CheckBox id="cb_d5_uphBack" Text="&nbsp;D5" runat="server" />
+                                            <asp:CheckBox id="cb_d6_uphBack" Text="&nbsp;D6" runat="server" />
+                                            <asp:CheckBox id="cb_d7_uphBack" Text="&nbsp;D7" runat="server" />
+                                            <asp:CheckBox id="cb_d8_uphBack" Text="&nbsp;D8" runat="server" />
+                                            <asp:CheckBox id="cb_d9_uphBack" Text="&nbsp;D9" runat="server" />
+                                            <asp:CheckBox id="cb_d10_uphBack" Text="&nbsp;D10" runat="server" />
+                                            <asp:CheckBox id="cb_d11_uphBack" Text="&nbsp;D11" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="uphBack" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1604,15 +1608,15 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_floor" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_floor" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_floor" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_floor" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_floor" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_floor" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Cement</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
+                                            <asp:CheckBox id="cb_cement_floor" Text="&nbsp;Cement" runat="server" />
+                                            <asp:CheckBox id="cb_replace_floor" Text="&nbsp;Replace" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_floor" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1621,11 +1625,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_driverSeatBelt" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_driverSeatBelt" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_driverSeatBelt" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_driverSeatBelt" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_driverSeatBelt" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_driverSeatBelt" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
 
@@ -1637,11 +1641,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_extCondition" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_extCondition" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_extCondition" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_extCondition" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_extCondition" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_extCondition" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
 
@@ -1653,11 +1657,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_interiorCondition" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_interiorCondition" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_interiorCondition" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_interiorCondition" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_interiorCondition" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_interiorCondition" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
 
@@ -1669,15 +1673,15 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_chains" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_chains" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_chains" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_chains" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_chains" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_chains" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Automatic</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Manual</label>
+                                            <asp:CheckBox id="cb_automatic_chains" Text="&nbsp;Automatic" runat="server" />
+                                            <asp:CheckBox id="cb_manual_chains" Text="&nbsp;Manual" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_chains" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
@@ -1686,11 +1690,11 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_misc" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
-                                            <select class="form-control" id="sel_majmin_misc" style="max-width: 190px">
-                                                <option>Select Major or Minor...</option>
-                                                <option>Minor</option>
-                                                <option>Major</option>
-                                            </select>
+                                            <asp:DropDownList class="form-control" ID="ddl_misc" Width="200px" runat="server">
+                                                <asp:ListItem Text="Select Major or Minor..." Value="ddlli_prompt_majmin_misc" Selected="True" />
+                                                <asp:ListItem Text="Minor" Value="ddlli_Minor_misc" />
+                                                <asp:ListItem Text="Major" Value="ddlli_Major_misc" />
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
       
@@ -1707,19 +1711,11 @@
             <br />
             <%--Begin Notes Section --%>
             <div class="container">
-<%--                <form role="form">
-                    <div class="form-group">--%>
+                    <div class="form-group">
                         <label for="notes">Notes:</label>
                         <textarea class="form-control" rows="5" id="notes"></textarea>
                     </div>
-                <%--</form>--%>
             </div> <%--End Notes Section--%>
-
-
-
-
-
-
 
 
 
@@ -1727,23 +1723,5 @@
     </div>
 
 
-
-    
-
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
- 
 
 </asp:Content>
