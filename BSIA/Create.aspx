@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group">
-                        <label for="lbl_bus">Bus:</label>
+                        <asp:Label ID="lbl_bus" class="control-label" runat="server" Text="Bus:" style="font-weight:bold"></asp:Label>
                         <asp:DropDownList class="form-control" ID="ddl_bus" Style="max-width: 300px" runat="server">
                             <asp:ListItem Text="Select Bus Number" Value="ddlli_prompt_bus" Selected="True" />
                             <asp:ListItem Text="1" Value="ddlli_bus1" />
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group" style="grid-flow: columns">
-                        <label for="lbl_season">Season:</label>
+                        <asp:Label ID="lbl_season" class="control-label" runat="server" Text="Season:" style="font-weight:bold"></asp:Label>
                         <asp:DropDownList class="form-control" ID="ddl_season" Style="max-width: 300px" runat="server">
                             <asp:ListItem Text="Select Season" Value="ddlli_prompt_season" Selected="True" />
                             <asp:ListItem Text="Spring" Value="ddlli_Spring" />
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group" style="grid-flow: columns">
-                        <label for="lbl_inspectionDate">Inspection Date:</label>
+                        <asp:Label ID="lbl_inspectionDate" class="control-label" runat="server" Text="Inspection Date:" style="font-weight:bold"></asp:Label>
                         <table><tr><td>
                             <asp:TextBox ID="txt_inspectionDate" Width="200px" class="form-control" runat="server" /></td><td>
                             <asp:LinkButton ID="btn_calendar" runat="server" class="btn btn-primary btn-calendar" OnClick="btn_calendar_Click"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span></asp:LinkButton>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3" style="margin-top: 25px">
-                    <asp:Button ID="btn_createInspection" class="btn btn-primary" runat="server" Text="Create Inspection" />
+                    <asp:Button ID="btn_createInspection" class="btn btn-primary" type="submit" runat="server" Text="Create Inspection" />
                 </div>
 
             </div><%--End Bus Selection Row--%>   
@@ -111,21 +111,23 @@
 
                 <div class="col-sm-4">
                     <div class="form-group" style="grid-flow: columns">
-                        <label for="lbl_odometer">Odometer:</label>
-                        <asp:TextBox class="form-control" id="txt_odometer" placeholder="Numerical Data Only..." runat="server"></asp:TextBox>
+                        <asp:Label ID="lbl_odometer" class="control-label" runat="server" Text="Odometer:" style="font-weight:bold"></asp:Label>
+                        <asp:TextBox type="text" pattern="[0-9]{1,6}" runat="server" class="form-control" id="txt_odometer" name="txt_odometer" placeholder="Numerical Data Only..." data-error="Invalid. Numbers < 999999 only." />
+                        <div class="help-block with-errors"></div>
                     </div>
                 </div>
 
                 <div class="col-sm-4">
                     <div class="form-group" style="grid-flow: columns">
-                        <label for="lbl_tag">Vehicle License Plate (TAG):</label>
-                        <asp:TextBox class="form-control" id="txt_tag" placeholder="Letters/Numbers, No Spaces..." runat="server"></asp:TextBox>
+                        <asp:Label ID="lbl_tag" class="control-label" runat="server" Text="Vehicle License Plate (TAG):" style="font-weight:bold"></asp:Label>
+                        <asp:TextBox type="text" pattern="[a-zA-Z0-9]{3,7}" runat="server" class="form-control" id="txt_tag" name="txt_tag" placeholder="Letters/Numbers, No Spaces..." data-error="Invalid. Letters and Numbers only. No spaces." />
+                        <div class="help-block with-errors"></div>
                     </div>
                 </div>
 
                 <div class="col-sm-4">
                     <div class="form-group" style="grid-flow: columns">
-                        <label for="lbl_enteredBy">Entered By:</label> Do we still need this?
+                        <asp:Label ID="lbl_enteredBy" class="control-label" runat="server" Text="Entered By:" style="font-weight:bold"></asp:Label> Grab and Display
                         <asp:TextBox class="form-control" id="txt_enteredBy" runat="server"></asp:TextBox>
                     </div>
                 </div>
@@ -137,13 +139,13 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#collapse1"><strong>Group I - Suspension & Frame</strong> <span class="badge badge-danger" style="float: right">5</span></a>
+                                <a data-toggle="collapse" href="#collapse1"><strong>Group I - Suspension & Frame</strong> <span class="badge" style="float: right">5</span></a>
                             </h4>
                         </div>
                         <div id="collapse1" class="panel-collapse collapse">
                             <ul class="list-group">
-                                <li class="list-group-item"><p><strong>Ball Joints</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Ball Joints</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_ballJoints" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_ballJoints" Width="200px" runat="server">
@@ -161,8 +163,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_ballJoints" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Drag Link</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Drag Link</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_dragLink" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_dragLink" Width="200px" runat="server">
@@ -180,8 +182,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_dragLink" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Tie Rods</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Tie Rods</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_tieRods" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_tieRods" Width="200px" runat="server">
@@ -202,8 +204,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_tieRods" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Springs</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Springs</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_springs" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_springs" Width="200px" runat="server">
@@ -222,8 +224,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_springs" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Shackles (Bolts)</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Shackles (Bolts)</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_shackles" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_shackles" Width="200px" runat="server">
@@ -241,8 +243,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_shackles" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Shock Absorbers</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Shock Absorbers</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_shockAbsorbers" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_shockAbsorbers" Width="200px" runat="server">
@@ -257,8 +259,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_shockAbsorbers" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Front End Alignment</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Front End Alignment</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_frontendAlignment" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_frontendAlignment" Width="200px" runat="server">
@@ -273,8 +275,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_frontendAlignment" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>King Pins and Bushings</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>King Pins and Bushings</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_kingPins" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_kingPin" Width="200px" runat="server">
@@ -291,8 +293,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_kingPins" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Steering Column</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Steering Column</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_steeringColumn" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_steeringColumn" Width="200px" runat="server">
@@ -302,13 +304,13 @@
                                             </asp:DropDownList>
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
-                                            <label class="checkbox-inline"><input type="checkbox" value="">"U" Joint</label>
+                                            <asp:CheckBox id="cb_ujoint_steeringColumn" Text="&nbsp;&quot;U&quot; Joint" runat="server" />
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_steeringColumn" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Steering Gear Box</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Steering Gear Box</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_steeringGearBox" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_steeringGearBox" Width="200px" runat="server">
@@ -325,8 +327,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_steeringGearBox" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Steering Leakage</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Steering Leakage</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_steeringLeakage" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_steeringLeakage" Width="200px" runat="server">
@@ -341,8 +343,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_steeringLeakage" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Power Steering Mechanism and Hoses</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Power Steering Mechanism and Hoses</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_powerSteering" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_powerSteering" Width="200px" runat="server">
@@ -359,8 +361,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_powerSteering" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Body Attachment</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Body Attachment</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_bodyAttachment" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_bodyAttachment" Width="200px" runat="server">
@@ -392,8 +394,8 @@
                         </div>
                         <div id="collapse2" class="panel-collapse collapse">
                             <ul class="list-group">
-                                <li class="list-group-item"><p><strong>Service</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Service</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_service" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_service" Width="200px" runat="server">
@@ -415,8 +417,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_service" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Parking</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Parking</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_parking" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_parking" Width="200px" runat="server">
@@ -432,8 +434,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_parking" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Air or Vacuum Booster</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Air or Vacuum Booster</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_booster" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_booster" Width="200px" runat="server">
@@ -449,8 +451,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_booster" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Low Indicator</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Low Indicator</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_lowIndicator" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                              <asp:DropDownList class="form-control" ID="ddl_lowIndicator" Width="200px" runat="server">
@@ -466,8 +468,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_lowIndicator" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Emergency System</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Emergency System</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_emergencySystem" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_emergencySystem" Width="200px" runat="server">
@@ -482,8 +484,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_emergencySystem" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Brake Lines or Hoses</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Brake Lines or Hoses</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_brakeLines" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_brakeLines" Width="200px" runat="server">
@@ -502,8 +504,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_brakeLines" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Brake Drums</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Brake Drums</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_brakeDrums" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_brakeDrums" Width="200px" runat="server">
@@ -521,8 +523,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_brakeDrums" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Master Cylinder</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Master Cylinder</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_masterCylinder" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_masterCylinder" Width="200px" runat="server">
@@ -540,8 +542,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_masterCylinder" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Wheel Cylinder</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Wheel Cylinder</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_wheelCylinder" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_wheelCylinder" Width="200px" runat="server">
@@ -560,8 +562,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_wheelCylinder" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Wheel Bearing</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Wheel Bearing</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_wheelBearing" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_wheelBearing" Width="200px" runat="server">
@@ -580,8 +582,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_wheelBearing" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Wheel Lug Nuts</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Wheel Lug Nuts</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_wheelLugNuts" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_wheelLugNuts" Width="200px" runat="server">
@@ -597,8 +599,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_wheelLugNuts" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Tires</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Tires</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_tires" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_tires" Width="200px" runat="server">
@@ -620,8 +622,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_tires" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Disc</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Disc</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_disc" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_disc" Width="200px" runat="server">
@@ -639,8 +641,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_disc" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>ABS Systems</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>ABS Systems</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_absSystem" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_absSystem" Width="200px" runat="server">
@@ -655,8 +657,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_absSystem" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Valve Stem</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Valve Stem</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_valveStem" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_valveStem" Width="200px" runat="server">
@@ -689,8 +691,8 @@
                         </div>
                         <div id="collapse3" class="panel-collapse collapse">
                             <ul class="list-group">
-                                <li class="list-group-item"><p><strong>Air Cleaner</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Air Cleaner</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_airCleaner" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_airCleaner" Width="200px" runat="server">
@@ -708,8 +710,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_airCleaner" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Alternator/Generator</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Alternator/Generator</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_alternator" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_alternator" Width="200px" runat="server">
@@ -725,8 +727,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_alternator" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Battery Cable Hold-Down</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Battery Cable Hold-Down</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_battery" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_battery" Width="200px" runat="server">
@@ -743,8 +745,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_battery" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Drive Belts, Power Steering</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Drive Belts, Power Steering</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_driveBelts" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_driveBelts" Width="200px" runat="server">
@@ -761,8 +763,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_driveBelts" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Fuel Leaks</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Fuel Leaks</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_fuelLeaks" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_fuelLeaks" Width="200px" runat="server">
@@ -779,8 +781,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_fuelLeaks" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Gaskets and Seals</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Gaskets and Seals</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_gaskets" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_gaskets" Width="200px" runat="server">
@@ -795,8 +797,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_gaskets" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Radiator Heater Hose</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Radiator Heater Hose</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_radiatorHose" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_radiatorHose" Width="200px" runat="server">
@@ -814,8 +816,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_radiatorHose" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Lines and Wiring</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Lines and Wiring</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_linesWiring" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_linesWiring" Width="200px" runat="server">
@@ -830,8 +832,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_linesWiring" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Engine Operation</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Engine Operation</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_engineOperation" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_engineOperation" Width="200px" runat="server">
@@ -846,8 +848,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_engineOperation" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Clutch</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Clutch</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_clutch" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_clutch" Width="200px" runat="server">
@@ -864,8 +866,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_clutch" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Engine Clean</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Engine Clean</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_engineClean" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_engineClean" Width="200px" runat="server">
@@ -884,8 +886,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_engineClean" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Manifold Leak</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Manifold Leak</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_manifoldLeak" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_manifoldLeak" Width="200px" runat="server">
@@ -901,8 +903,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_manifoldLeak" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Exhaust and Tail Pipes</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Exhaust and Tail Pipes</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_exhaust" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_exhaust" Width="200px" runat="server">
@@ -920,8 +922,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_exhaust" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Muffler</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Muffler</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_muffler" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_muffler" Width="200px" runat="server">
@@ -937,8 +939,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_muffler" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>P.C.V. Valve</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>P.C.V. Valve</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_pcvValve" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_pcvValve" Width="200px" runat="server">
@@ -970,8 +972,8 @@
                         </div>
                         <div id="collapse4" class="panel-collapse collapse">
                             <ul class="list-group">
-                                <li class="list-group-item"><p><strong>Head</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Head</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_head" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_head" Width="200px" runat="server">
@@ -989,8 +991,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_head" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Stop and Tail</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Stop and Tail</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_stopTail" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_stopTail" Width="200px" runat="server">
@@ -1006,8 +1008,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_stopTail" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Warning Flasher</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Warning Flasher</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_warningFlasher" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_warningFlasher" Width="200px" runat="server">
@@ -1025,8 +1027,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_warningFlasher" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Clearance Cluster</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Clearance Cluster</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_clearance" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_clearance" Width="200px" runat="server">
@@ -1045,8 +1047,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_clearance" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Turn Signal/Hazard</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Turn Signal/Hazard</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_turnSignal" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_turnSignal" Width="200px" runat="server">
@@ -1067,8 +1069,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comment_turnSignal" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Interior</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Interior</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_interior" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_interior" Width="200px" runat="server">
@@ -1083,8 +1085,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_interior" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Back Up</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Back Up</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_backUp" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_backUp" Width="200px" runat="server">
@@ -1101,8 +1103,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_backUp" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>License Plate</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>License Plate</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_licensePlate" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_licensePlate" Width="200px" runat="server">
@@ -1117,8 +1119,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_licensePlate" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Instrumental Panel</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Instrumental Panel</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_instrumental" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_instrumental" Width="200px" runat="server">
@@ -1133,8 +1135,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_instrumental" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Glass</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Glass</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_glass" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_glass" Width="200px" runat="server">
@@ -1151,8 +1153,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_glass" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Windshield Wipers</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Windshield Wipers</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_windshieldWipers" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_windshieldWipers" Width="200px" runat="server">
@@ -1168,8 +1170,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_windshieldWipers" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Odometer</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Odometer</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_odometer" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_odometer" Width="200px" runat="server">
@@ -1184,8 +1186,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_odometer" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Video Camera Light</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Video Camera Light</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_video" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_video" Width="200px" runat="server">
@@ -1200,8 +1202,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_video" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Interior Dome Lights</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Interior Dome Lights</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_interiorLights" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_interiorLights" Width="200px" runat="server">
@@ -1233,8 +1235,8 @@
                         </div>
                         <div id="collapse5" class="panel-collapse collapse">
                             <ul class="list-group">
-                                <li class="list-group-item"><p><strong>Fire Extinguisher</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Fire Extinguisher</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_fireExt" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_fireExt" Width="200px" runat="server">
@@ -1250,8 +1252,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_fireExt" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>First Aid Kit</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>First Aid Kit</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_firstAid" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_firstAid" Width="200px" runat="server">
@@ -1268,8 +1270,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_firstAid" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Fuses</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Fuses</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_fuses" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_fuses" Width="200px" runat="server">
@@ -1280,13 +1282,12 @@
                                         </div>
                                         <div class="col-xs-6 col-sm-4">
                                             <asp:CheckBox id="CheckBox1" Text="&nbsp;Replace" runat="server" />
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Replace</label>
                                         </div>
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_fuses" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Reflectors</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Reflectors</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_reflectors" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_reflectors" Width="200px" runat="server">
@@ -1301,8 +1302,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_reflectors" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Body Fluids Kit</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Body Fluids Kit</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_bodyFluidsKit" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_bodyFluidsKit" Width="200px" runat="server">
@@ -1318,8 +1319,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_bodyFluidsKit" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Strobe Light</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Strobe Light</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_strobeLight" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_strobeLight" Width="200px" runat="server">
@@ -1334,8 +1335,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_strobeLight" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Roof Hatch</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Roof Hatch</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_roofHatch" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_roofHatch" Width="200px" runat="server">
@@ -1351,8 +1352,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_roofHatch" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Emergency Window</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Emergency Window</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_emergencyWindow" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_emergencyWindow" Width="200px" runat="server">
@@ -1385,8 +1386,8 @@
                         </div>
                         <div id="collapse6" class="panel-collapse collapse">
                             <ul class="list-group">
-                                <li class="list-group-item"><p><strong>Body</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Body</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_body" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_body" Width="200px" runat="server">
@@ -1403,8 +1404,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_body" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Lettering</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Lettering</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_lettering" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_lettering" Width="200px" runat="server">
@@ -1419,8 +1420,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_lettering" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Mirror</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Mirror</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_mirror" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_mirror" Width="200px" runat="server">
@@ -1442,8 +1443,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_mirror" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Service Door</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Service Door</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_serviceDoor" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_serviceDoor" Width="200px" runat="server">
@@ -1458,8 +1459,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_serviceDoor" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Emergency Door</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Emergency Door</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_emergencyDoor" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_emergencyDoor" Width="200px" runat="server">
@@ -1475,8 +1476,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_emergencyDoor" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Emergency Exit</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Emergency Exit</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_emergencyExit" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_emergencyExit" Width="200px" runat="server">
@@ -1491,8 +1492,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_emergencyExit" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Heater/Defroster</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Heater/Defroster</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_heater" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_heater" Width="200px" runat="server">
@@ -1510,8 +1511,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_heater" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Horn(s) - Non Function</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Horn(s) - Non Function</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_horns" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_horns" Width="200px" runat="server">
@@ -1526,8 +1527,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_horns" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Upholstery Seat</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Upholstery Seat</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_uphSeat" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_uphSeat" Width="200px" runat="server">
@@ -1565,8 +1566,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_uphSeat" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Upholstery Back</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Upholstery Back</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_uphBack" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_uphBack" Width="200px" runat="server">
@@ -1604,8 +1605,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="uphBack" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Floor Coverings</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Floor Coverings</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_floor" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_floor" Width="200px" runat="server">
@@ -1621,8 +1622,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_floor" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Driver Seat Belt</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Driver Seat Belt</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_driverSeatBelt" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_driverSeatBelt" Width="200px" runat="server">
@@ -1637,8 +1638,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_driverSeatBelt" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Exterior Condition</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Exterior Condition</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_extCondition" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_extCondition" Width="200px" runat="server">
@@ -1653,8 +1654,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_extCondition" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Interior Condition</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Interior Condition</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_interiorCondition" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_interiorCondition" Width="200px" runat="server">
@@ -1669,8 +1670,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_interiorCondition" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Chains</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Chains</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_chains" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_chains" Width="200px" runat="server">
@@ -1686,8 +1687,8 @@
                                         <div class="col-xs-6 col-sm-4"><asp:TextBox class="form-control" id="txt_comments_chains" placeholder="Additional Comments..." runat="server"></asp:TextBox></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item"><p><strong>Miscellaneous</strong></p>
-                                    <div class="row">
+                                <li class="list-group-item"><p style="color:blue"><strong>Miscellaneous</strong></p>
+                                    <div class="row" style="margin-left:5px">
                                         <div class="col-xs-6 col-sm-1"><asp:CheckBox id="cb_fail_misc" Text="&nbsp;Fail" runat="server" /></div>
                                         <div class="col-xs-6 col-sm-3">
                                             <asp:DropDownList class="form-control" ID="ddl_misc" Width="200px" runat="server">
@@ -1712,16 +1713,24 @@
             <%--Begin Notes Section --%>
             <div class="container">
                     <div class="form-group">
-                        <label for="notes">Notes:</label>
-                        <textarea class="form-control" rows="5" id="notes"></textarea>
+                        <asp:Label ID="lbl_notes" class="control-label" runat="server" Text="Notes:" style="font-weight:bold"></asp:Label>
+                        <textarea class="form-control" rows="5" id="ta_notes" runat="server"></textarea>
+
                     </div>
             </div> <%--End Notes Section--%>
 
+            <%--Begin Acknowledgement Panel--%>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="font-size: 18px; font-weight: bold; background-color: cornflowerblue">Acknowledgement</div>
+                <div class="panel-body">
+                    <asp:CheckBox ID="cb_agree" type="checkbox" name="cb_agree" Text="&nbsp;Inspection results have been reviewed with the Contractor." data-error="Must acknowledge before digitally signing form." runat="server" />
+                    <div class="help-block with-errors"></div>
+                </div><%--End Acknowledgement Panel Body--%>
+            </div><%--End Acknowledgement Panel--%>
 
 
-        </div>
-    </div>
-
+        </div><%--End Create Inspection Panel Body--%>
+    </div><%--End Create Inspection Panel--%>
 
 
 </asp:Content>

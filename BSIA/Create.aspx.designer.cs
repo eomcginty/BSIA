@@ -13,6 +13,15 @@ namespace BSIA {
     public partial class Create {
         
         /// <summary>
+        /// lbl_bus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_bus;
+        
+        /// <summary>
         /// ddl_bus control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.DropDownList ddl_bus;
         
         /// <summary>
+        /// lbl_season control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_season;
+        
+        /// <summary>
         /// ddl_season control.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_season;
+        
+        /// <summary>
+        /// lbl_inspectionDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_inspectionDate;
         
         /// <summary>
         /// txt_inspectionDate control.
@@ -85,6 +112,15 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.TableHeaderRow Table1HeaderRow;
         
         /// <summary>
+        /// lbl_odometer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_odometer;
+        
+        /// <summary>
         /// txt_odometer control.
         /// </summary>
         /// <remarks>
@@ -94,6 +130,15 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.TextBox txt_odometer;
         
         /// <summary>
+        /// lbl_tag control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_tag;
+        
+        /// <summary>
         /// txt_tag control.
         /// </summary>
         /// <remarks>
@@ -101,6 +146,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_tag;
+        
+        /// <summary>
+        /// lbl_enteredBy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_enteredBy;
         
         /// <summary>
         /// txt_enteredBy control.
@@ -587,6 +641,15 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_steeringColumn;
+        
+        /// <summary>
+        /// cb_ujoint_steeringColumn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_ujoint_steeringColumn;
         
         /// <summary>
         /// txt_comments_steeringColumn control.
@@ -4394,5 +4457,32 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_comments_misc;
+        
+        /// <summary>
+        /// lbl_notes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_notes;
+        
+        /// <summary>
+        /// ta_notes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ta_notes;
+        
+        /// <summary>
+        /// cb_agree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_agree;
     }
 }
