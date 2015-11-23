@@ -175,19 +175,19 @@
             SelectCommand="SELECT [group_description], [group_id] FROM [InspectionGroup]" DataSourceMode="DataReader">
 
         </asp:SqlDataSource>
-        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource_groups">
+        <asp:Repeater ID="Repeater_groups" runat="server" DataSourceID="SqlDataSource_groups">
             <ItemTemplate>
                 <div class="container">
                     <div class="panel-group">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse1"><strong><%# Eval("group_description") %></strong> <span class="badge" style="float: right">5</span></a>
+                                    <a data-toggle="collapse" href="#div_<%# DataBinder.Eval(Container,"ItemIndex") %>"><strong><%# Eval("group_description") %></strong> <span class="badge" style="float: right">5</span></a>
                                 </h4>
 								        <asp:Label runat="server" ID="lbl_groupId" Text='<%# Eval("group_id") %>' Visible="False" />
                             </div>
 
-                            <div> <%--Begin Repeater Items--%>
+                            <div id="div_<%# DataBinder.Eval(Container,"ItemIndex") %>" class="panel-collapse collapse"> <%--Begin Repeater Items--%>
                                 <asp:Label runat="server" ID="lbl_itemsId" Text='<%# Eval("group_id") %>' Visible="False" />
                                 <asp:SqlDataSource
                                     ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_items" runat="server"
@@ -300,7 +300,7 @@
        <%-- </div>End Create Inspection Panel Body--%>
     <%--</div>End Create Inspection Panel--%>
 
-
+                <br />
                 <%--Begin Notes Section --%>
                 <div class="container">
                     <div class="form-group">
