@@ -25,6 +25,11 @@ namespace BSIA
             calendar.Visible = false;
         }
 
+        protected void btn_getBus_Click(object sender, EventArgs e)
+        {
+            pnl_bus.Visible = true;
+            pnl_inspection.Visible = true;
+        }
 
     }
 }
