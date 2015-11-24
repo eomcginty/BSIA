@@ -181,7 +181,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <None Include="Properties\PublishProfiles\bsia %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\bsia - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\bsia - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\bsia.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="mycustompage.html" />
     <Content Include="images\BSIA_banner.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

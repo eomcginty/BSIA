@@ -332,7 +332,7 @@
 
                 <%--Submit Bus Inspected Information--%>
                 <div class="col-sm-3" style="margin-top:20px">
-                     <asp:Button ID="btn_createInspection" class="btn btn-primary" type="submit" runat="server" Text="Submit Create Inspection" Width="200px" />
+                     <asp:Button ID="btn_createInspection" class="btn btn-primary" type="submit" runat="server" Text="Submit Create Inspection" Width="200px" OnClick="btn_createInspection_Click" />
                 </div>
 
             </div><%--End Create Inspection Panel Body--%>

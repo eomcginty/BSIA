@@ -31,5 +31,9 @@ namespace BSIA
             pnl_inspection.Visible = true;
         }
 
+        protected void btn_createInspection_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
