@@ -123,221 +123,220 @@
 
     <%--Begin Create Inspection Panel--%>
     <asp:Panel ID="pnl_inspection" runat="server" class="panel panel-default" Visible="false">
-        <%--<div class="panel panel-default">--%>
-            <div class="panel-heading" style="font-size: 18px; font-weight: bold; background-color: cornflowerblue">Create Inspection</div>
-            <div class="panel-body">
-
-                <%--Additional input fields - Odometer, TAG--%>
-                <div class="row">
-                    <%--Odometer--%>
-                    <div class="col-sm-3">
-                        <div class="form-group" style="grid-flow: columns">
-                            <asp:Label ID="lbl_odometer" class="control-label" runat="server" Text="Odometer:" Style="font-weight: bold"></asp:Label>
-                            <asp:TextBox type="text" pattern="[0-9]{1,6}" runat="server" class="form-control" ID="txt_odometer" name="txt_odometer" placeholder="Numerical Data Only..." data-error="Invalid. Numbers < 999999 only." />
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
-                    <%--TAG--%>
-                    <div class="col-sm-3">
-                        <div class="form-group" style="grid-flow: columns">
-                            <asp:Label ID="lbl_tag" class="control-label" runat="server" Text="Vehicle License Plate (TAG):" Style="font-weight: bold"></asp:Label>
-                            <asp:TextBox type="text" pattern="[a-zA-Z0-9]{3,7}" runat="server" class="form-control" ID="txt_tag" name="txt_tag" placeholder="Letters/Numbers, No Spaces..." data-error="Invalid. Letters and Numbers only. No spaces." />
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
-                    <%--Created By--%>
-                    <div class="col-sm-3">
-                        <div class="form-group" style="grid-flow: columns">
-                            <asp:Label ID="lbl_createdBy" class="control-label" runat="server" Text="Created By:" Style="font-weight: bold"></asp:Label>
-                            <asp:SqlDataSource ID="SqlDataSource_createdBy" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>" SelectCommand="SELECT created_by FROM Bus where bus_id = 400" DataSourceMode="DataReader"></asp:SqlDataSource>
-                            <asp:TextBox class="form-control" Text='<%# Eval("created_by") %>' ID="txt_createdBy" runat="server" DataSourceID="SqlDataSource_createdBy"></asp:TextBox>
-                        </div>
-                    </div>
-                    <%--Updated By--%>
-                    <div class="col-sm-3">
-                        <div class="form-group" style="grid-flow: columns">
-                            <asp:Label ID="lbl_updatedBy" class="control-label" runat="server" Text="Updated By:" Style="font-weight: bold"></asp:Label>
-                            <asp:TextBox class="form-control" ID="txt_updatedBy" runat="server" disabled></asp:TextBox>
-                        </div>
-                    </div>
-                </div><%-- End Additional input fields - Odometer, TAG--%>
-
-
-
-     <%--Begin Create Inspection Panel--%>
-                <div class="row">
-<%--    <div class="panel panel-default">
         <div class="panel-heading" style="font-size: 18px; font-weight: bold; background-color: cornflowerblue">Create Inspection</div>
-        <div class="panel-body">--%>
+        <div class="panel-body">
 
-        <%--Begin Group Panels--%>
-        <asp:SqlDataSource ID="SqlDataSource_groups" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-            SelectCommand="SELECT [group_description], [group_id] FROM [InspectionGroup]" DataSourceMode="DataReader">
+            <%--Additional input fields - Odometer, TAG--%>
+            <div class="row">
+                <%--Odometer--%>
+                <div class="col-sm-3">
+                    <div class="form-group" style="grid-flow: columns">
+                        <asp:Label ID="lbl_odometer" class="control-label" runat="server" Text="Odometer:" Style="font-weight: bold"></asp:Label>
+                        <asp:TextBox type="text" pattern="[0-9]{1,6}" runat="server" class="form-control" ID="txt_odometer" name="txt_odometer" placeholder="Numerical Data Only..." data-error="Invalid. Numbers < 999999 only." />
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <%--TAG--%>
+                <div class="col-sm-3">
+                    <div class="form-group" style="grid-flow: columns">
+                        <asp:Label ID="lbl_tag" class="control-label" runat="server" Text="Vehicle License Plate (TAG):" Style="font-weight: bold"></asp:Label>
+                        <asp:TextBox type="text" pattern="[a-zA-Z0-9]{3,7}" runat="server" class="form-control" ID="txt_tag" name="txt_tag" placeholder="Letters/Numbers, No Spaces..." data-error="Invalid. Letters and Numbers only. No spaces." />
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <%--Created By--%>
+                <div class="col-sm-3">
+                    <div class="form-group" style="grid-flow: columns">
+                        <asp:Label ID="lbl_createdBy" class="control-label" runat="server" Text="Created By:" Style="font-weight: bold"></asp:Label>
+                        <asp:SqlDataSource ID="SqlDataSource_createdBy" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>" SelectCommand="SELECT created_by FROM Bus where bus_id = 400" DataSourceMode="DataReader"></asp:SqlDataSource>
+                        <asp:TextBox class="form-control" Text='<%# Eval("created_by") %>' ID="txt_createdBy" runat="server" DataSourceID="SqlDataSource_createdBy"></asp:TextBox>
+                    </div>
+                </div>
+                <%--Updated By--%>
+                <div class="col-sm-3">
+                    <div class="form-group" style="grid-flow: columns">
+                        <asp:Label ID="lbl_updatedBy" class="control-label" runat="server" Text="Updated By:" Style="font-weight: bold"></asp:Label>
+                        <asp:TextBox class="form-control" ID="txt_updatedBy" runat="server" disabled></asp:TextBox>
+                    </div>
+                </div>
+            </div><%-- End Additional input fields - Odometer, TAG row --%>
+                
 
-        </asp:SqlDataSource>
-        <asp:Repeater ID="Repeater_groups" runat="server" DataSourceID="SqlDataSource_groups">
-            <ItemTemplate>
-                <div class="container">
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#div_<%# DataBinder.Eval(Container,"ItemIndex") %>"><strong><%# Eval("group_description") %></strong> <span class="badge" style="float: right">5</span></a>
-                                </h4>
-								        <asp:Label runat="server" ID="lbl_groupId" Text='<%# Eval("group_id") %>' Visible="False" />
-                            </div>
 
-                            <div id="div_<%# DataBinder.Eval(Container,"ItemIndex") %>" class="panel-collapse collapse"> <%--Begin Repeater Items--%>
-                                <asp:Label runat="server" ID="lbl_itemsId" Text='<%# Eval("group_id") %>' Visible="False" />
-                                <asp:SqlDataSource
-                                    ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_items" runat="server"
-                                    SelectCommand="SELECT item_description, item_id FROM InspectionItem WHERE InspectionItem.group_id = @group_id" DataSourceMode="DataReader">
-                                    <SelectParameters>
-                                        <asp:ControlParameter ControlID="lbl_groupId" Name="group_id" Type="Int32" DefaultValue="0" />
-                                    </SelectParameters>
-                                </asp:SqlDataSource>
-                                <asp:Repeater ID="Repeater_items" runat="server" DataSourceID="SqlDataSource_items">
-                                    <HeaderTemplate>
-                                        <table class="table">
+     <%--Begin Create Inspection Input row--%>
+            <div class="row"> 
+
+            <%--Begin Group Panels--%>
+            <asp:SqlDataSource ID="SqlDataSource_groups" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
+                SelectCommand="SELECT [group_description], [group_id] FROM [InspectionGroup]" DataSourceMode="DataReader">
+            </asp:SqlDataSource>
+            <%--Begin Repeater Groups--%>
+            <asp:Repeater ID="Repeater_groups" runat="server" DataSourceID="SqlDataSource_groups">
+                <ItemTemplate>
+                    <div class="container">
+                        <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" href="#div_<%# DataBinder.Eval(Container,"ItemIndex") %>"><strong><%# Eval("group_description") %></strong> <span class="badge" style="float: right">5</span></a>
+                                    </h4>
+								    <asp:Label runat="server" ID="lbl_groupId" Text='<%# Eval("group_id") %>' Visible="False" />
+                                </div>
+                                <%--Begin Repeater Items--%>
+                                <div id="div_<%# DataBinder.Eval(Container,"ItemIndex") %>" class="panel-collapse collapse"> 
+                                    <asp:Label runat="server" ID="lbl_itemsId" Text='<%# Eval("group_id") %>' Visible="False" />
+                                    <asp:SqlDataSource
+                                        ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_items" runat="server"
+                                        SelectCommand="SELECT item_description, item_id FROM InspectionItem WHERE InspectionItem.group_id = @group_id" DataSourceMode="DataReader">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="lbl_groupId" Name="group_id" Type="Int32" DefaultValue="0" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+                                    <asp:Repeater ID="Repeater_items" runat="server" DataSourceID="SqlDataSource_items">
+                                        <HeaderTemplate>
+                                            <table class="table">
+                                                <tr>
+                                                    <th style="width: 20%">Item</th>
+                                                    <th style="width: 10%">Result</th>
+                                                    <th style="width: 15%">Severity</th>
+                                                    <th style="width: 25%">Inspection Elements</th>
+                                                    <th style="width: 25%">Additional Comments</th>
+                                                </tr>
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
                                             <tr>
-                                                <th style="width: 20%">Item</th>
-                                                <th style="width: 10%">Result</th>
-                                                <th style="width: 15%">Severity</th>
-                                                <th style="width: 25%">Inspection Elements</th>
-                                                <th style="width: 25%">Additional Comments</th>
-                                            </tr>
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <tr>
-                                            <td bgcolor="#d9edf7"><asp:Label runat="server" ID="Label1" Text='<%# Eval("item_description") %>' /></td>
-                                            <td bgcolor="#d9edf7" hidden><asp:Label runat="server" ID="lbl_elementsId" Text='<%# Eval("item_id") %>' /></td>
-                                                        <asp:SqlDataSource
-                                                    ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_elements" runat="server"
-                                                    SelectCommand="SELECT element_description FROM InspectionDetail WHERE InspectionDetail.item_id = @item_elements" DataSourceMode="DataReader">
-                                                    <SelectParameters>
-                                                        <asp:ControlParameter ControlID="lbl_elementsId" Name="item_elements" Type="Int32" DefaultValue="0" />
-                                                    </SelectParameters>
-                                                </asp:SqlDataSource>
-                                            <td bgcolor="#d9edf7"><asp:CheckBox ID="cb_fail_ballJoints_e" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
-                                            <td bgcolor="#d9edf7">
-                                                <asp:SqlDataSource ID="SqlDataSource_minmaj" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                                                    SelectCommand="SELECT [severity_description], [score] FROM [Severity]" DataSourceMode="DataReader">
-                                                </asp:SqlDataSource>
-                                                <asp:DropDownList class="form-control" ID="ddl_severity" Style="max-width: 150px" runat="server"
-                                                    DataSourceID="SqlDataSource_minmaj" DataTextField="severity_description" DataValueField="score" AppendDataBoundItems="True">
-                                                    <asp:ListItem>Minor or Major...</asp:ListItem>
-                                                </asp:DropDownList>
-                        <%--                        <asp:CompareValidator Style="color: #b94a48" ID="CompareValidator_severity" runat="server" ErrorMessage="Select Severity!"
-                                                    Operator="NotEqual" ValueToCompare="Select Major or Minor" ControlToValidate="ddl_severity">
-                                                    &nbsp;Must select Severity!
-                                                </asp:CompareValidator>--%>
-                                            </td>
-                                            <td bgcolor="#d9edf7">
+                                                <td bgcolor="#d9edf7"><asp:Label runat="server" ID="Label1" Text='<%# Eval("item_description") %>' /></td>
+                                                <td bgcolor="#d9edf7" hidden><asp:Label runat="server" ID="lbl_elementsId" Text='<%# Eval("item_id") %>' /></td>
+                                                    <asp:SqlDataSource
+                                                        ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_elements" runat="server"
+                                                        SelectCommand="SELECT element_description FROM InspectionDetail WHERE InspectionDetail.item_id = @item_elements" DataSourceMode="DataReader">
+                                                        <SelectParameters>
+                                                            <asp:ControlParameter ControlID="lbl_elementsId" Name="item_elements" Type="Int32" DefaultValue="0" />
+                                                        </SelectParameters>
+                                                    </asp:SqlDataSource>
+                                                <td bgcolor="#d9edf7"><asp:CheckBox ID="cb_fail_ballJoints_e" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
+                                                <td bgcolor="#d9edf7">
+                                                    <asp:SqlDataSource ID="SqlDataSource_minmaj" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
+                                                        SelectCommand="SELECT [severity_description], [score] FROM [Severity]" DataSourceMode="DataReader">
+                                                    </asp:SqlDataSource>
+                                                    <asp:DropDownList class="form-control" ID="ddl_severity" Style="max-width: 150px" runat="server"
+                                                        DataSourceID="SqlDataSource_minmaj" DataTextField="severity_description" DataValueField="score" AppendDataBoundItems="True">
+                                                        <asp:ListItem>Minor or Major...</asp:ListItem>
+                                                    </asp:DropDownList>
+                            <%--                        <asp:CompareValidator Style="color: #b94a48" ID="CompareValidator_severity" runat="server" ErrorMessage="Select Severity!"
+                                                        Operator="NotEqual" ValueToCompare="Select Major or Minor" ControlToValidate="ddl_severity">
+                                                        &nbsp;Must select Severity!
+                                                    </asp:CompareValidator>--%>
+                                                </td>
+                                                <td bgcolor="#d9edf7">
                                     
-                                                <asp:Repeater ID="Repeater_elements" runat="server" DataSourceID="SqlDataSource_elements">
-                                                    <ItemTemplate>
-                                                        <asp:CheckBox ID="cb_elements" font-bold="false" name="item_elements" DataSourceID="SqlDataSource_elements" Text='<%# Eval("element_description") %>' runat="server" />
-                                                    </ItemTemplate>
-                                                </asp:Repeater>
-                                            </td>
-                                            <td bgcolor="#d9edf7"><asp:TextBox class="form-control" ID="txt_comments_ballJoints_e" placeholder="Additional Comments..." runat="server"></asp:TextBox></td>
-                                        </tr>
-                                    </ItemTemplate>
+                                                    <asp:Repeater ID="Repeater_elements" runat="server" DataSourceID="SqlDataSource_elements">
+                                                        <ItemTemplate>
+                                                            <asp:CheckBox ID="cb_elements" font-bold="false" name="item_elements" DataSourceID="SqlDataSource_elements" Text='<%# Eval("element_description") %>' runat="server" />
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>
+                                                </td>
+                                                <td bgcolor="#d9edf7"><asp:TextBox class="form-control" ID="txt_comments_ballJoints_e" placeholder="Additional Comments..." runat="server"></asp:TextBox></td>
+                                            </tr>
+                                        </ItemTemplate>
 
-                                    <AlternatingItemTemplate>
-                                        <tr>
-                                            <td><asp:Label runat="server" ID="Label1" Text='<%# Eval("item_description") %>' />
-                                            <td hidden><asp:Label runat="server" ID="lbl_id" Text='<%# Eval("item_id") %>' /></td>
-                                            <td><asp:CheckBox ID="cb_fail_ballJoints_e" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
-                                            <td>
-                                                <asp:SqlDataSource ID="SqlDataSource_minmaj" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                                                    SelectCommand="SELECT [severity_description], [score] FROM [Severity]" DataSourceMode="DataReader">
-                                                </asp:SqlDataSource>
-                                                <asp:DropDownList class="form-control" ID="ddl_severity" Style="max-width: 150px" runat="server"
-                                                    DataSourceID="SqlDataSource_minmaj" DataTextField="severity_description" DataValueField="score" AppendDataBoundItems="True">
-                                                    <asp:ListItem>Minor or Major...</asp:ListItem>
-                                                </asp:DropDownList>
-                        <%--                        <asp:CompareValidator Style="color: #b94a48" ID="CompareValidator_severity" runat="server" ErrorMessage="Select Severity!"
-                                                    Operator="NotEqual" ValueToCompare="Select Major or Minor" ControlToValidate="ddl_severity">
-                                                    &nbsp;Must select Severity!
-                                                </asp:CompareValidator>--%>
-                                            </td>
-                                            <td>
-                                                <asp:SqlDataSource
-                                                    ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_elements" runat="server"
-                                                    SelectCommand="SELECT element_description FROM InspectionDetail WHERE InspectionDetail.item_id = @item_elements" DataSourceMode="DataReader">
-                                                    <SelectParameters>
-                                                        <asp:ControlParameter ControlID="lbl_id" Name="item_elements" Type="Int32" DefaultValue="0" />
-                                                    </SelectParameters>
-                                                </asp:SqlDataSource>
-                                                <asp:Repeater ID="Repeater_elements" runat="server" DataSourceID="SqlDataSource_elements">
-                                                    <ItemTemplate>
-                                                        <asp:CheckBox ID="cb_elements" name="item_elements" DataSourceID="SqlDataSource_elements" Text='<%# Eval("element_description") %>' runat="server" />
-                                                    </ItemTemplate>
-                                                </asp:Repeater>
-                                            </td>
-                                            <td><asp:TextBox class="form-control" ID="txt_comments_ballJoints_e" placeholder="Additional Comments..." runat="server"></asp:TextBox></td>
-                                        </tr>
-                                    </AlternatingItemTemplate>
+                                        <AlternatingItemTemplate>
+                                            <tr>
+                                                <td><asp:Label runat="server" ID="Label1" Text='<%# Eval("item_description") %>' />
+                                                <td hidden><asp:Label runat="server" ID="lbl_id" Text='<%# Eval("item_id") %>' /></td>
+                                                <td><asp:CheckBox ID="cb_fail_ballJoints_e" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
+                                                <td>
+                                                    <asp:SqlDataSource ID="SqlDataSource_minmaj" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
+                                                        SelectCommand="SELECT [severity_description], [score] FROM [Severity]" DataSourceMode="DataReader">
+                                                    </asp:SqlDataSource>
+                                                    <asp:DropDownList class="form-control" ID="ddl_severity" Style="max-width: 150px" runat="server"
+                                                        DataSourceID="SqlDataSource_minmaj" DataTextField="severity_description" DataValueField="score" AppendDataBoundItems="True">
+                                                        <asp:ListItem>Minor or Major...</asp:ListItem>
+                                                    </asp:DropDownList>
+                            <%--                        <asp:CompareValidator Style="color: #b94a48" ID="CompareValidator_severity" runat="server" ErrorMessage="Select Severity!"
+                                                        Operator="NotEqual" ValueToCompare="Select Major or Minor" ControlToValidate="ddl_severity">
+                                                        &nbsp;Must select Severity!
+                                                    </asp:CompareValidator>--%>
+                                                </td>
+                                                <td>
+                                                    <asp:SqlDataSource
+                                                        ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_elements" runat="server"
+                                                        SelectCommand="SELECT element_description FROM InspectionDetail WHERE InspectionDetail.item_id = @item_elements" DataSourceMode="DataReader">
+                                                        <SelectParameters>
+                                                            <asp:ControlParameter ControlID="lbl_id" Name="item_elements" Type="Int32" DefaultValue="0" />
+                                                        </SelectParameters>
+                                                    </asp:SqlDataSource>
+                                                    <asp:Repeater ID="Repeater_elements" runat="server" DataSourceID="SqlDataSource_elements">
+                                                        <ItemTemplate>
+                                                            <asp:CheckBox ID="cb_elements" name="item_elements" DataSourceID="SqlDataSource_elements" Text='<%# Eval("element_description") %>' runat="server" />
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>
+                                                </td>
+                                                <td><asp:TextBox class="form-control" ID="txt_comments_ballJoints_e" placeholder="Additional Comments..." runat="server"></asp:TextBox></td>
+                                            </tr>
+                                        </AlternatingItemTemplate>
 
-                                    <FooterTemplate>
-                                        </table>
-                                    </FooterTemplate>
-                                </asp:Repeater>
-                            </div> <%--End Repeater Items--%>
+                                        <FooterTemplate>
+                                            </table>
+                                        </FooterTemplate>
+                                    </asp:Repeater>
+                                </div> <%--End Repeater Items--%>
 
-
+                            </div>
                         </div>
                     </div>
+                </ItemTemplate>
+            </asp:Repeater>
+            <%--End Group Panels--%>
+            <br />
+            <%--Begin Notes Section --%>
+            <div class="container">
+                <div class="form-group">
+                    <asp:Label ID="lbl_notes" class="control-label" runat="server" Text="Notes:" Style="font-weight: bold"></asp:Label>
+                    <textarea class="form-control" rows="3" id="ta_notes" runat="server"></textarea>
                 </div>
+            </div>
+            <%--End Notes Section--%>
+            </div> <%--<End Create Inspection Input row>--%>
 
-            </ItemTemplate>
-        </asp:Repeater>
-        <%--End Group Panels--%>
-
-
-
-       <%-- </div>End Create Inspection Panel Body--%>
-    <%--</div>End Create Inspection Panel--%>
-
-                <br />
-                <%--Begin Notes Section --%>
-                <div class="container">
+            <%--Begin Acknowledgement Panel--%>
+            <div class="panel panel-info">
+                <div class="panel-heading" style="color: black; font-weight: bold">Acknowledgement</div>
+                <div class="panel-body">
                     <div class="form-group">
-                        <asp:Label ID="lbl_notes" class="control-label" runat="server" Text="Notes:" Style="font-weight: bold"></asp:Label>
-                        <textarea class="form-control" rows="3" id="ta_notes" runat="server"></textarea>
+                        <div class="checkbox">
+                            <label>
+                                <input id="cb_agree" type="checkbox" id="terms" onclick="$('#target').toggle();" data-error="Must acknowledge before digitally signing form." required />
+                                 <span style="font-weight: bold">&nbsp;Inspection results have been reviewed with the Contractor.</span>
+                            </label>
+                            <div class="help-block with-errors"></div>
+                        </div>
                     </div>
+                    <div id="target" style="display: none">
+                        <br />
+                        <asp:Label ID="lbl_sig" DataSourceID="SqlDataSource_sig" class="control-label" runat="server" Text="Printed Name:" Style="font-weight: bold"></asp:Label><br />
+                        <asp:SqlDataSource
+                            ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_sig" runat="server"
+                            SelectCommand="SELECT [user_id], [first_name], [last_name] FROM [Users] WHERE Users.user_id = 1" DataSourceMode="DataReader">
+    <%--                                <SelectParameters>
+                                <asp:ControlParameter ControlID="lbl_sig" Name="first_name" Type="Int32" />
+                            </SelectParameters>--%>
+                        </asp:SqlDataSource>
+                        <asp:TextBox ID="txt_sig" runat="server" placeholder="Type name to sign."></asp:TextBox>
+                        <asp:Button ID="btn_sig" runat="server" Text="Submit Signature" />
+
+                    </div>
+                    <div class="help-block with-errors"></div>
                 </div>
-                <%--End Notes Section--%>
+            </div><%--End Acknowledgement Panel--%>
+           
 
-                <%--Begin Acknowledgement Panel--%>
-                <asp:Table ID="Table1" class="table" runat="server" DataSourceID="SqlDataSource_sig">
-                    <asp:TableHeaderRow >
-                        <asp:TableHeaderCell ColumnSpan="2" BackColor="#c4e7f8" ForeColor="Black">Acknowledgement</asp:TableHeaderCell>
-                    </asp:TableHeaderRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:CheckBox ID="CheckBox1" type="checkbox" name="cb_agree" Text="&nbsp;Inspection results have been reviewed with the Contractor." data-error="Must acknowledge before digitally signing form." runat="server" />
-                                <div class="help-block with-errors"></div>
-                        </asp:TableCell>
-                        </asp:TableRow>
-                        <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Label ID="lbl_sig" DataSourceID="SqlDataSource_sig" class="control-label" runat="server" Text='<%# Eval("model_year") %>' Style="font-weight: bold"></asp:Label>
-                            <asp:SqlDataSource ID="SqlDataSource_sig" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                                SelectCommand="SELECT model_year FROM Bus" DataSourceMode="DataReader"></asp:SqlDataSource>
-                        </asp:TableCell>
-                    </asp:TableRow>
-                </asp:Table><%--End Acknowledgement Panel--%>
+            <%--Submit Bus Inspected Information--%>
+            <div class="col-sm-3" style="margin-top:20px">
+                    <asp:Button ID="btn_createInspection" class="btn btn-primary" type="submit" runat="server" Text="Submit Create Inspection" Width="200px" />
+            </div>
 
-                <%--Submit Bus Inspected Information--%>
-                <div class="col-sm-3" style="margin-top:20px">
-                     <asp:Button ID="btn_createInspection" class="btn btn-primary" type="submit" runat="server" Text="Submit Create Inspection" Width="200px" OnClick="btn_createInspection_Click" />
-                </div>
-
-            </div><%--End Create Inspection Panel Body--%>
-        <%--</div>--%><%--End Create Inspection Div--%>
+        </div><%--End Create Inspection Panel Body--%>
     </asp:Panel><%--End Create Inspection Panel--%>
-
     
 </asp:Content>

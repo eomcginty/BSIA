@@ -11,7 +11,11 @@ namespace BSIA
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!User.Identity.IsAuthenticated)
+            {
+                //If not authenticated, redirect to login page.
+                Response.Redirect("/Account/Login");
+            }
         }
 
         protected void btn_calendar_Click(object sender, EventArgs e)
@@ -35,5 +39,6 @@ namespace BSIA
         {
 
         }
+
     }
 }

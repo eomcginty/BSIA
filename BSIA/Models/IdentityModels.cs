@@ -30,7 +30,7 @@ namespace BSIA.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("UserDBConnection", throwIfV1Schema: false)
+            : base("BSIAConnectionString", throwIfV1Schema: false)
         {
         }
 
