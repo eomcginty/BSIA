@@ -10,7 +10,7 @@
 namespace BSIA {
     
     
-    public partial class Create {
+    public partial class Edit {
         
         /// <summary>
         /// lbl_bus control.
@@ -49,94 +49,22 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator_bus;
         
         /// <summary>
-        /// lbl_season control.
+        /// btn_getBusEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_season;
+        protected global::System.Web.UI.WebControls.Button btn_getBusEdit;
         
         /// <summary>
-        /// SqlDataSource_season control.
+        /// btn_getBusDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_season;
-        
-        /// <summary>
-        /// ddl_season control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_season;
-        
-        /// <summary>
-        /// CompareValidator_season control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator_season;
-        
-        /// <summary>
-        /// lbl_message control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_message;
-        
-        /// <summary>
-        /// lbl_inspectionDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_inspectionDate;
-        
-        /// <summary>
-        /// txt_inspectionDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_inspectionDate;
-        
-        /// <summary>
-        /// btn_calendar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btn_calendar;
-        
-        /// <summary>
-        /// calendar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calendar;
-        
-        /// <summary>
-        /// btn_getBus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_getBus;
+        protected global::System.Web.UI.WebControls.Button btn_getBusDelete;
         
         /// <summary>
         /// pnl_bus control.
@@ -319,12 +247,12 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.Label lbl_sig;
         
         /// <summary>
-        /// btn_createInspection control.
+        /// btn_editInspection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_createInspection;
+        protected global::System.Web.UI.WebControls.Button btn_editInspection;
     }
 }

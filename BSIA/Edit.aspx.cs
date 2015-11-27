@@ -9,7 +9,7 @@ using System.Data.Sql;
 
 namespace BSIA
 {
-    public partial class Create : Page
+    public partial class Edit : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,24 +20,19 @@ namespace BSIA
             }
         }
 
-        protected void btn_calendar_Click(object sender, EventArgs e)
-        {
-            calendar.Visible = true;
-        }
-
-        protected void calendar_SelectionChanged(object sender, EventArgs e)
-        {
-            txt_inspectionDate.Text = calendar.SelectedDate.ToShortDateString();
-            calendar.Visible = false;
-        }
-
-        protected void btn_getBus_Click(object sender, EventArgs e)
+        protected void btn_getBusEdit_Click(object sender, EventArgs e)
         {
             pnl_bus.Visible = true;
             pnl_inspection.Visible = true;
         }
 
-        protected void btn_createInspection_Click(object sender, EventArgs e)
+        protected void btn_getBusDelete_Click(object sender, EventArgs e)
+        {
+            pnl_bus.Visible = true;
+            pnl_inspection.Visible = true;
+        }
+
+        protected void btn_editInspection_Click(object sender, EventArgs e)
         {
             //SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
             //conn.Open();
@@ -62,6 +57,11 @@ namespace BSIA
             //{
             //    conn.Close();
             //}
+        }
+
+        protected void btn_deleteInspection_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

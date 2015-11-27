@@ -1,7 +1,7 @@
-﻿<%@ Page Title="Create" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Create.aspx.cs" Inherits="BSIA.Create" %>
+﻿<%@ Page Title="Edit" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="BSIA.Edit" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Create Inspection</h2>
+    <h2>Edit Inspection</h2>
 
     <%--Begin Bus Information Panel--%>
     <div class="panel panel-default">
@@ -9,7 +9,7 @@
         <div class="panel-body">
 
             <%--Begin Bus Selection Row--%>
-            <div class="row">
+            <div class="row" style="width: 60%">
                 <%--Form alerts--%>
                 <div class="alert alert-info fade in" style="display:none">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -24,7 +24,7 @@
                     <i>Bus is currently locked for editing by another inspector.</i>
                 </div>
                 <%--Bus DropDownList--%>
-                <div class="col-sm-3">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <asp:Label ID="lbl_bus" class="control-label" runat="server" Text="Bus:" style="font-weight:bold"></asp:Label>
                         <asp:SqlDataSource ID="SqlDataSource_bus" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
@@ -40,48 +40,13 @@
                         </asp:CompareValidator>
                     </div>
                 </div>
-                 <%--Season DropDownList--%>
-                <div class="col-sm-3">
-                    <div class="form-group">
-                        <asp:Label ID="lbl_season" class="control-label" runat="server" Text="Season:" style="font-weight:bold"></asp:Label>
-                        <asp:SqlDataSource ID="SqlDataSource_season" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                            SelectCommand="SELECT [season_id], [season_name] FROM [Season]" DataSourceMode="DataReader">
-                        </asp:SqlDataSource>
-                        <asp:DropDownList class="form-control" ID="ddl_season" Style="max-width: 300px" runat="server"
-                            DataSourceID="SqlDataSource_season" DataTextField="season_name" DataValueField="season_id" AppendDataBoundItems="True">
-                            <asp:ListItem>Select Season from list</asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:CompareValidator style="color:#b94a48" ID="CompareValidator_season" runat="server" ErrorMessage="Select a Season!"
-                            Operator="NotEqual" ValueToCompare="Select Season from list" ControlToValidate="ddl_season">
-                            &nbsp;Please select a Season!
-                        </asp:CompareValidator>
-                    </div>
-                    <asp:Label ID="lbl_message" runat="server" Text="Season Message" Visible="false" style="color:red; font-size:large"></asp:Label>
+
+                <%--Get Bus Information to Edit or Delete Inspection--%>
+                <div class="col-sm-6" style="margin-top:20px">
+                     <asp:Button ID="btn_getBusEdit" class="btn btn-primary" type="submit" runat="server" Text="Edit Inspection" OnClick="btn_getBusEdit_Click" />&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btn_getBusDelete" class="btn btn-primary" type="submit" runat="server" Text="Delete Inspection" OnClick="btn_getBusDelete_Click" />
                 </div>
-                <%--Inspection Date Calendar--%>
-                <div class="col-sm-3">
-                    <div class="form-group">
-                        <asp:Label ID="lbl_inspectionDate" class="control-label" runat="server" Text="Inspection Date:" style="font-weight:bold"></asp:Label>
-                        <table><tr><td>
-                            <asp:TextBox ID="txt_inspectionDate" Width="200px" class="form-control" runat="server" /></td><td>
-                            <asp:LinkButton ID="btn_calendar" runat="server" class="btn btn-primary btn-calendar" OnClick="btn_calendar_Click"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span></asp:LinkButton>
-                        </td></tr></table>
-                        <asp:Calendar ID="calendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="calendar_SelectionChanged" Visible="False">
-                            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                            <NextPrevStyle VerticalAlign="Bottom" />
-                            <OtherMonthDayStyle ForeColor="#808080" />
-                            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                            <SelectorStyle BackColor="#CCCCCC" />
-                            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                            <WeekendDayStyle BackColor="#FFFFCC" />
-                        </asp:Calendar>
-                    </div>
-                </div>
-                <%--Submit Bus Information for Display Table--%>
-                <div class="col-sm-3" style="margin-top:20px">
-                     <asp:Button ID="btn_getBus" class="btn btn-primary" type="submit" runat="server" Text="Get Bus Information" OnClick="btn_getBus_Click" />
-                </div>
+
             </div><%--End Bus Selection Row--%>
             
             <%--Begin Panel to Display Populated Table, and Verify Row--%>
@@ -122,9 +87,9 @@
         </div><%--End Bus Panel Body--%>
     </div><%--End Bus Panel--%>
 
-    <%--Begin Create Inspection Panel--%>
+    <%--Begin Edit Inspection Panel--%>
     <asp:Panel ID="pnl_inspection" runat="server" class="panel panel-default" Visible="false">
-        <div class="panel-heading" style="font-size: 18px; font-weight: bold; background-color: cornflowerblue">Create Inspection</div>
+        <div class="panel-heading" style="font-size: 18px; font-weight: bold; background-color: cornflowerblue">Edit Inspection</div>
         <div class="panel-body">
 
             <%--Additional input fields - Odometer, TAG--%>
@@ -164,7 +129,7 @@
                 
 
 
-     <%--Begin Create Inspection Input row--%>
+     <%--Begin Edit Inspection Input row--%>
             <div class="row"> 
 
             <%--Begin Group Panels--%>
@@ -298,7 +263,7 @@
                 </div>
             </div>
             <%--End Notes Section--%>
-            </div> <%--<End Create Inspection Input row>--%>
+            </div> <%--<End Edit Inspection Input row>--%>
 
             <%--Begin Acknowledgement Panel--%>
             <div class="panel panel-info">
@@ -340,14 +305,13 @@
                     </div>
                 </div>
            </div><%--End Acknowledgement Panel--%>
-           
 
             <%--Submit Bus Inspected Information--%>
             <div class="col-sm-3" style="margin-top:20px">
-                    <asp:Button ID="btn_createInspection" class="btn btn-primary" type="submit" runat="server" Text="Submit Create Inspection" Width="200px" OnClick="btn_createInspection_Click" />
+                    <asp:Button ID="btn_editInspection" class="btn btn-primary" type="submit" runat="server" Text="Submit Edit Inspection" Width="200px" OnClick="btn_editInspection_Click" />
             </div>
 
-        </div><%--End Create Inspection Panel Body--%>
-    </asp:Panel><%--End Create Inspection Panel--%>
+        </div><%--End Edit Inspection Panel Body--%>
+    </asp:Panel><%--End Edit Inspection Panel--%>
     
 </asp:Content>
