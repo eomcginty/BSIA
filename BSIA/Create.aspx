@@ -215,7 +215,7 @@
                                                             <asp:ControlParameter ControlID="lbl_elementsId" Name="item_elements" Type="Int32" DefaultValue="0" />
                                                         </SelectParameters>
                                                     </asp:SqlDataSource>
-                                                <td bgcolor="#d9edf7"><asp:CheckBox ID="cb_fail_ballJoints_e" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
+                                                <td bgcolor="#d9edf7"><asp:CheckBox ID="cb_fail" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
                                                 <td bgcolor="#d9edf7">
                                                     <asp:SqlDataSource ID="SqlDataSource_minmaj" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
                                                         SelectCommand="SELECT [severity_description], [score] FROM [Severity]" DataSourceMode="DataReader">
@@ -237,15 +237,15 @@
                                                         </ItemTemplate>
                                                     </asp:Repeater>
                                                 </td>
-                                                <td bgcolor="#d9edf7"><asp:TextBox class="form-control" ID="txt_comments_ballJoints_e" placeholder="Additional Comments..." runat="server"></asp:TextBox></td>
+                                                <td bgcolor="#d9edf7"><asp:TextBox class="form-control" ID="txt_comments" placeholder="Additional Comments..." runat="server"></asp:TextBox></td>
                                             </tr>
                                         </ItemTemplate>
 
                                         <AlternatingItemTemplate>
                                             <tr>
                                                 <td><asp:Label runat="server" ID="Label1" Text='<%# Eval("item_description") %>' />
-                                                <td hidden><asp:Label runat="server" ID="lbl_id" Text='<%# Eval("item_id") %>' /></td>
-                                                <td><asp:CheckBox ID="cb_fail_ballJoints_e" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
+                                                <td hidden><asp:Label runat="server" ID="lbl_elementsId" Text='<%# Eval("item_id") %>' /></td>
+                                                <td><asp:CheckBox ID="cb_fail" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
                                                 <td>
                                                     <asp:SqlDataSource ID="SqlDataSource_minmaj" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
                                                         SelectCommand="SELECT [severity_description], [score] FROM [Severity]" DataSourceMode="DataReader">
@@ -264,7 +264,7 @@
                                                         ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_elements" runat="server"
                                                         SelectCommand="SELECT element_description FROM InspectionDetail WHERE InspectionDetail.item_id = @item_elements" DataSourceMode="DataReader">
                                                         <SelectParameters>
-                                                            <asp:ControlParameter ControlID="lbl_id" Name="item_elements" Type="Int32" DefaultValue="0" />
+                                                            <asp:ControlParameter ControlID="lbl_elementsId" Name="item_elements" Type="Int32" DefaultValue="0" />
                                                         </SelectParameters>
                                                     </asp:SqlDataSource>
                                                     <asp:Repeater ID="Repeater_elements" runat="server" DataSourceID="SqlDataSource_elements">
@@ -273,7 +273,7 @@
                                                         </ItemTemplate>
                                                     </asp:Repeater>
                                                 </td>
-                                                <td><asp:TextBox class="form-control" ID="txt_comments_ballJoints_e" placeholder="Additional Comments..." runat="server"></asp:TextBox></td>
+                                                <td><asp:TextBox class="form-control" ID="txt_comments" placeholder="Additional Comments..." runat="server"></asp:TextBox></td>
                                             </tr>
                                         </AlternatingItemTemplate>
 
@@ -336,7 +336,7 @@
                     </div>
                     <%--Show signature, hide signature form--%>
                     <div id="signed_name" style="display: none">
-                        <asp:Label ID="lbl_sig" runat="server" DataSourceID="SqlDataSource_sig2" class="control-label" Text="'Signed Name: ' + 'txt_sig.Text()'" Style="font-weight: bold"></asp:Label><br />
+                        <asp:Label ID="lbl_sig" runat="server" DataSourceID="SqlDataSource_sig2" class="control-label" Text="'Signed Name: ' + txt_sig.Text" Style="font-weight: bold"></asp:Label><br />
                     </div>
                 </div>
            </div><%--End Acknowledgement Panel--%>
