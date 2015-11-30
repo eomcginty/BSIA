@@ -20,9 +20,9 @@ namespace BSIA {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BSIADataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BSIA_Rpts")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BSIADataSet : global::System.Data.DataSet {
+    public partial class BSIA_Rpts : global::System.Data.DataSet {
         
         private rpt_Bus_Inspection_DetailsDataTable tablerpt_Bus_Inspection_Details;
         
@@ -40,7 +40,7 @@ namespace BSIA {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BSIADataSet() {
+        public BSIA_Rpts() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -51,7 +51,7 @@ namespace BSIA {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected BSIADataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BSIA_Rpts(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -202,7 +202,7 @@ namespace BSIA {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BSIADataSet cln = ((BSIADataSet)(base.Clone()));
+            BSIA_Rpts cln = ((BSIA_Rpts)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -319,9 +319,9 @@ namespace BSIA {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BSIADataSet";
+            this.DataSetName = "BSIA_Rpts";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BSIADataSet.xsd";
+            this.Namespace = "http://tempuri.org/BSIA_Rpts.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablerpt_Bus_Inspection_Details = new rpt_Bus_Inspection_DetailsDataTable();
@@ -385,7 +385,7 @@ namespace BSIA {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BSIADataSet ds = new BSIADataSet();
+            BSIA_Rpts ds = new BSIA_Rpts();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -709,7 +709,7 @@ namespace BSIA {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BSIADataSet ds = new BSIADataSet();
+                BSIA_Rpts ds = new BSIA_Rpts();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1229,7 +1229,7 @@ namespace BSIA {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BSIADataSet ds = new BSIADataSet();
+                BSIA_Rpts ds = new BSIA_Rpts();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1565,7 +1565,7 @@ namespace BSIA {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BSIADataSet ds = new BSIADataSet();
+                BSIA_Rpts ds = new BSIA_Rpts();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1931,7 +1931,7 @@ namespace BSIA {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BSIADataSet ds = new BSIADataSet();
+                BSIA_Rpts ds = new BSIA_Rpts();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2283,7 +2283,7 @@ namespace BSIA {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BSIADataSet ds = new BSIADataSet();
+                BSIA_Rpts ds = new BSIA_Rpts();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2604,7 +2604,7 @@ namespace BSIA {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BSIADataSet ds = new BSIADataSet();
+                BSIA_Rpts ds = new BSIA_Rpts();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3909,7 +3909,7 @@ namespace BSIA {
         }
     }
 }
-namespace BSIA.BSIADataSetTableAdapters {
+namespace BSIA.BSIA_RptsTableAdapters {
     
     
     /// <summary>
@@ -4064,7 +4064,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BSIADataSet.rpt_Bus_Inspection_DetailsDataTable dataTable, global::System.Nullable<int> InspectionID) {
+        public virtual int Fill(BSIA_Rpts.rpt_Bus_Inspection_DetailsDataTable dataTable, global::System.Nullable<int> InspectionID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((InspectionID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(InspectionID.Value));
@@ -4083,7 +4083,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BSIADataSet.rpt_Bus_Inspection_DetailsDataTable GetData(global::System.Nullable<int> InspectionID) {
+        public virtual BSIA_Rpts.rpt_Bus_Inspection_DetailsDataTable GetData(global::System.Nullable<int> InspectionID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((InspectionID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(InspectionID.Value));
@@ -4091,7 +4091,7 @@ namespace BSIA.BSIADataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            BSIADataSet.rpt_Bus_Inspection_DetailsDataTable dataTable = new BSIADataSet.rpt_Bus_Inspection_DetailsDataTable();
+            BSIA_Rpts.rpt_Bus_Inspection_DetailsDataTable dataTable = new BSIA_Rpts.rpt_Bus_Inspection_DetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4261,7 +4261,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BSIADataSet.rpt_Bus_Inspection_SummaryDataTable dataTable, global::System.Nullable<int> InspectionID) {
+        public virtual int Fill(BSIA_Rpts.rpt_Bus_Inspection_SummaryDataTable dataTable, global::System.Nullable<int> InspectionID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((InspectionID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(InspectionID.Value));
@@ -4280,7 +4280,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BSIADataSet.rpt_Bus_Inspection_SummaryDataTable GetData(global::System.Nullable<int> InspectionID) {
+        public virtual BSIA_Rpts.rpt_Bus_Inspection_SummaryDataTable GetData(global::System.Nullable<int> InspectionID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((InspectionID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(InspectionID.Value));
@@ -4288,7 +4288,7 @@ namespace BSIA.BSIADataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            BSIADataSet.rpt_Bus_Inspection_SummaryDataTable dataTable = new BSIADataSet.rpt_Bus_Inspection_SummaryDataTable();
+            BSIA_Rpts.rpt_Bus_Inspection_SummaryDataTable dataTable = new BSIA_Rpts.rpt_Bus_Inspection_SummaryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4448,7 +4448,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BSIADataSet.rpt_Buses_Passing_InspectionDataTable dataTable, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
+        public virtual int Fill(BSIA_Rpts.rpt_Buses_Passing_InspectionDataTable dataTable, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((StartDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(StartDate.Value));
@@ -4473,7 +4473,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BSIADataSet.rpt_Buses_Passing_InspectionDataTable GetData(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
+        public virtual BSIA_Rpts.rpt_Buses_Passing_InspectionDataTable GetData(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((StartDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(StartDate.Value));
@@ -4487,7 +4487,7 @@ namespace BSIA.BSIADataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            BSIADataSet.rpt_Buses_Passing_InspectionDataTable dataTable = new BSIADataSet.rpt_Buses_Passing_InspectionDataTable();
+            BSIA_Rpts.rpt_Buses_Passing_InspectionDataTable dataTable = new BSIA_Rpts.rpt_Buses_Passing_InspectionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4649,7 +4649,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BSIADataSet.rpt_Buses_with_30_Day_ViolationsDataTable dataTable, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
+        public virtual int Fill(BSIA_Rpts.rpt_Buses_with_30_Day_ViolationsDataTable dataTable, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((StartDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(StartDate.Value));
@@ -4674,7 +4674,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BSIADataSet.rpt_Buses_with_30_Day_ViolationsDataTable GetData(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
+        public virtual BSIA_Rpts.rpt_Buses_with_30_Day_ViolationsDataTable GetData(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((StartDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(StartDate.Value));
@@ -4688,7 +4688,7 @@ namespace BSIA.BSIADataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            BSIADataSet.rpt_Buses_with_30_Day_ViolationsDataTable dataTable = new BSIADataSet.rpt_Buses_with_30_Day_ViolationsDataTable();
+            BSIA_Rpts.rpt_Buses_with_30_Day_ViolationsDataTable dataTable = new BSIA_Rpts.rpt_Buses_with_30_Day_ViolationsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4849,7 +4849,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BSIADataSet.rpt_Buses_with_RedlineDataTable dataTable, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
+        public virtual int Fill(BSIA_Rpts.rpt_Buses_with_RedlineDataTable dataTable, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((StartDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(StartDate.Value));
@@ -4874,7 +4874,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BSIADataSet.rpt_Buses_with_RedlineDataTable GetData(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
+        public virtual BSIA_Rpts.rpt_Buses_with_RedlineDataTable GetData(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((StartDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(StartDate.Value));
@@ -4888,7 +4888,7 @@ namespace BSIA.BSIADataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            BSIADataSet.rpt_Buses_with_RedlineDataTable dataTable = new BSIADataSet.rpt_Buses_with_RedlineDataTable();
+            BSIA_Rpts.rpt_Buses_with_RedlineDataTable dataTable = new BSIA_Rpts.rpt_Buses_with_RedlineDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5047,7 +5047,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BSIADataSet.rpt_Upcoming_InspectionsDataTable dataTable, string Season, global::System.Nullable<int> InspectionYear) {
+        public virtual int Fill(BSIA_Rpts.rpt_Upcoming_InspectionsDataTable dataTable, string Season, global::System.Nullable<int> InspectionYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Season == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -5072,7 +5072,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BSIADataSet.rpt_Upcoming_InspectionsDataTable GetData(string Season, global::System.Nullable<int> InspectionYear) {
+        public virtual BSIA_Rpts.rpt_Upcoming_InspectionsDataTable GetData(string Season, global::System.Nullable<int> InspectionYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Season == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -5086,7 +5086,7 @@ namespace BSIA.BSIADataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            BSIADataSet.rpt_Upcoming_InspectionsDataTable dataTable = new BSIADataSet.rpt_Upcoming_InspectionsDataTable();
+            BSIA_Rpts.rpt_Upcoming_InspectionsDataTable dataTable = new BSIA_Rpts.rpt_Upcoming_InspectionsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5160,7 +5160,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(BSIADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BSIA_Rpts dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -5170,7 +5170,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(BSIADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BSIA_Rpts dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -5180,7 +5180,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(BSIADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BSIA_Rpts dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -5214,7 +5214,7 @@ namespace BSIA.BSIADataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(BSIADataSet dataSet) {
+        public virtual int UpdateAll(BSIA_Rpts dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

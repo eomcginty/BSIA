@@ -17,6 +17,18 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="Scripts/validator.js"></script>
+    <script>
+        function openModal_success() {
+        $('#modal_success').modal('show'); 
+        return true;
+        };
+        </script>
+        <script>
+    function openModal_error() {
+        $('#modal_error').modal('show'); 
+        return true;
+    };
+</script>
 </head>
 <body>
     <form id="bsiaForm" runat="server" role="form" data-toggle="validator">

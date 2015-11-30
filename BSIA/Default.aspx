@@ -41,31 +41,30 @@
         </div>
         <div class="col-md-3">
             <h2>Create Inspection</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="Create.aspx">Learn more &raquo;</a>
-            </p>
+            <p>The BSIA eliminates the need for paper inspection forms. Inspectors can create a new bus inspection and 
+                use the BSIA to complete and submit the inspection entirely online.</p>
+            <p><a class="btn btn-default" href="Create.aspx">Create Inspections &raquo;</a></p>
         </div>
         <div class="col-md-3">
             <h2>Edit Inspection</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="Edit.aspx">Learn more &raquo;</a>
-            </p>
+            <p>Allows transportation staff to edit a completed inspection to fix errors or update the inspection based 
+                on changes, such as repairs. Administrators can also delete completed inspections.</p>
+            <p><a class="btn btn-default" href="Edit.aspx">Edit or Delete Inspections &raquo;</a></p>
         </div>
         <div class="col-md-3">
             <h2>Reports</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="Reports.aspx">Learn more &raquo;</a>
-            </p>
+            View up-to-date inspection data: 
+                <ul>
+                    <li>Inspection Summary</li>
+                    <li>Redline Violations</li>
+                    <li>30 Day Violations</li>
+                    <li>Passed Initial Inspection</li>
+                    <li>Outstanding Violations</li>
+                    <li>Inspection Due</li>
+                    <li>View Inspection Reports</li>
+                </ul>
+            
+            <p><a class="btn btn-default" href="Reports.aspx">View Reports &raquo;</a></p>
         </div>
     </div>
 

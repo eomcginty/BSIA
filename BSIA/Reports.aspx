@@ -28,20 +28,43 @@
 <%--                <div class="col-sm-3" style="margin-top:20px">
                      <asp:Button ID="btn_chg_season" class="btn btn-primary" type="submit" runat="server" Text="View Report" OnClick="btn_getBus_Click" />
                 </div>--%>
-                <rsweb:ReportViewer ID="ReportViewer2" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="630px" CssClass="table-responsive">
-                    <LocalReport ReportPath="Report1.rdlc">
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+                    <LocalReport ReportPath="Inspection Summary.rdlc">
                         <DataSources>
-                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet3" />
+                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="BusDetails" />
+                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="Failures" />
                         </DataSources>
                     </LocalReport>
                 </rsweb:ReportViewer>
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="BSIA.BSIADataSetTestTableAdapters.SeasonTableAdapter"></asp:ObjectDataSource>
+                <asp:ObjectDataSource runat="server" SelectMethod="GetData" TypeName="BSIA.BSIA_RptsTableAdapters.rpt_Bus_Inspection_SummaryTableAdapter" ID="ObjectDataSource1" OldValuesParameterFormatString="original_{0}">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="77" Name="InspectionID" Type="Int32"></asp:Parameter>
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+            
+                <rsweb:ReportViewer ID="ReportViewer2" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+                    <LocalReport ReportPath="Inspection Summary.rdlc">
+                        <DataSources>
+                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="BusDetails" />
+                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="Failures" />
+                        </DataSources>
+                    </LocalReport>
+                </rsweb:ReportViewer>
+                <asp:ObjectDataSource runat="server" SelectMethod="GetData" TypeName="BSIA.BSIA_RptsTableAdapters.rpt_Bus_Inspection_SummaryTableAdapter" ID="ObjectDataSource2" OldValuesParameterFormatString="original_{0}">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="77" Name="InspectionID" Type="Int32"></asp:Parameter>
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+            
             </div>
             <div role="tabpanel" class="tab-pane" id="divRpt1">
                 <h3>Buses with Redline</h3>
+
+            
             </div>
             <div role="tabpanel" class="tab-pane" id="divRpt2">
                 <h3>Buses with 30 Day Violation</h3>
+
             </div>
             <div role="tabpanel" class="tab-pane" id="divRpt3">
                 <h3>Buses that passed initial inspection</h3>

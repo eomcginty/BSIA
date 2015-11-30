@@ -292,8 +292,8 @@
                         <div id="signed_name_form" class="form-group">
                             <label for="txt_sig" class="control-label">Signed Name: </label>
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">X</span>
-                                <input id="txt_sig" type="text" class="form-control" placeholder="Type name to sign." data-error="Must digitally sign form." aria-describedby="basic-addon1" required>
+                                <span class="input-group-addon" id="basic-addon3">X</span>
+                                <input id="txt_sig" type="text" class="form-control" placeholder="Type name to sign." data-error="Must digitally sign form." aria-describedby="basic-addon3" required>
                             </div>
                             <div class="help-block with-errors"></div>
                             <div><button id="btn_sig" type="button" onclick="$('#signed_name').toggle();$('#signed_name_form').toggle();" class="btn btn-default">Submit Signature</button></div>

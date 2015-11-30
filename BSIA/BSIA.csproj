@@ -176,7 +176,6 @@
   <ItemGroup>
     <Content Include="Edit.aspx" />
     <Content Include="Reports.aspx" />
-    <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -194,7 +193,6 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Content\custom.css" />
     <Content Include="Create.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -214,16 +212,16 @@
     <Content Include="BSIADataSet.xss">
       <DependentUpon>BSIADataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="BSIADataSetTest.xsc">
-      <DependentUpon>BSIADataSetTest.xsd</DependentUpon>
+    <Content Include="BSIA_Rpts.xsc">
+      <DependentUpon>BSIA_Rpts.xsd</DependentUpon>
     </Content>
-    <None Include="BSIADataSetTest.xsd">
+    <None Include="BSIA_Rpts.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BSIADataSetTest.Designer.cs</LastGenOutput>
+      <LastGenOutput>BSIA_Rpts.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="BSIADataSetTest.xss">
-      <DependentUpon>BSIADataSetTest.xsd</DependentUpon>
+    <Content Include="BSIA_Rpts.xss">
+      <DependentUpon>BSIA_Rpts.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\bsia %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\bsia - FTP.pubxml" />
@@ -289,10 +287,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BSIADataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BSIADataSetTest.Designer.cs">
+    <Compile Include="BSIA_Rpts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BSIADataSetTest.xsd</DependentUpon>
+      <DependentUpon>BSIA_Rpts.xsd</DependentUpon>
     </Compile>
     <Compile Include="Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
@@ -414,29 +412,14 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Create.aspx.designer.cs">
       <DependentUpon>Create.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -477,10 +460,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <EmbeddedResource Include="Inspection Summary.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

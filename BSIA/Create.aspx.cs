@@ -48,8 +48,11 @@ namespace BSIA
         {
             pnl_bus.Visible = true;
             pnl_inspection.Visible = true;
+            if (ddl_bus.SelectedIndex != 0)
+            {
+                btn_getBus.Enabled = true;
+            }
         }
-
 
 
         protected void btn_createInspection_Click(object sender, EventArgs e)
@@ -158,13 +161,18 @@ namespace BSIA
                         cmd_fails.ExecuteNonQuery();
                     }
                 }
-                lbl_message.Visible = true;
-                lbl_message.Text = "Saved...";
+                //lbl_message.Visible = true;
+                //lbl_message.Text = "Saved...";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success();", true);
+                pnl_success.Visible = true;
+                btn_createInspection.Enabled = false;
             }
             catch (Exception)
             {
-                lbl_message.Visible = true;
-                lbl_message.Text = "Not Saved.";
+                //lbl_message.Visible = true;
+                //lbl_message.Text = "Not Saved.";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_error();", true);
+                pnl_error.Visible = true;
             }
             finally
             {
