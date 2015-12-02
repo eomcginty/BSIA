@@ -16,7 +16,7 @@
                     </div>
                     <div class="modal-body">
                         <p class="text-success">Choose from the following selections.</p>
-                        <a href="Default.aspx" class="btn btn-success">Go to Home Page</a>
+                        <a href="Default.aspx" class="btn btn-success"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Go to Home Page</a>
                         <a href="Reports.aspx" class="btn btn-success">View Bus Report</a>
                         <a href="Create.aspx" class="btn btn-success">Enter New Inspection</a>
                     </div>
@@ -35,6 +35,7 @@
                 <div class="modal-content">
                     <div class="modal-header label-danger">
                         <h4 class="modal-title" style="color:#ffffff">Inspection Error!</h4>
+                        <%--<asp:Label ID="lbl_err" runat="server" Text=""</asp:Label>--%>
                     </div>
                     <div class="modal-body">
                         <p class="text-danger">Choose from the following selections.</p>
@@ -128,7 +129,7 @@
                         <i>Verify Bus Information.</i>
                     </div>
                     <asp:SqlDataSource ID="SqlDataSource_busTable" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                        SelectCommand="SELECT DISTINCT bus_number, VIN, company_name, body_description, chassis_description, model_year FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id WHERE bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
+                        SelectCommand="SELECT DISTINCT bus_number, VIN, company_name, body_description, chassis_description, model_year, bcn.contractor_id AS contractor_id FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id WHERE bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" Type="Int32" DefaultValue="0" />
                         </SelectParameters>
@@ -179,18 +180,20 @@
                         <asp:Label ID="lbl_tag" class="control-label" runat="server" Text="Vehicle License Plate (TAG):" Style="font-weight: bold"></asp:Label>
                         <asp:TextBox type="text" pattern="[a-zA-Z0-9]{3,7}" runat="server" class="form-control" ID="txt_tag" name="txt_tag" placeholder="Letters/Numbers, No Spaces..." data-error="Invalid. Letters and Numbers only. No spaces." />
                         <div class="help-block with-errors"></div>
-                    </div>
+                   </div>
                 </div>
                 <%--Created By--%>
                 <div class="col-sm-3">
                     <div class="form-group" style="grid-flow: columns">
                         <asp:Label ID="lbl_createdBy" class="control-label" runat="server" Text="Created By:" Style="font-weight: bold"></asp:Label>
                         <asp:SqlDataSource ID="SqlDataSource_createdBy" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>" SelectCommand="SELECT created_by FROM Bus where bus_id = 400" DataSourceMode="DataReader"></asp:SqlDataSource>
-                        <asp:TextBox class="form-control" Text='<%# Eval("created_by") %>' ID="txt_createdBy" runat="server" DataSourceID="SqlDataSource_createdBy"></asp:TextBox>
+<%--                        <asp:TextBox class="form-control" Text= "<%: User.Identity.Name %>" ID="txt_createdBy" runat="server" DataSourceID="SqlDataSource_createdBy"></asp:TextBox>--%>
+                        <asp:TextBox class="form-control" ID="txt_createdby" runat="server"></asp:TextBox>
+
                     </div>
                 </div>
                 <%--Updated By--%>
-                <div class="col-sm-3">
+                <div class="col-sm-3" style="display:none">
                     <div class="form-group" style="grid-flow: columns">
                         <asp:Label ID="lbl_updatedBy" class="control-label" runat="server" Text="Updated By:" Style="font-weight: bold"></asp:Label>
                         <asp:TextBox class="form-control" ID="txt_updatedBy" runat="server" disabled></asp:TextBox>
@@ -215,7 +218,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" href="#div_<%# DataBinder.Eval(Container,"ItemIndex") %>"><strong><%# Eval("group_description") %></strong> <span class="badge" style="float: right">5</span></a>
+                                        <a data-toggle="collapse" href="#div_<%# DataBinder.Eval(Container,"ItemIndex") %>"><strong><%# Eval("group_description") %></strong></a>
                                     </h4>
 								    <asp:Label runat="server" ID="lbl_groupId" Text='<%# Eval("group_id") %>' Visible="False" />
                                 </div>

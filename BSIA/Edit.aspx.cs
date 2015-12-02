@@ -18,50 +18,47 @@ namespace BSIA
                 //If not authenticated, redirect to login page.
                 Response.Redirect("/Account/Login");
             }
+
+            //if (txt_inspectionDate.Text == "")
+            //    txt_inspectionDate.Text = DateTime.Now.ToString("M/d/yyyy");
+
+            //if (txt_createdby.Text == "")
+            //    txt_createdby.Text = Context.User.Identity.Name;
+        }
+
+        protected void btn_calendar_Click(object sender, EventArgs e)
+        {
+
+            //calendar.Visible = true;
+        }
+
+        protected void calendar_SelectionChanged(object sender, EventArgs e)
+        {
+            //txt_inspectionDate.Text = DateTime.Parse(calendar.SelectedDate.ToShortDateString()).ToString("M/d/yyyy");
+            //calendar.Visible = false;
         }
 
         protected void btn_getBusEdit_Click(object sender, EventArgs e)
         {
             pnl_bus.Visible = true;
-            pnl_inspection.Visible = true;
+            pnl_repairs.Visible = true;
+           // pnl_inspection.Visible = true;
+        }
+
+        protected void btn_editInspection_Click(object sender, EventArgs e)
+        {
+
         }
 
         protected void btn_getBusDelete_Click(object sender, EventArgs e)
         {
             pnl_bus.Visible = true;
-            pnl_inspection.Visible = true;
+            //pnl_inspection.Visible = true;
         }
 
-        protected void btn_editInspection_Click(object sender, EventArgs e)
-        {
-            //SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
-            //conn.Open();
-            //SqlCommand cmd = new SqlCommand("Insert into season (season_name, created_by, updated_by, date_created, date_updated) values(@season_name, @created_by, @updated_by, @date_created, @date_updated)", conn);
-            //try
-            //{
-            //    cmd.Parameters.AddWithValue("@season_name", "Test Season2");
-            //    cmd.Parameters.AddWithValue("@created_by", "1");
-            //    cmd.Parameters.AddWithValue("@updated_by", "1");
-            //    cmd.Parameters.AddWithValue("@date_created", "11/25/2015 12:00:00 AM");
-            //    cmd.Parameters.AddWithValue("@date_updated", "11/25/2015 12:00:00 AM");
-            //    cmd.ExecuteNonQuery();
-            //    lbl_message.Visible = true;
-            //    lbl_message.Text = "Saved...";
-            //}
-            //catch (Exception)
-            //{
-            //    lbl_message.Visible = true;
-            //    lbl_message.Text = "Not Saved.";
-            //}
-            //finally
-            //{
-            //    conn.Close();
-            //}
-        }
+        //protected void btn_deleteInspection_Click(object sender, EventArgs e)
+        //{
 
-        protected void btn_deleteInspection_Click(object sender, EventArgs e)
-        {
-
-        }
+        //}
     }
 }

@@ -31,6 +31,11 @@ namespace BSIA
                 //If not authenticated, redirect to login page.
                 Response.Redirect("/Account/Login");
             }
+            if (txt_inspectionDate.Text == "")
+                txt_inspectionDate.Text = DateTime.Now.ToString("M/d/yyyy");
+
+            if (txt_createdby.Text == "")
+                txt_createdby.Text = Context.User.Identity.Name;
         }
 
         protected void btn_calendar_Click(object sender, EventArgs e)
@@ -40,7 +45,7 @@ namespace BSIA
 
         protected void calendar_SelectionChanged(object sender, EventArgs e)
         {
-            txt_inspectionDate.Text = calendar.SelectedDate.ToShortDateString();
+            txt_inspectionDate.Text = DateTime.Parse(calendar.SelectedDate.ToShortDateString()).ToString("M/d/yyyy");
             calendar.Visible = false;
         }
 
@@ -54,13 +59,16 @@ namespace BSIA
             }
         }
 
-
         protected void btn_createInspection_Click(object sender, EventArgs e)
         {
 
             int inspectionId = 0;
             Boolean passed = false;
-            string today = DateTime.Now.ToString("M/d/yyyy");
+
+            string creationDate;
+            if (txt_inspectionDate.Text != "")
+                creationDate = txt_inspectionDate.Text;
+            else creationDate = DateTime.Now.ToString("M/d/yyyy");
 
             List<InspectionItem> failedItems = new List<InspectionItem>();
 
@@ -101,20 +109,39 @@ namespace BSIA
             if (failedItems.Count == 0)
                 passed = true;
 
+            /*
+  SelectCommand="SELECT DISTINCT bus_number, VIN, company_name, body_description, chassis_description, model_year, bcn.contractor_id AS contractor_id
+  FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id WHERE bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" Type="Int32" DefaultValue="0" />
+
+            SELECT contractor_id from BusContractorNumber WHERE bus_number = @bus_num
+    */
+
             SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
             conn.Open();
+
+            int cont_id = 1;
+            //SqlCommand cmd1 = new SqlCommand("SELECT contractor_id from BusContractorNumber WHERE bus_number = @bus_id", conn);
+            //cmd1.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedValue));
+            //SqlDataReader reader = cmd1.ExecuteReader();
+            //if (reader.HasRows)
+            //    cont_id = (int)(reader["contractor_id"]);
+
             SqlCommand cmd = new SqlCommand("INSERT INTO BSIA.dbo.Inspections(inspection_date, season_id, bus_id, contractor_id, user_id, odometer, inspector_esignature, notes, contractor_ename, contractor_esignature, pass_date, tag_number, created_by, updated_by, date_created, date_updated) " +
                 "output INSERTED.inspection_id" + " VALUES (@insp_date, @seaon_id, @bus_id, @contractor_id, @user_id," +
                 " @odometer, @inspector_esignature, @notes, NULL, NULL, @pass_date, @tag_number," +
                 " @created_by, @updated_by, GETDATE(), GETDATE())", conn);
             try
             {
-                cmd.Parameters.AddWithValue("@insp_date", today);
+                cmd.Parameters.AddWithValue("@insp_date", creationDate);
                 cmd.Parameters.AddWithValue("@seaon_id", ddl_season.SelectedIndex);
                 cmd.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedItem.Text));
                 //TODO: get contractor id
                 //bogus contractor id for now
-                cmd.Parameters.AddWithValue("@contractor_id", 23);
+               
+                cmd.Parameters.AddWithValue("@contractor_id", cont_id);
+               // cmd.Parameters.AddWithValue("@contractor_id", hdn_contractor_id);
                 //TODO: get user id
                 //bogus user id for now
                 cmd.Parameters.AddWithValue("@user_id", 1);
@@ -126,7 +153,7 @@ namespace BSIA
                 // null               cmd.Parameters.AddWithValue("@contractor_ename", "Bogus name"   );
                 // NULL               cmd.Parameters.AddWithValue("@contractor_esignature", "Bogus Signature"   );
                 if (passed)
-                    cmd.Parameters.AddWithValue("@pass_date", today);
+                    cmd.Parameters.AddWithValue("@pass_date", creationDate);
                 else
                     cmd.Parameters.AddWithValue("@pass_date", DBNull.Value);
 
@@ -167,7 +194,7 @@ namespace BSIA
                 pnl_success.Visible = true;
                 btn_createInspection.Enabled = false;
             }
-            catch (Exception)
+            catch (Exception err)
             {
                 //lbl_message.Visible = true;
                 //lbl_message.Text = "Not Saved.";

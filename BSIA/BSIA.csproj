@@ -201,17 +201,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="BSIADataSet.xsc">
-      <DependentUpon>BSIADataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="BSIADataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BSIADataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="BSIADataSet.xss">
-      <DependentUpon>BSIADataSet.xsd</DependentUpon>
-    </Content>
     <Content Include="BSIA_Rpts.xsc">
       <DependentUpon>BSIA_Rpts.xsd</DependentUpon>
     </Content>
@@ -282,11 +271,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BSIADataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BSIADataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="BSIA_Rpts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -463,10 +447,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Buses_Passing_Inspection.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inspection Summary.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

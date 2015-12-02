@@ -23,39 +23,22 @@
             <div role="tabpanel" class="tab-pane active" id="divRptSummary">
                 <h3>Summary of the Latest Inspection</h3>
                 <p>Summary of the latest inspection results including the number of buses inspected, the number of minor failures, the number of major failures, the number of outstanding repairs (any failure that has not been corrected is considered an outstanding failure regardless of the time passed.</p><br />
-                <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
-                <%--Button to change the season and Year--%>
-<%--                <div class="col-sm-3" style="margin-top:20px">
-                     <asp:Button ID="btn_chg_season" class="btn btn-primary" type="submit" runat="server" Text="View Report" OnClick="btn_getBus_Click" />
-                </div>--%>
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-                    <LocalReport ReportPath="Inspection Summary.rdlc">
-                        <DataSources>
-                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="BusDetails" />
-                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="Failures" />
+
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="751px">
+                    <LocalReport ReportPath="Report4.rdlc">
+                                                <DataSources>
+                            <rsweb:ReportDataSource Name="rpt_Buses_Passing_Inspection" DataSourceId="ObjectDataSource1"></rsweb:ReportDataSource>
                         </DataSources>
                     </LocalReport>
                 </rsweb:ReportViewer>
-                <asp:ObjectDataSource runat="server" SelectMethod="GetData" TypeName="BSIA.BSIA_RptsTableAdapters.rpt_Bus_Inspection_SummaryTableAdapter" ID="ObjectDataSource1" OldValuesParameterFormatString="original_{0}">
+                <asp:ObjectDataSource runat="server" SelectMethod="GetData" TypeName="BSIA.BSIA_RptsTableAdapters.rpt_Buses_Passing_InspectionTableAdapter" ID="ObjectDataSource1" OldValuesParameterFormatString="original_{0}">
                     <SelectParameters>
-                        <asp:Parameter DefaultValue="77" Name="InspectionID" Type="Int32"></asp:Parameter>
+                        <asp:Parameter DefaultValue="7/1/2015" Name="StartDate" Type="DateTime"></asp:Parameter>
+                        <asp:Parameter DefaultValue="7/10/2015" Name="EndDate" Type="DateTime"></asp:Parameter>
                     </SelectParameters>
                 </asp:ObjectDataSource>
             
-                <rsweb:ReportViewer ID="ReportViewer2" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-                    <LocalReport ReportPath="Inspection Summary.rdlc">
-                        <DataSources>
-                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="BusDetails" />
-                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="Failures" />
-                        </DataSources>
-                    </LocalReport>
-                </rsweb:ReportViewer>
-                <asp:ObjectDataSource runat="server" SelectMethod="GetData" TypeName="BSIA.BSIA_RptsTableAdapters.rpt_Bus_Inspection_SummaryTableAdapter" ID="ObjectDataSource2" OldValuesParameterFormatString="original_{0}">
-                    <SelectParameters>
-                        <asp:Parameter DefaultValue="77" Name="InspectionID" Type="Int32"></asp:Parameter>
-                    </SelectParameters>
-                </asp:ObjectDataSource>
-            
+           
             </div>
             <div role="tabpanel" class="tab-pane" id="divRpt1">
                 <h3>Buses with Redline</h3>

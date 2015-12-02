@@ -258,7 +258,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Bus_id.Value)</Value>
+                              <Value>=Fields!Bus_id.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -484,7 +484,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>8.58333in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -497,16 +497,17 @@
     <DataSource Name="BSIA_Rpts">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
+        <ConnectString>BSIAConnectionString2</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>78440fe6-2682-4a7e-9712-2744aa3a867e</rd:DataSourceID>
+      <rd:DataSourceID>490dc24f-8fe9-4d83-8dd0-b2f6fe74656b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="rpt_Buses_Passing_Inspection">
       <Query>
         <DataSourceName>BSIA_Rpts</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpt_Buses_Passing_Inspection</CommandText>
       </Query>
       <Fields>
         <Field Name="Bus_id">
@@ -545,5 +546,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>0e0a6c46-cb9a-4253-bbf6-838fde4ea21e</rd:ReportID>
+  <rd:ReportID>e7dbb742-a1aa-4aa6-91b2-e0a33e97a636</rd:ReportID>
 </Report>

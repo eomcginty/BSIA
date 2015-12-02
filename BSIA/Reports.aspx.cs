@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WebForms;
 using Microsoft.Owin.Security;
+using System.Data.Odbc;
 
 
 namespace BSIA
@@ -19,49 +20,67 @@ namespace BSIA
         {
             if (!IsPostBack)
             {
-                ReportViewer1.Reset();
+                //ReportViewer1.Reset();
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Inspection Summary.rdlc");
-                BSIA_Rpts ds_busDetails = new BSIA_Rpts();
-                ds_busDetails = GetData(77);
-                ReportDataSource datasource_busDetails = new ReportDataSource("BusDetails", ds_busDetails.Tables[0]);
+                ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Report4.rdlc");
+                BSIA_Rpts ds_busPass = new BSIA_Rpts();
+                //ds_busPass = GetData(77);
+                ds_busPass = GetData();
+                ReportDataSource datasource_busPass = new ReportDataSource("rpt_Buses_Passing_Inspection", ds_busPass.Tables[0]);
                 ReportViewer1.LocalReport.DataSources.Clear();
-                ReportViewer1.LocalReport.DataSources.Add(datasource_busDetails);
+                ReportViewer1.LocalReport.DataSources.Add(datasource_busPass);
+                ReportViewer1.LocalReport.Refresh();
 
-                ReportViewer2.Reset();
-                ReportViewer2.ProcessingMode = ProcessingMode.Local;
-                ReportViewer2.LocalReport.ReportPath = Server.MapPath("~/Inspection Summary.rdlc");
-                BSIA_Rpts ds_failures = new BSIA_Rpts();
-                ds_failures = GetData(77);
-                ReportDataSource datasource_failures = new ReportDataSource("Failures", ds_failures.Tables[0]);
-                ReportViewer2.LocalReport.DataSources.Clear();
-                ReportViewer2.LocalReport.DataSources.Add(datasource_failures);
+                //ReportViewer2.Reset();
+                //ReportViewer2.ProcessingMode = ProcessingMode.Local;
+                //ReportViewer2.LocalReport.ReportPath = Server.MapPath("~/Inspection Summary.rdlc");
+                //BSIA_Rpts ds_failures = new BSIA_Rpts();
+                //ds_failures = GetData(77);
+                //ReportDataSource datasource_failures = new ReportDataSource("Failures", ds_failures.Tables[0]);
+                //ReportViewer2.LocalReport.DataSources.Clear();
+                //ReportViewer2.LocalReport.DataSources.Add(datasource_failures);
             }
         }
 
-        private BSIA_Rpts GetData(int id)
+        OdbcConnection cn;
+        OdbcCommand cmd;
+        BSIA_Rpts ds_busPass = new BSIA_Rpts();
+        //public BSIA_Rpts GetData(
+        //    BSIA_Rpts ds_busPass, string conString, string queryString)
+        public BSIA_Rpts GetData()
         {
-            string conString = ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString;
-            SqlCommand cmd = new SqlCommand("dbo.rpt_Bus_Inspection_Summary");
-            using (SqlConnection con = new SqlConnection(conString))
+            string conString = ConfigurationManager.ConnectionStrings["BSIAConnectionString2"].ConnectionString;
+            cmd = new OdbcCommand("{? = call dbo.rpt_Buses_Passing_Inspection (?, ?)}", cn);
+            cn = new OdbcConnection(conString);
+            
+
+            using (OdbcConnection connection = new OdbcConnection(conString))
             {
-                using (SqlDataAdapter sda = new SqlDataAdapter())
+                //using (OdbcDataAdapter adapter = new OdbcDataAdapter(cmd, connection))
+                using (OdbcDataAdapter adapter = new OdbcDataAdapter())
                 {
-                    cmd.Connection = con;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = "1/1/2013";
-                    //cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = "11/20/2015";
-                    cmd.Parameters.Add("@InspectionID", SqlDbType.Int).Value = id;
-                    sda.SelectCommand = cmd;
-                    using (BSIA_Rpts ds = new BSIA_Rpts())
+                    // Open the connection and fill the DataSet.
+                    try
                     {
-                       // ds.EnforceConstraints = false;
-                        //sda.Fill(dsViolations, "DataTable1");
-                        sda.Fill(ds, "rpt_Bus_Inspection_Summary");
-                        return ds;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "rpt_Buses_Passing_Inspection"; //your store procedure name;
+                        cmd.Parameters.Add("@StartDate", OdbcType.Date).Value = DateTime.Parse("07/01/2015");
+                        cmd.Parameters.Add("@EndDate", OdbcType.Date).Value = DateTime.Parse("7/10/2015");
+                        using (BSIA_Rpts ds_busPass = new BSIA_Rpts())
+                        {
+                            connection.Open();
+                            adapter.Fill(ds_busPass);
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    // The connection is automatically closed when the
+                    // code exits the using block.
                 }
             }
+            return ds_busPass;
         }
 
 
@@ -69,3 +88,5 @@ namespace BSIA
 
 
 }
+
+
