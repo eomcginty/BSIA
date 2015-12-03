@@ -8,17 +8,18 @@
         <%--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--%>
 
         <!-- Modal Success Message-->
-        <div id="modal_success" role="dialog" class="modal in">
+        <div id="modal_success_repair" role="dialog" class="modal in">
             <div class="modal-dialog" style="margin-top: 100px">
                 <div class="modal-content">
                     <div class="modal-header label-success">
-                        <h4 class="modal-title">Inspection Successful!</h4>
+                        <h4 class="modal-title">Repair Successfully Updated!</h4>
                     </div>
                     <div class="modal-body">
+                        <p class="text-success">All items have been repaired, this inspection will be updated to PASS.</p>
                         <p class="text-success">Choose from the following selections.</p>
                         <a href="Default.aspx" class="btn btn-success"><span aria-hidden="true" class="glyphicon glyphicon-home"></span>Go to Home Page</a>
                         <a href="Reports.aspx" class="btn btn-success">View Bus Report</a>
-                        <a href="Create.aspx" class="btn btn-success">Enter New Inspection</a>
+                        <a href="Edit.aspx" class="btn btn-success">Edit Inspection</a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -30,14 +31,15 @@
 
     <!-- Modal Error Message-->
     <asp:Panel ID="pnl_error" runat="server" Visible="false">
-        <div id="modal_error" role="dialog" class="modal in">
+        <div id="modal_error_repair" role="dialog" class="modal in">
             <div class="modal-dialog" style="margin-top: 100px">
                 <div class="modal-content">
                     <div class="modal-header label-danger">
-                        <h4 class="modal-title" style="color: #ffffff">Inspection Error!</h4>
+                        <h4 class="modal-title" style="color: #ffffff">Repair Inspection Error!</h4>
                         <%--<asp:Label ID="lbl_err" runat="server" Text=""</asp:Label>--%>
                     </div>
                     <div class="modal-body">
+                        <p class="text-danger">Repairs are still pending for this inspection.</p>
                         <p class="text-danger">Choose from the following selections.</p>
                         <a href="Default.aspx" class="btn btn-danger">Go to Home Page</a>
                         <a href="Reports.aspx" class="btn btn-danger">View Bus Report</a>
@@ -93,35 +95,14 @@
                     </div>
                     <asp:Label ID="lbl_message" runat="server" Text="Season Message" Visible="false" Style="color: red; font-size: large"></asp:Label>
                 </div>
-                <%--Inspection Date Calendar
-                <div class="col-sm-3">
-                    <div class="form-group">
-                        <asp:Label ID="lbl_inspectionDate" class="control-label" runat="server" Text="Inspection Date:" style="font-weight:bold"></asp:Label>
-                        <table><tr><td>
-                            <asp:TextBox ID="txt_inspectionDate" Width="200px" class="form-control" runat="server" /></td><td>
-                            <asp:LinkButton ID="btn_calendar" runat="server" class="btn btn-primary btn-calendar" OnClick="btn_calendar_Click"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span></asp:LinkButton>
-                        </td></tr></table>
-                        <asp:Calendar ID="calendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="calendar_SelectionChanged" Visible="False">
-                            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                            <NextPrevStyle VerticalAlign="Bottom" />
-                            <OtherMonthDayStyle ForeColor="#808080" />
-                            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                            <SelectorStyle BackColor="#CCCCCC" />
-                            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                            <WeekendDayStyle BackColor="#FFFFCC" />
-                        </asp:Calendar>
-                    </div>
-                </div>--%>
+
                 <%--Submit Bus Information for Display Table--%>
-                <div class="col-sm-3" style="margin-top: 20px">
-                    <asp:Button ID="btn_getBusEdit" class="btn btn-primary active" type="submit" runat="server" Text="Edit Inspection" OnClick="btn_getBusEdit_Click" />
-                </div>
-                <div class="col-sm-3" style="margin-top: 20px; display: none">
-                    <asp:Button ID="btn_getBusDelete" class="btn btn-primary active" type="submit" runat="server" Text="Delete Inspection" OnClick="btn_getBusDelete_Click" />
+                <div class="col-sm-3" style="margin-top:20px">
+                     <asp:Button ID="btn_getBus" class="btn btn-primary active" type="submit" runat="server" Text="Get Bus Information" OnClick="btn_getBus_Click" />
                 </div>
             </div>
             <%--End Bus Selection Row--%>
+
 
             <%--Begin Panel to Display Populated Table, and Verify Row--%>
             <div id="rowDisplay_busInfo" class="row" style="display: block">
@@ -136,35 +117,51 @@
                             <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" Type="Int32" DefaultValue="0" />
                         </SelectParameters>
                     </asp:SqlDataSource>
-                    <asp:GridView class="table" ID="GridView_busTable" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource_busTable" ForeColor="#333333" GridLines="None">
-                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                        <Columns>
-                            <asp:BoundField DataField="company_name" HeaderText="Contractor Name" SortExpression="company_name" />
-                            <asp:BoundField DataField="VIN" HeaderText="VIN" SortExpression="VIN" />
-                            <asp:BoundField DataField="model_year" HeaderText="Model" SortExpression="model_year" />
-                            <asp:BoundField DataField="chassis_description" HeaderText="Chassis" SortExpression="chassis_description" />
-                            <asp:BoundField DataField="body_description" HeaderText="Body" SortExpression="body_description" />
-                        </Columns>
-                        <EditRowStyle BackColor="#999999" />
-                        <FooterStyle BackColor="#c4e7f8" ForeColor="Black" Font-Bold="True" />
-                        <HeaderStyle BackColor="#c4e7f8" Font-Bold="True" ForeColor="Black" />
-                        <PagerStyle BackColor="#284775" ForeColor="Black" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                    </asp:GridView>
+                    <%--Begin Bus Information Repeater--%>
+                    <asp:Repeater ID="repeater_busInfo" runat="server" DataSourceID="SqlDataSource_busTable">
+                        <HeaderTemplate>
+                            <table class="table table-striped">
+                                <tr>
+                                    <th style="width: 20%; background-color: #c4e7f8">Contractor Name</th>
+                                    <th style="width: 10%; background-color: #c4e7f8">Odometer</th>
+                                    <th style="width: 10%; background-color: #c4e7f8">TAG</th>
+                                    <th style="width: 15%; background-color: #c4e7f8">VIN</th>
+                                    <th style="width: 10%; background-color: #c4e7f8">Model</th>
+                                    <th style="width: 10%; background-color: #c4e7f8">Chassis</th>
+                                    <th style="width: 10%; background-color: #c4e7f8">Body</th>
+                                    <th style="width: 15%; background-color: #c4e7f8">Edit Inspection</th>
+                                </tr>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <tbody>
+                                <tr> <%--TODO ADD Odometer and TAG in SQL--%>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_ctrName" Text='<%# Eval("company_name") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_odometer" Text="15348" /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_tag" Text="A123GH" /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_vin" Text='<%# Eval("vin") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_model" Text='<%# Eval("model_year") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_chassis" Text='<%# Eval("chassis_description") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_body" Text='<%# Eval("body_description") %>' /></td>
+                                    <td>
+                                        <asp:Button ID="btn_edit_inspection" OnClick="btn_edit_inspection_Click" runat="server" Text="Edit"></asp:Button>
+                                        <asp:Button ID="btn_delete_inspection" OnClick="btn_delete_inspection_Click" runat="server" Text="Delete"></asp:Button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </tbody></table>
+                        </FooterTemplate>
+                    </asp:Repeater> <%--End Bus Information Repeater--%>
                 </asp:Panel>
-            </div>
-            <%--End Panel to Display Populated Table, and Verify Row--%>
-        </div>
-        <%--End Bus Panel Body--%>
-    </div>
-    <%--End Bus Panel--%>
-
-    <asp:Panel ID="pnl_repairs" runat="server" class="panel panel-default" Visible="false">
+            </div><%--End Panel to Display Populated Table, and Verify Row--%>
+        </div><%--End Bus Panel Body--%>
+    </div><%--End Bus Panel--%>
+    
+    
+<%--    <asp:Panel ID="pnl_repairs" runat="server" class="panel panel-default" Visible="false">--%>
+    <asp:UpdatePanel ID="upd_pnl_repairs" runat="server" class="panel panel-default" Visible="false" UpdateMode="Conditional">
+        <ContentTemplate>
         <div class="panel-heading" style="font-size: 18px; font-weight: bold; background-color: cornflowerblue">Repairs</div>
         <div class="panel-body">
 
@@ -172,62 +169,56 @@
             <%--<asp:Label runat="server" ID="lbl_itemsId" Text='<%# Eval("group_id") %>' Visible="False" />--%>
             <asp:SqlDataSource
                 ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_repairs" runat="server"
-                SelectCommand="SELECT notes FROM InspectionFailures WHERE inspection_id = 262" DataSourceMode="DataReader">
-<%--                <SelectParameters>
-                    <asp:ControlParameter ControlID="lbl_groupId" Name="group_id" Type="Int32" DefaultValue="0" />
-                </SelectParameters>--%>
+                SelectCommand="SELECT InspectionFailures.notes, InspectionItem.item_description, Severity.severity_description, Inspections.inspection_id, InspectionFailures.element_id FROM InspectionFailures INNER JOIN Severity ON InspectionFailures.severity_id = Severity.severity_id INNER JOIN InspectionDetail ON InspectionFailures.element_id = InspectionDetail.element_id INNER JOIN InspectionItem ON InspectionDetail.item_id = InspectionItem.item_id INNER JOIN Inspections ON InspectionFailures.inspection_id = Inspections.inspection_id WHERE (Inspections.bus_id = @bus_id AND Inspections.season_id = @season_id AND repaired_date IS NULL)" DataSourceMode="DataReader">
+                <SelectParameters>
+                    <asp:Parameter ConvertEmptyStringToNull="false" Name="dbnull" DefaultValue="" />
+                    <asp:ControlParameter ControlID="ddl_bus" Name="bus_id" Type="Int32" DefaultValue="0" />
+                    <asp:ControlParameter ControlID="ddl_season"  PropertyName="SelectedIndex" Name="season_id" Type="Int32" DefaultValue="0" />
+                </SelectParameters>
             </asp:SqlDataSource>
             <asp:Repeater ID="Repeater_repairs" runat="server" DataSourceID="SqlDataSource_repairs">
                 <HeaderTemplate>
                     <table class="table table-striped">
                         <tr>
-                            <th style="width: 20%; background-color: #c4e7f8">Item</th>
+                            <th style="width: 25%; background-color: #c4e7f8">Item</th>
                             <th style="width: 15%; background-color: #c4e7f8">Severity</th>
-                            <th style="width: 25%; background-color: #c4e7f8">Notes</th>
-                            <th style="width: 25%; background-color: #c4e7f8">Inspection Date</th>
+                            <th style="width: 30%; background-color: #c4e7f8">Notes</th>
+                            <th style="width: 20%; background-color: #c4e7f8">Repair Date</th>                       
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tbody>
                         <tr>
-                            <td style="background-color: #f9f9f9">
-                                <asp:Label runat="server" ID="lbl_description" Text="item description placeholder" /></td>
-                           <%-- '<%# Eval("item_description") %>'--%>
-<%--                            <td hidden>
-                                <asp:Label runat="server" ID="lbl_elementsId" Text='<%# Eval("item_id") %>' /></td>--%>
-                            <td style="background-color: #f9f9f9">
-                                <asp:Label runat="server" ID="lbl_severity" Text="test major" /></td>
+                            <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_description" Text='<%# Eval("Item_description") %>' /></td>
+                            <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_severity" Text='<%# Eval("severity_description") %>' /></td>
+                            <td style="background-color: #f9f9f9"><asp:TextBox class="form-control" ID="txt_notes" runat="server" Text='<%# Eval("notes") %>'></asp:TextBox></td>
+                            <td style="background-color: #f9f9f9"><asp:TextBox Visible="false" class="form-control" ID="txt_inspection_id" runat="server" Text='<%# Eval("inspection_id") %>'></asp:TextBox>                                                     
+                                <asp:TextBox Visible="false" class="form-control" ID="txt_element_id" runat="server" Text='<%# Eval("element_id") %>'></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txt_repairDate" runat="server" />
                             </td>
-                            <td style="background-color: #f9f9f9">
-                                <asp:TextBox class="form-control" ID="txt_notes" runat="server" Text='<%# Eval("notes") %>'></asp:TextBox></td>
-                            <td style="background-color: #f9f9f9">
-                                <asp:TextBox ID="txt_repairDate" runat="server" />
 
-                                <%--<div class="form-group">
-                                    <asp:Label ID="lbl_inspectionDate" class="control-label" runat="server" Text="Inspection Date:" Style="font-weight: bold"></asp:Label>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <asp:TextBox ID="txt_inspectionDate" Width="200px" class="form-control" runat="server" /></td>
-                                            <td>
-                                                <asp:LinkButton ID="btn_calendar" runat="server" class="btn btn-primary btn-calendar" OnClick="btn_calendar_Click"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span></asp:LinkButton>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <asp:Calendar ID="calendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="calendar_SelectionChanged" Visible="False">
-                                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                                        <NextPrevStyle VerticalAlign="Bottom" />
-                                        <OtherMonthDayStyle ForeColor="#808080" />
-                                        <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                                        <SelectorStyle BackColor="#CCCCCC" />
-                                        <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                                        <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                                        <WeekendDayStyle BackColor="#FFFFCC" />
-                                    </asp:Calendar>
+                                <%--Inspection Date Calendar
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <asp:Label ID="lbl_inspectionDate" class="control-label" runat="server" Text="Inspection Date:" style="font-weight:bold"></asp:Label>
+                                        <table><tr><td>
+                                            <asp:TextBox ID="txt_inspectionDate" Width="200px" class="form-control" runat="server" /></td><td>
+                                            <asp:LinkButton ID="btn_calendar" runat="server" class="btn btn-primary btn-calendar" OnClick="btn_calendar_Click"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span></asp:LinkButton>
+                                        </td></tr></table>
+                                        <asp:Calendar ID="calendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="calendar_SelectionChanged" Visible="False">
+                                            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                                            <NextPrevStyle VerticalAlign="Bottom" />
+                                            <OtherMonthDayStyle ForeColor="#808080" />
+                                            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                                            <SelectorStyle BackColor="#CCCCCC" />
+                                            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                                            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                                            <WeekendDayStyle BackColor="#FFFFCC" />
+                                        </asp:Calendar>
+                                    </div>
                                 </div>--%>
 
                             </td>
-
                         </tr>
                 </ItemTemplate>
 
@@ -267,13 +258,12 @@
                 <FooterTemplate>
                     </tbody> </table>
                 </FooterTemplate>
-            </asp:Repeater>
-
-            <%--End Repeater Items--%>
-        </div>
-        <%--End Repair Panel Body--%>
-    </asp:Panel>
-    <%--End Repair Panel--%>
+            </asp:Repeater><%--End Repeater Items--%>   
+            <asp:Button ID="btn_repair_update" OnClick="btn_repair_update_Click" runat ="server" Text="Update Repair" />
+        </div><%--End Repair Panel Body--%>  
+ </ContentTemplate> 
+    </asp:UpdatePanel><%--End Repair Panel--%>
+<%--               </asp:Panel><%--End Repair Panel--%>   
 
 
 

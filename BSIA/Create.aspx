@@ -8,11 +8,11 @@
         <%--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--%>
 
         <!-- Modal Success Message-->
-        <div id="modal_success" role="dialog" class="modal in">
+        <div id="modal_success_create" role="dialog" class="modal in">
             <div class="modal-dialog" style="margin-top: 100px">
                 <div class="modal-content">
                     <div class="modal-header label-success">
-                        <h4 class="modal-title">Inspection Successful!</h4>
+                        <h4 class="modal-title">Inspection Successfully Created!</h4>
                     </div>
                     <div class="modal-body">
                         <p class="text-success">Choose from the following selections.</p>
@@ -30,11 +30,11 @@
 
     <!-- Modal Error Message-->
     <asp:Panel ID="pnl_error" runat="server" Visible="false">
-        <div id="modal_error" role="dialog" class="modal in">
+        <div id="modal_error_create" role="dialog" class="modal in">
             <div class="modal-dialog" style="margin-top: 100px">
                 <div class="modal-content">
                     <div class="modal-header label-danger">
-                        <h4 class="modal-title" style="color:#ffffff">Inspection Error!</h4>
+                        <h4 class="modal-title" style="color:#ffffff">Create Inspection Error!</h4>
                         <%--<asp:Label ID="lbl_err" runat="server" Text=""</asp:Label>--%>
                     </div>
                     <div class="modal-body">
@@ -134,7 +134,35 @@
                             <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" Type="Int32" DefaultValue="0" />
                         </SelectParameters>
                     </asp:SqlDataSource>
-                    <asp:GridView class="table" ID="GridView_busTable" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource_busTable" ForeColor="#333333" GridLines="None">
+                                       <%--Begin Bus Information Repeater--%>
+                    <asp:Repeater ID="repeater_busInfo" runat="server" DataSourceID="SqlDataSource_busTable">
+                        <HeaderTemplate>
+                            <table class="table table-striped">
+                                <tr>
+                                    <th style="width: 20%; background-color: #c4e7f8">Contractor Name</th>
+                                    <th style="width: 20%; background-color: #c4e7f8">VIN</th>
+                                    <th style="width: 10%; background-color: #c4e7f8">Model</th>
+                                    <th style="width: 10%; background-color: #c4e7f8">Chassis</th>
+                                    <th style="width: 10%; background-color: #c4e7f8">Body</th>
+                                </tr>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <tbody>
+                                <tr>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_ctrName" Text='<%# Eval("company_name") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_vin" Text='<%# Eval("vin") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_model" Text='<%# Eval("model_year") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_chassis" Text='<%# Eval("chassis_description") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_body" Text='<%# Eval("body_description") %>' /></td>
+                                </tr>
+                            </tbody>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </tbody></table>
+                        </FooterTemplate>
+                    </asp:Repeater> <%--End Bus Information Repeater--%>
+
+<%--                    <asp:GridView class="table" ID="GridView_busTable" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource_busTable" ForeColor="#333333" GridLines="None">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                         <Columns>
                             <asp:BoundField DataField="company_name" HeaderText="Contractor Name" SortExpression="company_name" />
@@ -153,7 +181,7 @@
                         <SortedAscendingHeaderStyle BackColor="#506C8C" />
                         <SortedDescendingCellStyle BackColor="#FFFDF8" />
                         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                    </asp:GridView>
+                    </asp:GridView>--%>
                 </asp:Panel>
             </div><%--End Panel to Display Populated Table, and Verify Row--%>
         </div><%--End Bus Panel Body--%>

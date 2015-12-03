@@ -18,17 +18,23 @@
     <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="Scripts/validator.js"></script>
     <script>
-        function openModal_success() {
-        $('#modal_success').modal('show'); 
-        return true;
+        function openModal_success_create() {
+            $('#modal_success_create').modal('show');
+            return true;
         };
-        </script>
-        <script>
-    function openModal_error() {
-        $('#modal_error').modal('show'); 
-        return true;
-    };
-</script>
+        function openModal_error_create() {
+            $('#modal_error_create').modal('show');
+            return true;
+        };
+        function openModal_success_repair() {
+            $('#modal_success_repair').modal('show');
+            return true;
+        };
+        function openModal_error_repair() {
+            $('#modal_error_repair').modal('show');
+            return true;
+        };
+    </script>
 </head>
 <body>
     <form id="bsiaForm" runat="server" role="form" data-toggle="validator">

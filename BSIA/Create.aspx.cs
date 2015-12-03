@@ -190,7 +190,7 @@ namespace BSIA
                 }
                 //lbl_message.Visible = true;
                 //lbl_message.Text = "Saved...";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success();", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_create();", true);
                 pnl_success.Visible = true;
                 btn_createInspection.Enabled = false;
             }
@@ -198,7 +198,7 @@ namespace BSIA
             {
                 //lbl_message.Visible = true;
                 //lbl_message.Text = "Not Saved.";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_error();", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_error_create();", true);
                 pnl_error.Visible = true;
             }
             finally

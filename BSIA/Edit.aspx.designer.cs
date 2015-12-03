@@ -112,22 +112,13 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.Label lbl_message;
         
         /// <summary>
-        /// btn_getBusEdit control.
+        /// btn_getBus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_getBusEdit;
-        
-        /// <summary>
-        /// btn_getBusDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_getBusDelete;
+        protected global::System.Web.UI.WebControls.Button btn_getBus;
         
         /// <summary>
         /// pnl_bus control.
@@ -148,22 +139,22 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_busTable;
         
         /// <summary>
-        /// GridView_busTable control.
+        /// repeater_busInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_busTable;
+        protected global::System.Web.UI.WebControls.Repeater repeater_busInfo;
         
         /// <summary>
-        /// pnl_repairs control.
+        /// upd_pnl_repairs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_repairs;
+        protected global::System.Web.UI.UpdatePanel upd_pnl_repairs;
         
         /// <summary>
         /// SqlDataSource_repairs control.
@@ -182,5 +173,14 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater_repairs;
+        
+        /// <summary>
+        /// btn_repair_update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_repair_update;
     }
 }
