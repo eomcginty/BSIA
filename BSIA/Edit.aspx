@@ -3,11 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Edit Inspection</h2>
 
-    <asp:Panel ID="pnl_success" runat="server" Visible="false">
-        <!-- Trigger the modal with a button -->
-        <%--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--%>
-
-        <!-- Modal Success Message-->
+    <!-- Modal Repair Success Message-->
+    <asp:Panel ID="pnl_success_repair" runat="server" Visible="false">
         <div id="modal_success_repair" role="dialog" class="modal in">
             <div class="modal-dialog" style="margin-top: 100px">
                 <div class="modal-content">
@@ -29,14 +26,13 @@
         </div>
     </asp:Panel>
 
-    <!-- Modal Error Message-->
-    <asp:Panel ID="pnl_error" runat="server" Visible="false">
+    <!-- Modal Repair Error Message-->
+    <asp:Panel ID="pnl_error_repair" runat="server" Visible="false">
         <div id="modal_error_repair" role="dialog" class="modal in">
             <div class="modal-dialog" style="margin-top: 100px">
                 <div class="modal-content">
                     <div class="modal-header label-danger">
                         <h4 class="modal-title" style="color: #ffffff">Repair Inspection Error!</h4>
-                        <%--<asp:Label ID="lbl_err" runat="server" Text=""</asp:Label>--%>
                     </div>
                     <div class="modal-body">
                         <p class="text-danger">Repairs are still pending for this inspection.</p>
@@ -53,6 +49,70 @@
         </div>
     </asp:Panel>
 
+    <!-- Modal VerifyDelete Message-->
+    <asp:Panel ID="pnl_verify_delete" runat="server" Visible="false">
+        <div id="modal_verify_delete" role="dialog" class="modal in">
+            <div class="modal-dialog" style="margin-top: 100px">
+                <div class="modal-content">
+                    <div class="modal-header label-warning">
+                        <h4 class="modal-title" style="color: #ffffff">Are you sure you want to delete this inspection?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger">Choose from the following selections.</p>
+                        <asp:Button ID="btn_verifyDeleteYes" class="btn btn-warning active" type="submit" runat="server" Text="Yes" OnClick="btn_verifyDeleteYes_Click" />
+                        <asp:Button ID="btn_verifyDeleteNo" class="btn btn-warning active" type="submit" runat="server" Text="No" OnClick="btn_verifyDeleteNo_Click" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+
+    <!-- Modal Delete Success Message-->
+    <asp:Panel ID="pnl_success_delete" runat="server" Visible="false">
+        <div id="modal_success_delete" role="dialog" class="modal in">
+            <div class="modal-dialog" style="margin-top: 100px">
+                <div class="modal-content">
+                    <div class="modal-header label-success">
+                        <h4 class="modal-title">Inspection Successfully Deleted!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-success">Choose from the following selections.</p>
+                        <a href="Default.aspx" class="btn btn-success"><span aria-hidden="true" class="glyphicon glyphicon-home"></span>Go to Home Page</a>
+                        <a href="Reports.aspx" class="btn btn-success">View Bus Report</a>
+                        <a href="Edit.aspx" class="btn btn-success">Edit Inspection</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+
+    <!-- Modal Delete Error Message-->
+    <asp:Panel ID="pnl_error_delete" runat="server" Visible="false">
+        <div id="modal_error_delete" role="dialog" class="modal in">
+            <div class="modal-dialog" style="margin-top: 100px">
+                <div class="modal-content">
+                    <div class="modal-header label-danger">
+                        <h4 class="modal-title" style="color: #ffffff">Delete Inspection Error!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger">Choose from the following selections.</p>
+                        <a href="Default.aspx" class="btn btn-danger">Go to Home Page</a>
+                        <a href="Reports.aspx" class="btn btn-danger">View Bus Report</a>
+                        <a href="Edit.aspx" class="btn btn-danger">Edit Inspection</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
 
     <%--Begin Bus Information Panel--%>
     <div class="panel panel-default">
@@ -104,7 +164,17 @@
             <%--End Bus Selection Row--%>
 
 
+<%--            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1">
+                <Columns>
+                    <asp:CommandField ShowSelectButton="True"></asp:CommandField>
+                </Columns>
+            </asp:GridView>--%>
+
+
+
+
             <%--Begin Panel to Display Populated Table, and Verify Row--%>
+            <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
             <div id="rowDisplay_busInfo" class="row" style="display: block">
                 <asp:Panel ID="pnl_bus" runat="server" class="col-sm-12" Visible="false">
                     <div class="alert alert-info fade in" style="display: none">
@@ -112,9 +182,11 @@
                         <i>Verify Bus Information.</i>
                     </div>
                     <asp:SqlDataSource ID="SqlDataSource_busTable" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                        SelectCommand="SELECT DISTINCT bus_number, VIN, company_name, body_description, chassis_description, model_year, bcn.contractor_id AS contractor_id FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id WHERE bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
+                        SelectCommand="SELECT DISTINCT bus_number, odometer, VIN, company_name, body_description, chassis_description, model_year, bcn.contractor_id AS contractor_id FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id Inner Join Inspections i ON i.bus_id = b.bus_id WHERE i.season_id = @season AND bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" Type="Int32" DefaultValue="0" />
+                            <asp:ControlParameter ControlID="ddl_season" PropertyName="SelectedIndex" Name="season" Type="Int32" DefaultValue="0" />
+
                         </SelectParameters>
                     </asp:SqlDataSource>
                     <%--Begin Bus Information Repeater--%>
@@ -136,7 +208,7 @@
                             <tbody>
                                 <tr> <%--TODO ADD Odometer and TAG in SQL--%>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_ctrName" Text='<%# Eval("company_name") %>' /></td>
-                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_odometer" Text="15348" /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_odometer" Text='<%# Eval("odometer") %>' /></td>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_tag" Text="A123GH" /></td>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_vin" Text='<%# Eval("vin") %>' /></td>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_model" Text='<%# Eval("model_year") %>' /></td>
@@ -169,7 +241,7 @@
             <%--<asp:Label runat="server" ID="lbl_itemsId" Text='<%# Eval("group_id") %>' Visible="False" />--%>
             <asp:SqlDataSource
                 ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_repairs" runat="server"
-                SelectCommand="SELECT InspectionFailures.notes, InspectionItem.item_description, Severity.severity_description, Inspections.inspection_id, InspectionFailures.element_id FROM InspectionFailures INNER JOIN Severity ON InspectionFailures.severity_id = Severity.severity_id INNER JOIN InspectionDetail ON InspectionFailures.element_id = InspectionDetail.element_id INNER JOIN InspectionItem ON InspectionDetail.item_id = InspectionItem.item_id INNER JOIN Inspections ON InspectionFailures.inspection_id = Inspections.inspection_id WHERE (Inspections.bus_id = @bus_id AND Inspections.season_id = @season_id AND repaired_date IS NULL)" DataSourceMode="DataReader">
+                SelectCommand="SELECT InspectionFailures.notes, InspectionItem.item_description, Severity.severity_description, Inspections.inspection_id, InspectionFailures.element_id FROM InspectionFailures INNER JOIN Severity ON InspectionFailures.severity_id = Severity.severity_id INNER JOIN InspectionDetail ON InspectionFailures.element_id = InspectionDetail.element_id INNER JOIN InspectionItem ON InspectionFailures.element_id = InspectionItem.item_id INNER JOIN Inspections ON InspectionFailures.inspection_id = Inspections.inspection_id WHERE (Inspections.bus_id = @bus_id AND Inspections.season_id = @season_id AND repaired_date IS NULL)" DataSourceMode="DataReader">
                 <SelectParameters>
                     <asp:Parameter ConvertEmptyStringToNull="false" Name="dbnull" DefaultValue="" />
                     <asp:ControlParameter ControlID="ddl_bus" Name="bus_id" Type="Int32" DefaultValue="0" />

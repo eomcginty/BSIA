@@ -123,11 +123,16 @@
             
             <%--Begin Panel to Display Populated Table, and Verify Row--%>
             <div id="rowDisplay_busInfo" class="row" style="display: block">
+                <asp:Panel class="alert alert-danger fade in" ID="pnl_error_exists" runat="server" Visible="false">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <i>Inspection Already Exists.</i>
+                </asp:Panel>
                 <asp:Panel ID="pnl_bus" runat="server" class="col-sm-12" Visible="false">
                     <div class="alert alert-info fade in" style="display:none">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <i>Verify Bus Information.</i>
                     </div>
+
                     <asp:SqlDataSource ID="SqlDataSource_busTable" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
                         SelectCommand="SELECT DISTINCT bus_number, VIN, company_name, body_description, chassis_description, model_year, bcn.contractor_id AS contractor_id FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id WHERE bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
                         <SelectParameters>
@@ -153,7 +158,9 @@
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_vin" Text='<%# Eval("vin") %>' /></td>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_model" Text='<%# Eval("model_year") %>' /></td>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_chassis" Text='<%# Eval("chassis_description") %>' /></td>
-                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_body" Text='<%# Eval("body_description") %>' /></td>
+                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_body" Text='<%# Eval("body_description") %>' />
+                                        <asp:Label Visible="false" ID="lbl_contractor_id" runat="server" Text='<%# Eval("contractor_id") %>' />
+                                    </td>
                                 </tr>
                             </tbody>
                         </ItemTemplate>

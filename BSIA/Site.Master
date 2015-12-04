@@ -34,6 +34,18 @@
             $('#modal_error_repair').modal('show');
             return true;
         };
+        function openModal_success_delete() {
+            $('#modal_success_delete').modal('show');
+            return true;
+        };
+        function openModal_error_delete() {
+            $('#modal_error_delete').modal('show');
+            return true;
+        };
+        function openModal_verify_delete() {
+            $('#modal_verify_delete').modal('show');
+            return true;
+        };
     </script>
 </head>
 <body>

@@ -135,22 +135,25 @@ namespace BSIA
                     }
                     btn_repair_update.Visible = false;
 
+                    Repeater_repairs.DataBind();
+                    upd_pnl_repairs.Update();
                     //notify user inspection passed
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_repair();", true);
-                    pnl_success.Visible = true;
+                    pnl_success_repair.Visible = true;
                 }
                 else
                 {
+                    Repeater_repairs.DataBind();
+                    upd_pnl_repairs.Update();
                     //notify user that there are still repairs
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_error_repair();", true);
-                    pnl_error.Visible = true;
+                    pnl_error_repair.Visible = true;
                 }
 
                 conn.Close();
             }
 
-            Repeater_repairs.DataBind();
-            upd_pnl_repairs.Update();
+
         }
 
         protected void btn_delete_inspection_Click(object sender, EventArgs e)
@@ -161,6 +164,74 @@ namespace BSIA
             //delete inspection
             //<asp:ControlParameter ControlID = "ddl_bus" Name = "bus_id" Type = "Int32" DefaultValue = "0" />
             //<asp:ControlParameter ControlID = "ddl_season"  PropertyName = "SelectedIndex" Name = "season_id" Type = "Int32" DefaultValue = "0" />
+
+            Button btn = (Button)sender;
+
+            
+            //this is ugly
+            Repeater r = (Repeater)btn.Parent.Parent;
+            foreach (RepeaterItem item in r.Items)
+            {
+                Label lbl_odometer = (Label)item.FindControl("lbl_odometer");
+                btn_verifyDeleteYes.CommandArgument = lbl_odometer.Text;
+            }
+
+
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_verify_delete();", true);
+            pnl_verify_delete.Visible = true;
+        }
+
+        protected void btn_verifyDeleteYes_Click(object sender, EventArgs e)
+        {
+            Button btn_vrfy = (Button)sender;
+            int odometer = int.Parse(btn_vrfy.CommandArgument);
+            // int bus_id = int.Parse(ddl_bus.SelectedItem.Text);
+            int bus_id = int.Parse(ddl_bus.SelectedItem.Text);
+            
+
+            SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
+            conn.Open();
+
+            //SqlCommand cmd1 = new SqlCommand("SELECT inspection_id FROM Inspections" +
+            //    "WHERE bus_id = @bus_id AND odometer = @odometer", conn);
+
+            SqlCommand cmd1 = new SqlCommand("SELECT inspection_id FROM Inspections" +
+             "WHERE season_id = @season_id AND odometer = @odometer", conn);
+            // cmd1.Parameters.AddWithValue("@bus_id", bus_id);
+
+            SqlCommand cmd = new SqlCommand(
+               "DELETE FROM Inspections, InspectionFailures WHERE inspection_id = @inspection_id" +
+                 conn);
+
+            try
+            { 
+            cmd1.Parameters.AddWithValue("@season_id", ddl_season.SelectedIndex);
+            cmd1.Parameters.AddWithValue("@odometer", odometer);
+
+            int inspection_id = (int)cmd1.ExecuteScalar();
+
+
+            cmd.Parameters.AddWithValue("@inspection_id", inspection_id);
+
+            cmd.ExecuteNonQuery();
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_delete();", true);
+                pnl_success_delete.Visible = true;
+            }
+            catch (Exception err)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_error_delete();", true);
+                pnl_error_delete.Visible = true;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        protected void btn_verifyDeleteNo_Click(object sender, EventArgs e)
+        {
 
         }
 

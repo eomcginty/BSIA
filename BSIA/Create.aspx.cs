@@ -51,11 +51,43 @@ namespace BSIA
 
         protected void btn_getBus_Click(object sender, EventArgs e)
         {
-            pnl_bus.Visible = true;
-            pnl_inspection.Visible = true;
+
             if (ddl_bus.SelectedIndex != 0)
             {
-                btn_getBus.Enabled = true;
+                int inspectionId = 0;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
+                conn.Open();
+
+                System.Data.DataSet ds = new System.Data.DataSet();
+
+                SqlCommand cmd = new SqlCommand("Select * FROM BSIA.dbo.Inspections WHERE season_id = @season_id AND bus_id = @bus_id", conn);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@season_id", ddl_season.SelectedIndex);
+                    cmd.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedItem.Text));
+
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
+                    
+                }
+                catch(Exception err)
+                {
+
+                }
+
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+                    pnl_bus.Visible = true;
+                    pnl_inspection.Visible = true;
+                    pnl_error_exists.Visible = false;
+                    btn_getBus.Enabled = false;
+                }
+                else
+                {
+
+                    pnl_error_exists.Visible = true;
+                }
             }
         }
 
@@ -71,7 +103,13 @@ namespace BSIA
             else creationDate = DateTime.Now.ToString("M/d/yyyy");
 
             List<InspectionItem> failedItems = new List<InspectionItem>();
+            int contractorId = 0;
 
+            foreach (RepeaterItem i in repeater_busInfo.Items)
+            {
+                Label contractor = (Label)i.FindControl("lbl_contractor_id");
+                contractorId = int.Parse(contractor.Text);
+            }
             //iterate through and add failures to list
             foreach (RepeaterItem group in Repeater_groups.Items)
             {
@@ -88,16 +126,19 @@ namespace BSIA
                         Label id = (Label)item.FindControl("lbl_elementsId");
                         failedItem.element_id = int.Parse(id.Text);
 
+                        TextBox tb = (TextBox)item.FindControl("txt_comments");
+                        string comments = tb.Text;
+
                         Repeater rep2 = (Repeater)item.FindControl("Repeater_elements");
                         foreach(RepeaterItem note in rep2.Items)
                         {
                             CheckBox cb_note = (CheckBox)note.FindControl("cb_elements");
                             if (cb_note.Checked)
-                                failedItem.notes += cb_note.Text + "\n";
+                                failedItem.notes += cb_note.Text + " / ";
                         }
 
                         //TextBox tb = (TextBox)item.FindControl("txt_comments");
-                        //failedItem.notes += tb.Text;
+                        failedItem.notes += comments;
 
                         failedItems.Add(failedItem);
                     }
@@ -121,7 +162,7 @@ namespace BSIA
             SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
             conn.Open();
 
-            int cont_id = 1;
+           
             //SqlCommand cmd1 = new SqlCommand("SELECT contractor_id from BusContractorNumber WHERE bus_number = @bus_id", conn);
             //cmd1.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedValue));
             //SqlDataReader reader = cmd1.ExecuteReader();
@@ -137,13 +178,9 @@ namespace BSIA
                 cmd.Parameters.AddWithValue("@insp_date", creationDate);
                 cmd.Parameters.AddWithValue("@seaon_id", ddl_season.SelectedIndex);
                 cmd.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedItem.Text));
-                //TODO: get contractor id
-                //bogus contractor id for now
-               
-                cmd.Parameters.AddWithValue("@contractor_id", cont_id);
-               // cmd.Parameters.AddWithValue("@contractor_id", hdn_contractor_id);
+                cmd.Parameters.AddWithValue("@contractor_id", contractorId);
                 //TODO: get user id
-                //bogus user id for now
+                //bogus user id for now 
                 cmd.Parameters.AddWithValue("@user_id", 1);
                 cmd.Parameters.AddWithValue("@odometer", int.Parse(txt_odometer.Text));
                 //TODO: get inspector sig
@@ -151,7 +188,7 @@ namespace BSIA
                 cmd.Parameters.AddWithValue("@inspector_esignature", "1");
                 cmd.Parameters.AddWithValue("@notes", ta_notes.Value);
                 // null               cmd.Parameters.AddWithValue("@contractor_ename", "Bogus name"   );
-                // NULL               cmd.Parameters.AddWithValue("@contractor_esignature", "Bogus Signature"   );
+                // NULL               cmd.Parameters.AddWithValue("@contractor_esignature", "1"   );
                 if (passed)
                     cmd.Parameters.AddWithValue("@pass_date", creationDate);
                 else
