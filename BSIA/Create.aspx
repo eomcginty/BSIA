@@ -60,10 +60,10 @@
                     <div class="form-group">
                         <asp:Label ID="lbl_bus" class="control-label" runat="server" Text="Bus:" style="font-weight:bold"></asp:Label>
                         <asp:SqlDataSource ID="SqlDataSource_bus" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                            SelectCommand="SELECT [bus_id] FROM [Bus]" DataSourceMode="DataReader">
+                            SelectCommand="SELECT bus_number FROM BusContractorNumber bcn WHERE bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) ORDER BY bus_number * 1" DataSourceMode="DataReader">
                         </asp:SqlDataSource>
                         <asp:DropDownList class="form-control" ID="ddl_bus" Style="max-width: 300px" runat="server" 
-                            DataSourceID="SqlDataSource_bus" DataTextField="bus_id" DataValueField="bus_id" AppendDataBoundItems="True">
+                            DataSourceID="SqlDataSource_bus" DataTextField="bus_number" DataValueField="bus_number" AppendDataBoundItems="True">
                             <asp:ListItem>Select Bus from list</asp:ListItem>
                         </asp:DropDownList>
                         <asp:CompareValidator style="color:#b94a48" ID="CompareValidator_bus" runat="server" ErrorMessage="Select a Bus!"

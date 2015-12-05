@@ -194,6 +194,7 @@ namespace BSIA
                 cmd.ExecuteNonQuery();
 
                 repeater_busInfo.DataBind();
+                Repeater_repairs.DataBind();
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_delete();", true);
                 pnl_success_delete.Visible = true;

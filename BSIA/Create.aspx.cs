@@ -66,19 +66,19 @@ namespace BSIA
 
                 System.Data.DataSet ds = new System.Data.DataSet();
 
-                SqlCommand cmd = new SqlCommand("Select * FROM BSIA.dbo.Inspections WHERE season_id = @season_id AND bus_id = @bus_id", conn);
+                SqlCommand cmd = new SqlCommand("Select * FROM BSIA.dbo.Inspections " +
+                    "WHERE season_id = @season_id AND bus_id = (SELECT bus_id from BusContractorNumber bcn WHERE bus_number = @bus_num " +
+                    "AND bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()))", conn);
                 try
                 {
                     cmd.Parameters.AddWithValue("@season_id", ddl_season.SelectedIndex);
-                    cmd.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedItem.Text));
-
+                    cmd.Parameters.AddWithValue("@bus_num", int.Parse(ddl_bus.SelectedItem.Text));
                     adapter.SelectCommand = cmd;
                     adapter.Fill(ds);
-                    
                 }
                 catch(Exception err)
                 {
-
+                    System.Console.Write("somthing went wrong");
                 }
 
                 if (ds.Tables[0].Rows.Count == 0)
@@ -88,11 +88,9 @@ namespace BSIA
                     pnl_error_exists.Visible = false;
                     btn_getBus.CssClass = "btn btn-primary";
                     btn_getBus.Enabled = false;
-
                 }
                 else
                 {
-
                     pnl_error_exists.Visible = true;
                 }
             }
@@ -159,17 +157,23 @@ namespace BSIA
                 passed = true;
 
             SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
-            conn.Open();       
+            conn.Open();
+
+            int bus_id = 0;
+            SqlCommand cmd1 = new SqlCommand("SELECT bus_id from BusContractorNumber WHERE bus_number = @bus_num", conn);
+            cmd1.Parameters.AddWithValue("@bus_num", ddl_bus.SelectedValue);
+            bus_id = (int)cmd1.ExecuteScalar();
 
             SqlCommand cmd = new SqlCommand("INSERT INTO BSIA.dbo.Inspections(inspection_date, season_id, bus_id, contractor_id, user_id, odometer, inspector_esignature, notes, contractor_ename, contractor_esignature, pass_date, tag_number, created_by, updated_by, date_created, date_updated) " +
                 "output INSERTED.inspection_id" + " VALUES (@insp_date, @season_id, @bus_id, @contractor_id, @user_id," +
                 " @odometer, @inspector_esignature, @notes, @contractor_ename, @contractor_esignature, @pass_date, @tag_number," +
                 " @created_by, @updated_by, GETDATE(), GETDATE())", conn);
+
             try
             {
                 cmd.Parameters.AddWithValue("@insp_date", creationDate);
                 cmd.Parameters.AddWithValue("@season_id", ddl_season.SelectedIndex);
-                cmd.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedItem.Text));
+                cmd.Parameters.AddWithValue("@bus_id", bus_id);
                 cmd.Parameters.AddWithValue("@contractor_id", contractorId);
                 //TODO: get user id
                 //bogus user id for now 
