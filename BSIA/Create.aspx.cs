@@ -19,7 +19,9 @@ namespace BSIA
         public int updated_by_id { get; set; }
         public string date_created { get; set; }
         public string date_updated { get; set; }
-
+        public string inspector_esignature { get; set; }
+        public string contractor_esignature { get; set; }
+        public string contractor_ename { get; set; }
     }
 
     public partial class Create : Page
@@ -36,7 +38,10 @@ namespace BSIA
 
             if (txt_createdby.Text == "")
                 txt_createdby.Text = Context.User.Identity.Name;
-        }
+
+            if (txt_sig_inspector.Text == "")
+                txt_sig_inspector.Text = Context.User.Identity.Name;
+        } 
 
         protected void btn_calendar_Click(object sender, EventArgs e)
         {
@@ -81,7 +86,9 @@ namespace BSIA
                     pnl_bus.Visible = true;
                     pnl_inspection.Visible = true;
                     pnl_error_exists.Visible = false;
+                    btn_getBus.CssClass = "btn btn-primary";
                     btn_getBus.Enabled = false;
+
                 }
                 else
                 {
@@ -110,6 +117,7 @@ namespace BSIA
                 Label contractor = (Label)i.FindControl("lbl_contractor_id");
                 contractorId = int.Parse(contractor.Text);
             }
+
             //iterate through and add failures to list
             foreach (RepeaterItem group in Repeater_groups.Items)
             {
@@ -150,45 +158,29 @@ namespace BSIA
             if (failedItems.Count == 0)
                 passed = true;
 
-            /*
-  SelectCommand="SELECT DISTINCT bus_number, VIN, company_name, body_description, chassis_description, model_year, bcn.contractor_id AS contractor_id
-  FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id WHERE bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" Type="Int32" DefaultValue="0" />
-
-            SELECT contractor_id from BusContractorNumber WHERE bus_number = @bus_num
-    */
-
             SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
-            conn.Open();
-
-           
-            //SqlCommand cmd1 = new SqlCommand("SELECT contractor_id from BusContractorNumber WHERE bus_number = @bus_id", conn);
-            //cmd1.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedValue));
-            //SqlDataReader reader = cmd1.ExecuteReader();
-            //if (reader.HasRows)
-            //    cont_id = (int)(reader["contractor_id"]);
+            conn.Open();       
 
             SqlCommand cmd = new SqlCommand("INSERT INTO BSIA.dbo.Inspections(inspection_date, season_id, bus_id, contractor_id, user_id, odometer, inspector_esignature, notes, contractor_ename, contractor_esignature, pass_date, tag_number, created_by, updated_by, date_created, date_updated) " +
-                "output INSERTED.inspection_id" + " VALUES (@insp_date, @seaon_id, @bus_id, @contractor_id, @user_id," +
-                " @odometer, @inspector_esignature, @notes, NULL, NULL, @pass_date, @tag_number," +
+                "output INSERTED.inspection_id" + " VALUES (@insp_date, @season_id, @bus_id, @contractor_id, @user_id," +
+                " @odometer, @inspector_esignature, @notes, @contractor_ename, @contractor_esignature, @pass_date, @tag_number," +
                 " @created_by, @updated_by, GETDATE(), GETDATE())", conn);
             try
             {
                 cmd.Parameters.AddWithValue("@insp_date", creationDate);
-                cmd.Parameters.AddWithValue("@seaon_id", ddl_season.SelectedIndex);
+                cmd.Parameters.AddWithValue("@season_id", ddl_season.SelectedIndex);
                 cmd.Parameters.AddWithValue("@bus_id", int.Parse(ddl_bus.SelectedItem.Text));
                 cmd.Parameters.AddWithValue("@contractor_id", contractorId);
                 //TODO: get user id
                 //bogus user id for now 
                 cmd.Parameters.AddWithValue("@user_id", 1);
                 cmd.Parameters.AddWithValue("@odometer", int.Parse(txt_odometer.Text));
-                //TODO: get inspector sig
-                //bogus sig for now
                 cmd.Parameters.AddWithValue("@inspector_esignature", "1");
+                cmd.Parameters.AddWithValue("@contractor_esignature", "1");
+                string contractor_ename = txt_sig_contractor_first.Text + " " + txt_sig_contractor_last.Text;
+                cmd.Parameters.AddWithValue("@contractor_ename", contractor_ename);
                 cmd.Parameters.AddWithValue("@notes", ta_notes.Value);
-                // null               cmd.Parameters.AddWithValue("@contractor_ename", "Bogus name"   );
-                // NULL               cmd.Parameters.AddWithValue("@contractor_esignature", "1"   );
+
                 if (passed)
                     cmd.Parameters.AddWithValue("@pass_date", creationDate);
                 else
@@ -200,9 +192,7 @@ namespace BSIA
                 cmd.Parameters.AddWithValue("@created_by", 1);
                 cmd.Parameters.AddWithValue("@updated_by", 1);
 
-
                 inspectionId = (int)cmd.ExecuteScalar();
-
 
                 if (failedItems.Count != 0)
                 {
@@ -225,18 +215,16 @@ namespace BSIA
                         cmd_fails.ExecuteNonQuery();
                     }
                 }
-                //lbl_message.Visible = true;
-                //lbl_message.Text = "Saved...";
+
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_create();", true);
                 pnl_success.Visible = true;
                 btn_createInspection.Enabled = false;
             }
             catch (Exception err)
             {
-                //lbl_message.Visible = true;
-                //lbl_message.Text = "Not Saved.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_error_create();", true);
                 pnl_error.Visible = true;
+                System.Console.Write(err);
             }
             finally
             {

@@ -160,16 +160,9 @@ namespace BSIA
         protected void btn_delete_inspection_Click(object sender, EventArgs e)
         {
 
-            //get inspection id from dbo.Inspections based on bus_id and season_id
-            //delete all failures associated with inspection_id
-            //delete inspection
-            //<asp:ControlParameter ControlID = "ddl_bus" Name = "bus_id" Type = "Int32" DefaultValue = "0" />
-            //<asp:ControlParameter ControlID = "ddl_season"  PropertyName = "SelectedIndex" Name = "season_id" Type = "Int32" DefaultValue = "0" />
-
             Button btn = (Button)sender;
 
-            
-            //Get the odemeter for the item selected. this is ugly
+            //Get the odemeter for the item selected. This is ugly.
             Repeater r = (Repeater)btn.Parent.Parent;
             foreach (RepeaterItem item in r.Items)
             {
@@ -185,9 +178,6 @@ namespace BSIA
         {
             Button btn_vrfy = (Button)sender;
             int odometer = int.Parse(btn_vrfy.CommandArgument);
-            //int season_id = int.Parse(ddl_season.SelectedIndex);
-            int season_id = ddl_season.SelectedIndex;
-            //int season_id = int.Parse(ddl_season.SelectedItem.Text);
             int bus_id = int.Parse(ddl_bus.SelectedItem.Text);
 
             SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
@@ -199,12 +189,15 @@ namespace BSIA
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(new SqlParameter("@BusID", bus_id));
-                cmd.Parameters.Add(new SqlParameter("@SeasonID", season_id));
+                cmd.Parameters.Add(new SqlParameter("@Odometer", odometer));
 
                 cmd.ExecuteNonQuery();
 
+                repeater_busInfo.DataBind();
+
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_delete();", true);
                 pnl_success_delete.Visible = true;
+
             }
             catch (Exception err)
             {

@@ -103,15 +103,6 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator_season;
         
         /// <summary>
-        /// lbl_message control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_message;
-        
-        /// <summary>
         /// lbl_inspectionDate control.
         /// </summary>
         /// <remarks>
@@ -247,15 +238,6 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.Label lbl_createdBy;
         
         /// <summary>
-        /// SqlDataSource_createdBy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_createdBy;
-        
-        /// <summary>
         /// txt_createdby control.
         /// </summary>
         /// <remarks>
@@ -319,40 +301,58 @@ namespace BSIA {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea ta_notes;
         
         /// <summary>
-        /// lbl_sig_print control.
+        /// cb_agree_inspector control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_sig_print;
+        protected global::System.Web.UI.WebControls.CheckBox cb_agree_inspector;
         
         /// <summary>
-        /// SqlDataSource_sig control.
+        /// cb_agree_contractor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_sig;
+        protected global::System.Web.UI.WebControls.CheckBox cb_agree_contractor;
         
         /// <summary>
-        /// lbl_sig control.
+        /// txt_sig_inspector control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_sig;
+        protected global::System.Web.UI.WebControls.TextBox txt_sig_inspector;
         
         /// <summary>
-        /// Label2 control.
+        /// txt_sig_contractor_first control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.TextBox txt_sig_contractor_first;
+        
+        /// <summary>
+        /// txt_sig_contractor_last control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_sig_contractor_last;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// SqlDataSource1 control.
@@ -362,15 +362,6 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// btn_createInspection control.

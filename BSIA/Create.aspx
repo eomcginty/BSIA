@@ -3,11 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Create Inspection</h2>
 
+    <!-- Modal Create Success Message-->
     <asp:Panel ID="pnl_success" runat="server" Visible="false">
-        <!-- Trigger the modal with a button -->
-        <%--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--%>
-
-        <!-- Modal Success Message-->
         <div id="modal_success_create" role="dialog" class="modal in">
             <div class="modal-dialog" style="margin-top: 100px">
                 <div class="modal-content">
@@ -28,14 +25,13 @@
         </div>
     </asp:Panel>
 
-    <!-- Modal Error Message-->
+    <!-- Modal Create Error Message-->
     <asp:Panel ID="pnl_error" runat="server" Visible="false">
         <div id="modal_error_create" role="dialog" class="modal in">
             <div class="modal-dialog" style="margin-top: 100px">
                 <div class="modal-content">
                     <div class="modal-header label-danger">
                         <h4 class="modal-title" style="color:#ffffff">Create Inspection Error!</h4>
-                        <%--<asp:Label ID="lbl_err" runat="server" Text=""</asp:Label>--%>
                     </div>
                     <div class="modal-body">
                         <p class="text-danger">Choose from the following selections.</p>
@@ -59,7 +55,6 @@
 
              <%--Begin Bus Selection Row--%>
             <div class="row">
-
                 <%--Bus DropDownList--%>
                 <div class="col-sm-3">
                     <div class="form-group">
@@ -93,7 +88,6 @@
                             &nbsp;Please select a Season!
                         </asp:CompareValidator>
                     </div>
-                    <asp:Label ID="lbl_message" runat="server" Text="Season Message" Visible="false" style="color:red; font-size:large"></asp:Label>
                 </div>
                 <%--Inspection Date Calendar--%>
                 <div class="col-sm-3">
@@ -117,7 +111,7 @@
                 </div>
                 <%--Submit Bus Information for Display Table--%>
                 <div class="col-sm-3" style="margin-top:20px">
-                     <asp:Button ID="btn_getBus" class="btn btn-primary active" type="submit" runat="server" Text="Get Bus Information" OnClick="btn_getBus_Click" />
+                     <asp:Button ID="btn_getBus" class="btn btn-primary" type="submit" runat="server" Text="Get Bus Information" OnClick="btn_getBus_Click" />
                 </div>
             </div><%--End Bus Selection Row--%>
             
@@ -139,7 +133,7 @@
                             <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" Type="Int32" DefaultValue="0" />
                         </SelectParameters>
                     </asp:SqlDataSource>
-                                       <%--Begin Bus Information Repeater--%>
+                    <%--Begin Bus Information Repeater--%>
                     <asp:Repeater ID="repeater_busInfo" runat="server" DataSourceID="SqlDataSource_busTable">
                         <HeaderTemplate>
                             <table class="table table-striped">
@@ -221,8 +215,6 @@
                 <div class="col-sm-3">
                     <div class="form-group" style="grid-flow: columns">
                         <asp:Label ID="lbl_createdBy" class="control-label" runat="server" Text="Created By:" Style="font-weight: bold"></asp:Label>
-                        <asp:SqlDataSource ID="SqlDataSource_createdBy" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>" SelectCommand="SELECT created_by FROM Bus where bus_id = 400" DataSourceMode="DataReader"></asp:SqlDataSource>
-<%--                        <asp:TextBox class="form-control" Text= "<%: User.Identity.Name %>" ID="txt_createdBy" runat="server" DataSourceID="SqlDataSource_createdBy"></asp:TextBox>--%>
                         <asp:TextBox class="form-control" ID="txt_createdby" runat="server"></asp:TextBox>
 
                     </div>
@@ -318,6 +310,13 @@
                                             <tr>
                                                 <td style="background-color:#ffffff"><asp:Label runat="server" ID="Label1" Text='<%# Eval("item_description") %>' />
                                                 <td hidden><asp:Label runat="server" ID="lbl_elementsId" Text='<%# Eval("item_id") %>' /></td>
+                                                    <asp:SqlDataSource
+                                                        ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_elements" runat="server"
+                                                        SelectCommand="SELECT element_description FROM InspectionDetail WHERE InspectionDetail.item_id = @item_elements" DataSourceMode="DataReader">
+                                                        <SelectParameters>
+                                                            <asp:ControlParameter ControlID="lbl_elementsId" Name="item_elements" Type="Int32" DefaultValue="0" />
+                                                        </SelectParameters>
+                                                    </asp:SqlDataSource>
                                                 <td style="background-color:#ffffff"><asp:CheckBox ID="cb_fail" Text="&nbsp;Fail" runat="server" Style="color: indianred" /></td>
                                                 <td style="background-color:#ffffff">
                                                     <asp:SqlDataSource ID="SqlDataSource_minmaj" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
@@ -330,13 +329,6 @@
                             
                                                 </td>
                                                 <td style="background-color:#ffffff">
-                                                    <asp:SqlDataSource
-                                                        ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_elements" runat="server"
-                                                        SelectCommand="SELECT element_description FROM InspectionDetail WHERE InspectionDetail.item_id = @item_elements" DataSourceMode="DataReader">
-                                                        <SelectParameters>
-                                                            <asp:ControlParameter ControlID="lbl_elementsId" Name="item_elements" Type="Int32" DefaultValue="0" />
-                                                        </SelectParameters>
-                                                    </asp:SqlDataSource>
                                                     <asp:Repeater ID="Repeater_elements" runat="server" DataSourceID="SqlDataSource_elements">
                                                         <ItemTemplate>
                                                             <asp:CheckBox ID="cb_elements" name="item_elements" DataSourceID="SqlDataSource_elements" Text='<%# Eval("element_description") %>' runat="server" />
@@ -374,75 +366,64 @@
             <div class="panel panel-info">
                 <div class="panel-heading" style="color: black; font-weight: bold">Acknowledgement</div>
                 <div class="panel-body">
+                    <div class="row">
                     <%--Force acknowledgement which will prompt for a digital signature--%>
-                    <div class="form-group">
+                    <div class="form-group col-sm-5">
                         <div class="checkbox">
                             <label>
-                                <input id="cb_agree" type="checkbox" id="terms" onclick="$('#pnl_digital_sig').toggle();" data-error="Must acknowledge before digitally signing form." required />
-                                 <span style="font-weight: bold">&nbsp;Inspection results have been reviewed with the Contractor.</span>
+                               <%-- <input id="cb_agree_inspector" type="checkbox" onclick="$('#pnl_digital_sig_inspector').toggle();" data-error="Must acknowledge before digitally signing form." required />--%>
+                                <asp:CheckBox ID="cb_agree_inspector" runat="server" type="checkbox" onclick="$('#pnl_digital_sig_inspector').toggle();" data-error="Must acknowledge before digitally signing form." required="true"/>
+                                <span style="font-weight: bold">&nbsp;Inspection results have been reviewed with the Contractor.</span>
                             </label>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
+                    <div class="form-group col-sm-7">
+                        <div class="checkbox">
+                            <label>
+                                <%--<input id="cb_agree_contractor" type="checkbox" onclick="$('#pnl_digital_sig_contractor').toggle();" data-error="Must acknowledge before digitally signing form." required />--%>
+                                <asp:CheckBox ID="cb_agree_contractor" runat="server" type="checkbox" onclick="$('#pnl_digital_sig_contractor').toggle();" data-error="Must acknowledge before digitally signing form." required="true"/>
+                                <span style="font-weight: bold">&nbsp;Contractor agrees with inspection results.</span>
+                            </label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
                     <%--Display User name logged in, and form to digitally sign and submit--%>
-                    <div id="pnl_digital_sig" class="row" style="display: none">
-                        <div class="col-sm-4">
-                            <div id="printed_name_inspector"><br />
-                                <asp:Label ID="lbl_sig_print" DataSourceID="SqlDataSource_sig" class="control-label" runat="server" Text="Inspector Printed Name: " Style="font-weight: bold"></asp:Label><br />
-                                <asp:SqlDataSource
-                                    ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_sig" runat="server"
-                                    SelectCommand="SELECT [user_id], [first_name], [last_name] FROM [Users] WHERE Users.user_id = 1" DataSourceMode="DataReader">
-        <%--                            <SelectParameters>'<%# Eval("first_name") %>'
-                                        <asp:ControlParameter ControlID="lbl_sig" Name="first_name" Type="Int32" />
-                                    </SelectParameters>--%>
-                                </asp:SqlDataSource>
+                    <div id="pnl_digital_sig_inspector" style="display: none">
+                        <div class="col-sm-5">
                                 <div id="signed_name_form_inspector" class="form-group">
                                     <label for="txt_sig" class="control-label">Inspector Signed Name: </label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon">X</span>
-                                        <input id="txt_sig_inspector" type="text" class="form-control" placeholder="Type name to sign." data-error="Must digitally sign form." aria-describedby="basic-addon" required>
+                                        <asp:TextBox class="form-control" ID="txt_sig_inspector" runat="server" data-error="Must digitally sign form." aria-describedby="basic-addon" required="true"></asp:TextBox>
                                     </div>
                                     <div class="help-block with-errors"></div>
-                                    <div><button id="btn_sig_inspector" type="button" onclick="$('#signed_name_inspector').toggle();$('#signed_name_form_inspector').toggle();" class="btn btn-default">Submit Signature</button></div>
                                 </div>
                             </div>
-                            <%--Show signature, hide signature form--%>
-                            <div id="signed_name_inspector" style="display: none">
-                                <asp:Label ID="lbl_sig" runat="server" DataSourceID="SqlDataSource_sig2" class="control-label" Text="'Inspector Signed Name: ' + txt_sig.Text" Style="font-weight: bold"></asp:Label><br />
-                            </div>
                         </div>
-
-                        <div class="col-sm-8">
-                            <div id="printed_name_contractor"><br />
-                                <asp:Label ID="Label2" DataSourceID="SqlDataSource_sig" class="control-label" runat="server" Text="Contractor Printed Name: " Style="font-weight: bold"></asp:Label><br />
-                                <asp:SqlDataSource
-                                    ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource1" runat="server"
-                                    SelectCommand="SELECT [user_id], [first_name], [last_name] FROM [Users] WHERE Users.user_id = 1" DataSourceMode="DataReader">
-        <%--                            <SelectParameters>'<%# Eval("first_name") %>'
-                                        <asp:ControlParameter ControlID="lbl_sig" Name="first_name" Type="Int32" />
-                                    </SelectParameters>--%>
-                                </asp:SqlDataSource>
+                    <div id="pnl_digital_sig_contractor" style="display: none">
+                        <div class="col-sm-7">
                                 <div id="signed_name_form_contractor" class="form-group">
                                     <label for="txt_sig" class="control-label">Contractor Signed Name: </label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon2">X</span>
-                                        <input id="txt_sig_contractor" type="text" class="form-control" placeholder="Type name to sign." data-error="Must digitally sign form." aria-describedby="basic-addon2" required>
+                                        <asp:TextBox class="form-control" ID="txt_sig_contractor_first" runat="server" placeholder="First Name..." data-error="Must digitally sign form." aria-describedby="basic-addon2" required="true"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="txt_sig_contractor_last" runat="server" placeholder="Last Name..." data-error="Must digitally sign form." aria-describedby="basic-addon2" required="true"></asp:TextBox>
                                     </div>
                                     <div class="help-block with-errors"></div>
-                                    <div><button id="btn_sig_contractor" type="button" onclick="$('#signed_name_contractor').toggle();$('#signed_name_form_contractor').toggle();" class="btn btn-default">Submit Signature</button></div>
                                 </div>
-                            </div>
-                            <%--Show signature, hide signature form--%>
-                            <div id="signed_name_contractor" style="display: none">
-                                <asp:Label ID="Label3" runat="server" DataSourceID="SqlDataSource_sig2" class="control-label" Text="'Contractor Signed Name: ' + txt_sig.Text" Style="font-weight: bold"></asp:Label><br />
                             </div>
                         </div>
                     </div>
                 </div>
            </div><%--End Acknowledgement Panel--%>
 
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
 
             <%--Submit Bus Inspected Information--%>
+            <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
             <div class="col-sm-3" style="margin-top:20px">
                     <asp:Button ID="btn_createInspection" class="btn btn-primary" type="submit" runat="server" Text="Submit Create Inspection" Width="200px" OnClick="btn_createInspection_Click" />
             </div>
