@@ -43,7 +43,6 @@ namespace BSIA
         {
             pnl_bus.Visible = true;
             upd_pnl_repairs.Visible = true;
-            pnl_editInspection.Visible = true;
         }
 
         protected void btn_saveInspection_Click(object sender, EventArgs e)
@@ -220,7 +219,7 @@ namespace BSIA
 
         protected void btn_edit_inspection_Click(object sender, EventArgs e)
         {
-
+            pnl_editInspection.Visible = true;
         }
     }
 }
