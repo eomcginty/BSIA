@@ -182,7 +182,12 @@
                         <i>Verify Bus Information.</i>
                     </div>
                     <asp:SqlDataSource ID="SqlDataSource_busTable" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                        SelectCommand="SELECT DISTINCT bus_number, odometer, VIN, company_name, body_description, chassis_description, model_year, bcn.contractor_id AS contractor_id FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id Inner Join Inspections i ON i.bus_id = b.bus_id WHERE i.season_id = @season AND bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
+                        SelectCommand="SELECT DISTINCT bus_number, odometer, VIN, company_name, body_description, chassis_description, 
+                         model_year, bcn.contractor_id AS contractor_id FROM Bus b INNER JOIN BusContractorNumber bcn ON bcn.bus_id = b.bus_id 
+                        INNER JOIN Contractor c ON c.contractor_id = bcn.contractor_id INNER JOIN BusBodyLU bl ON bl.body_id = b.body_id 
+                        INNER JOIN BusChassisLU cl ON cl.chassis_id = b.chassis_id Inner Join Inspections i ON i.bus_id = b.bus_id 
+                        WHERE i.season_id = @season AND bcn.effective_date <= GETDATE() AND 
+                        ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) AND bus_number = @bus_num" DataSourceMode="DataReader">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" Type="Int32" DefaultValue="0" />
                             <asp:ControlParameter ControlID="ddl_season" PropertyName="SelectedIndex" Name="season" Type="Int32" DefaultValue="0" />

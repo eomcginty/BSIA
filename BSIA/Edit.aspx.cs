@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data.Sql;
+using System.Data;
 
 namespace BSIA
 {
@@ -154,7 +155,7 @@ namespace BSIA
             }
 
 
-        }
+        }  //End Update Repair
 
         protected void btn_delete_inspection_Click(object sender, EventArgs e)
         {
@@ -168,15 +169,13 @@ namespace BSIA
             Button btn = (Button)sender;
 
             
-            //this is ugly
+            //Get the odemeter for the item selected. this is ugly
             Repeater r = (Repeater)btn.Parent.Parent;
             foreach (RepeaterItem item in r.Items)
             {
                 Label lbl_odometer = (Label)item.FindControl("lbl_odometer");
                 btn_verifyDeleteYes.CommandArgument = lbl_odometer.Text;
             }
-
-
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_verify_delete();", true);
             pnl_verify_delete.Visible = true;
@@ -186,35 +185,23 @@ namespace BSIA
         {
             Button btn_vrfy = (Button)sender;
             int odometer = int.Parse(btn_vrfy.CommandArgument);
-            // int bus_id = int.Parse(ddl_bus.SelectedItem.Text);
+            //int season_id = int.Parse(ddl_season.SelectedIndex);
+            int season_id = ddl_season.SelectedIndex;
+            //int season_id = int.Parse(ddl_season.SelectedItem.Text);
             int bus_id = int.Parse(ddl_bus.SelectedItem.Text);
-            
 
             SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
             conn.Open();
 
-            //SqlCommand cmd1 = new SqlCommand("SELECT inspection_id FROM Inspections" +
-            //    "WHERE bus_id = @bus_id AND odometer = @odometer", conn);
-
-            SqlCommand cmd1 = new SqlCommand("SELECT inspection_id FROM Inspections" +
-             "WHERE season_id = @season_id AND odometer = @odometer", conn);
-            // cmd1.Parameters.AddWithValue("@bus_id", bus_id);
-
-            SqlCommand cmd = new SqlCommand(
-               "DELETE FROM Inspections, InspectionFailures WHERE inspection_id = @inspection_id" +
-                 conn);
-
             try
-            { 
-            cmd1.Parameters.AddWithValue("@season_id", ddl_season.SelectedIndex);
-            cmd1.Parameters.AddWithValue("@odometer", odometer);
+            {
+                SqlCommand cmd = new SqlCommand("dbo.sp_Delete_Inspection", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            int inspection_id = (int)cmd1.ExecuteScalar();
+                cmd.Parameters.Add(new SqlParameter("@BusID", bus_id));
+                cmd.Parameters.Add(new SqlParameter("@SeasonID", season_id));
 
-
-            cmd.Parameters.AddWithValue("@inspection_id", inspection_id);
-
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_delete();", true);
                 pnl_success_delete.Visible = true;
@@ -223,6 +210,7 @@ namespace BSIA
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_error_delete();", true);
                 pnl_error_delete.Visible = true;
+                System.Console.Write(err);
             }
             finally
             {
