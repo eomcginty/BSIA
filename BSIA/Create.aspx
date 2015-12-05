@@ -420,10 +420,7 @@
                 </div>
            </div><%--End Acknowledgement Panel--%>
 
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
-
             <%--Submit Bus Inspected Information--%>
-            <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
             <div class="col-sm-3" style="margin-top:20px">
                     <asp:Button ID="btn_createInspection" class="btn btn-primary" type="submit" runat="server" Text="Submit Create Inspection" Width="200px" OnClick="btn_createInspection_Click" />
             </div>

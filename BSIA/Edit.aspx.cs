@@ -43,7 +43,7 @@ namespace BSIA
         {
             pnl_bus.Visible = true;
             upd_pnl_repairs.Visible = true;
-            // pnl_inspection.Visible = true;
+            pnl_editInspection.Visible = true;
         }
 
         protected void btn_saveInspection_Click(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace BSIA
         {
             Button btn_vrfy = (Button)sender;
             int odometer = int.Parse(btn_vrfy.CommandArgument);
-            int bus_id = int.Parse(ddl_bus.SelectedItem.Text);
+            int season_id = ddl_season.SelectedIndex;
 
             SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
             conn.Open();
@@ -188,13 +188,14 @@ namespace BSIA
                 SqlCommand cmd = new SqlCommand("dbo.sp_Delete_Inspection", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add(new SqlParameter("@BusID", bus_id));
+                cmd.Parameters.Add(new SqlParameter("@BusNum", ddl_bus.SelectedItem.Text));
                 cmd.Parameters.Add(new SqlParameter("@Odometer", odometer));
 
                 cmd.ExecuteNonQuery();
 
                 repeater_busInfo.DataBind();
                 Repeater_repairs.DataBind();
+                upd_pnl_repairs.Update();
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_delete();", true);
                 pnl_success_delete.Visible = true;
