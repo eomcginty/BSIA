@@ -162,27 +162,6 @@
                             </tbody></table>
                         </FooterTemplate>
                     </asp:Repeater> <%--End Bus Information Repeater--%>
-
-<%--                    <asp:GridView class="table" ID="GridView_busTable" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource_busTable" ForeColor="#333333" GridLines="None">
-                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                        <Columns>
-                            <asp:BoundField DataField="company_name" HeaderText="Contractor Name" SortExpression="company_name" />
-                            <asp:BoundField DataField="VIN" HeaderText="VIN" SortExpression="VIN" />
-                            <asp:BoundField DataField="model_year" HeaderText="Model" SortExpression="model_year" />
-                            <asp:BoundField DataField="chassis_description" HeaderText="Chassis" SortExpression="chassis_description" />
-                            <asp:BoundField DataField="body_description" HeaderText="Body" SortExpression="body_description" />
-                        </Columns>
-                        <EditRowStyle BackColor="#999999" />
-                        <FooterStyle BackColor="#c4e7f8" ForeColor="Black" Font-Bold="True" />
-                        <HeaderStyle BackColor="#c4e7f8" Font-Bold="True" ForeColor="Black" />
-                        <PagerStyle BackColor="#284775" ForeColor="Black" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                    </asp:GridView>--%>
                 </asp:Panel>
             </div><%--End Panel to Display Populated Table, and Verify Row--%>
         </div><%--End Bus Panel Body--%>
@@ -216,19 +195,17 @@
                     <div class="form-group" style="grid-flow: columns">
                         <asp:Label ID="lbl_createdBy" class="control-label" runat="server" Text="Created By:" Style="font-weight: bold"></asp:Label>
                         <asp:TextBox class="form-control" ID="txt_createdby" runat="server"></asp:TextBox>
-
                     </div>
                 </div>
                 <%--Updated By--%>
                 <div class="col-sm-3" style="display:none">
                     <div class="form-group" style="grid-flow: columns">
                         <asp:Label ID="lbl_updatedBy" class="control-label" runat="server" Text="Updated By:" Style="font-weight: bold"></asp:Label>
-                        <asp:TextBox class="form-control" ID="txt_updatedBy" runat="server" disabled></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="txt_updatedBy" runat="server" enabled="false"></asp:TextBox>
                     </div>
                 </div>
             </div><%-- End Additional input fields - Odometer, TAG row --%>
                 
-
 
      <%--Begin Create Inspection Input row--%>
             <div class="row"> 
@@ -371,7 +348,6 @@
                     <div class="form-group col-sm-5">
                         <div class="checkbox">
                             <label>
-                               <%-- <input id="cb_agree_inspector" type="checkbox" onclick="$('#pnl_digital_sig_inspector').toggle();" data-error="Must acknowledge before digitally signing form." required />--%>
                                 <asp:CheckBox ID="cb_agree_inspector" runat="server" type="checkbox" onclick="$('#pnl_digital_sig_inspector').toggle();" data-error="Must acknowledge before digitally signing form." required="true"/>
                                 <span style="font-weight: bold">&nbsp;Inspection results have been reviewed with the Contractor.</span>
                             </label>
@@ -381,7 +357,6 @@
                     <div class="form-group col-sm-7">
                         <div class="checkbox">
                             <label>
-                                <%--<input id="cb_agree_contractor" type="checkbox" onclick="$('#pnl_digital_sig_contractor').toggle();" data-error="Must acknowledge before digitally signing form." required />--%>
                                 <asp:CheckBox ID="cb_agree_contractor" runat="server" type="checkbox" onclick="$('#pnl_digital_sig_contractor').toggle();" data-error="Must acknowledge before digitally signing form." required="true"/>
                                 <span style="font-weight: bold">&nbsp;Contractor agrees with inspection results.</span>
                             </label>

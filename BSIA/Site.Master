@@ -26,6 +26,14 @@
             $('#modal_error_create').modal('show');
             return true;
         };
+        function openModal_success_edit() {
+            $('#modal_success_edit').modal('show');
+            return true;
+        };
+        function openModal_error_edit() {
+            $('#modal_error_edit').modal('show');
+            return true;
+        };
         function openModal_success_repair() {
             $('#modal_success_repair').modal('show');
             return true;

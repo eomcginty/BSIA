@@ -41,8 +41,14 @@ namespace BSIA
 
             if (txt_sig_inspector.Text == "")
                 txt_sig_inspector.Text = Context.User.Identity.Name;
-        } 
+        }
 
+
+        /*************************************************************************
+        *   Calendar 
+        *   Pop up calendar for easy Create Inspection Date input.  
+        *      Automatically defaults to current date.
+        **************************************************************************/
         protected void btn_calendar_Click(object sender, EventArgs e)
         {
             calendar.Visible = true;
@@ -54,9 +60,15 @@ namespace BSIA
             calendar.Visible = false;
         }
 
+
+        /*************************************************************************
+        *   Get Bus Information 
+        *   Display bus information for the bus number selected in a table:
+        *     Contractor Name, VIN, Model, Chassis, Body
+        *   Display Create Inspection panel
+        **************************************************************************/
         protected void btn_getBus_Click(object sender, EventArgs e)
         {
-
             if (ddl_bus.SelectedIndex != 0)
             {
                 int inspectionId = 0;
@@ -96,9 +108,16 @@ namespace BSIA
             }
         }
 
+
+        /*************************************************************************
+        *   Create Inspection
+        *   Iterates through the dynamically populated form, grabs values from
+        *     the repeater items and elements.
+        *   Performs an insert into the inspections and inspection failure tables of the db.
+        *   Uses pop-up/modal notifications for successful or non-successful attempts.
+        **************************************************************************/
         protected void btn_createInspection_Click(object sender, EventArgs e)
         {
-
             int inspectionId = 0;
             Boolean passed = false;
 
@@ -143,7 +162,6 @@ namespace BSIA
                                 failedItem.notes += cb_note.Text + " / ";
                         }
 
-                        //TextBox tb = (TextBox)item.FindControl("txt_comments");
                         failedItem.notes += comments;
 
                         failedItems.Add(failedItem);
@@ -151,7 +169,6 @@ namespace BSIA
                 }
 
             }
-
             
             if (failedItems.Count == 0)
                 passed = true;
@@ -179,6 +196,7 @@ namespace BSIA
                 //bogus user id for now 
                 cmd.Parameters.AddWithValue("@user_id", 1);
                 cmd.Parameters.AddWithValue("@odometer", int.Parse(txt_odometer.Text));
+                //TODO: update '1' to proper variable for esignatures
                 cmd.Parameters.AddWithValue("@inspector_esignature", "1");
                 cmd.Parameters.AddWithValue("@contractor_esignature", "1");
                 string contractor_ename = txt_sig_contractor_first.Text + " " + txt_sig_contractor_last.Text;
@@ -219,13 +237,14 @@ namespace BSIA
                         cmd_fails.ExecuteNonQuery();
                     }
                 }
-
+                //notify user Creation was successful
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_success_create();", true);
                 pnl_success.Visible = true;
                 btn_createInspection.Enabled = false;
             }
             catch (Exception err)
             {
+                //notify user Creation resulted in an error
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal_error_create();", true);
                 pnl_error.Visible = true;
                 System.Console.Write(err);
