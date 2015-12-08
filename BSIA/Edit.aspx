@@ -171,7 +171,7 @@
                             SelectCommand="SELECT bus_number FROM BusContractorNumber bcn WHERE bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()) ORDER BY bus_number * 1" DataSourceMode="DataReader">
                         </asp:SqlDataSource>
                         <asp:DropDownList class="form-control" ID="ddl_bus" Style="max-width: 300px" runat="server" 
-                            DataSourceID="SqlDataSource_bus" DataTextField="bus_number" DataValueField="bus_number" AppendDataBoundItems="True">
+                            DataSourceID="SqlDataSource_bus" DataTextField="bus_number" AutoPostBack="true" OnSelectedIndexChanged="btn_getBus_Click" DataValueField="bus_number" AppendDataBoundItems="True">
                             <asp:ListItem>Select Bus from list</asp:ListItem>
                         </asp:DropDownList>
                         <asp:CompareValidator Style="color: #b94a48" ID="CompareValidator_bus" runat="server" ErrorMessage="Select a Bus!"
@@ -180,42 +180,25 @@
                         </asp:CompareValidator>
                     </div>
                 </div>
-                <%--Season DropDownList--%>
-                <div class="col-sm-3">
-                    <div class="form-group">
-                        <asp:Label ID="lbl_season" class="control-label" runat="server" Text="Season:" Style="font-weight: bold"></asp:Label>
-                        <asp:SqlDataSource ID="SqlDataSource_season" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
-                            SelectCommand="SELECT [season_id], [season_name] FROM [Season]" DataSourceMode="DataReader"></asp:SqlDataSource>
-                        <asp:DropDownList class="form-control" ID="ddl_season" Style="max-width: 300px" runat="server"
-                            DataSourceID="SqlDataSource_season" DataTextField="season_name" DataValueField="season_id" AppendDataBoundItems="True">
-                            <asp:ListItem>Select Season from list</asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:CompareValidator Style="color: #b94a48" ID="CompareValidator_season" runat="server" ErrorMessage="Select a Season!"
-                            Operator="NotEqual" ValueToCompare="Select Season from list" ControlToValidate="ddl_season">
-                            &nbsp;Please select a Season!
-                        </asp:CompareValidator>
-                    </div>
-                </div>
-
                 <%--Submit Bus Information for Display Table--%>
-                <div class="col-sm-3" style="margin-top:20px">
+<%--                <div class="col-sm-3" style="margin-top:20px">
                      <asp:Button ID="btn_getBus" class="btn btn-primary active" type="submit" runat="server" Text="Get Bus Information" OnClick="btn_getBus_Click" />
-                </div>
+                </div>--%>
             </div>
             <%--End Bus Selection Row--%>
+            <asp:Panel ID="pnl_alert_noInspection" class="alert alert-warning fade in" runat="server" Visible="false">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <i>No inspections found for this bus.</i>
+            </asp:Panel>
 
             <%--Begin Panel to Display Populated Table, and Verify Row--%>
             <div id="rowDisplay_busInfo" class="row" style="display: block">
                 <asp:Panel ID="pnl_bus" runat="server" class="col-sm-12" Visible="false">
-                    <div class="alert alert-info fade in" style="display: none">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <i>Verify Bus Information.</i>
-                    </div>
                     <asp:SqlDataSource ID="SqlDataSource_busTable" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>" 
                         SelectCommand="edt_Bus_Summary" SelectCommandType="StoredProcedure">
                        <SelectParameters>
                             <asp:ControlParameter ControlID="ddl_bus" Name="BusNum" DefaultValue="0" />
-                            <asp:ControlParameter ControlID="ddl_season" DefaultValue="0" Name="SeasonID" PropertyName="SelectedIndex" Type="Int32" />
+                            <%--<asp:ControlParameter ControlID="ddl_season" DefaultValue="0" Name="SeasonID" PropertyName="SelectedIndex" Type="Int32" />--%>
                         </SelectParameters>
                     </asp:SqlDataSource>
                     <%--Begin Bus Information Repeater--%>
@@ -224,10 +207,11 @@
                             <table class="table table-striped">
                                 <tr>
                                     <th style="width: 20%; background-color: #c4e7f8">Contractor Name</th>
+                                    <th style="width: 5%; background-color: #c4e7f8">Season</th>
                                     <th style="width: 10%; background-color: #c4e7f8">Odometer</th>
                                     <th style="width: 10%; background-color: #c4e7f8">TAG</th>
                                     <th style="width: 15%; background-color: #c4e7f8">VIN</th>
-                                    <th style="width: 10%; background-color: #c4e7f8">Model</th>
+                                    <th style="width: 5%; background-color: #c4e7f8">Model</th>
                                     <th style="width: 10%; background-color: #c4e7f8">Chassis</th>
                                     <th style="width: 10%; background-color: #c4e7f8">Body</th>
                                     <th style="width: 15%; background-color: #c4e7f8">Edit Inspection</th>
@@ -237,7 +221,8 @@
                             <tbody>
                                 <tr> <%--TODO ADD Odometer and TAG in SQL--%>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_ctrName" Text='<%# Eval("company_name") %>' /></td>
-                                    <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_odometer" Text='<%# Eval("odometer") %>' /></td>
+                                    <td style="background-color: #f9f9f9; color:#863925; font-weight:bold"><asp:Label runat="server" ID="lbl_season" Text='<%# Eval("season_name") %>' /></td>
+                                    <td style="background-color: #f9f9f9; color:#863925; font-weight:bold"><asp:Label runat="server" ID="lbl_odometer" Text='<%# Eval("odometer") %>' /></td>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_tag" Text="A123GH" /></td>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_vin" Text='<%# Eval("vin") %>' /></td>
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_model" Text='<%# Eval("model_year") %>' /></td>
@@ -245,8 +230,8 @@
                                     <td style="background-color: #f9f9f9"><asp:Label runat="server" ID="lbl_body" Text='<%# Eval("body_description") %>' /></td>
                                     <td>
                                         <asp:TextBox Visible="false" class="form-control" ID="txt_inspection_id" runat="server" Text='<%# Eval("inspection_id") %>'></asp:TextBox>
-                                        <asp:Button ID="btn_edit_inspection" OnClick="btn_edit_inspection_Click" runat="server" Text="Edit"></asp:Button>
-                                        <asp:Button ID="btn_delete_inspection" OnClick="btn_delete_inspection_Click" runat="server" Text="Delete"></asp:Button>
+                                        <asp:Button ID="btn_edit_inspection" OnClientClick="window.location.href= window.location;" OnClick="btn_edit_inspection_Click" runat="server" Text="Edit"></asp:Button>
+                                        <asp:Button ID="btn_delete_inspection" OnClientClick="window.location.href= window.location;" OnClick="btn_delete_inspection_Click" runat="server" Text="Delete"></asp:Button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -270,11 +255,11 @@
             <%--Begin Repeater Items--%>
             <asp:SqlDataSource
                 ConnectionString="<%$ ConnectionStrings:BSIAConnectionString %>" ID="SqlDataSource_repairs" runat="server"
-                SelectCommand="SELECT InspectionFailures.notes, InspectionItem.item_description, Severity.severity_id, Severity.severity_description, Inspections.inspection_id, InspectionFailures.element_id FROM InspectionFailures INNER JOIN Severity ON InspectionFailures.severity_id = Severity.severity_id INNER JOIN InspectionDetail ON InspectionFailures.element_id = InspectionDetail.element_id INNER JOIN InspectionItem ON InspectionFailures.element_id = InspectionItem.item_id INNER JOIN Inspections ON InspectionFailures.inspection_id = Inspections.inspection_id WHERE (Inspections.bus_id = (SELECT bus_id FROM BusContractorNumber bcn WHERE bcn.bus_number = @bus_num and bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE())) AND Inspections.season_id = @season_id AND repaired_date IS NULL)" DataSourceMode="DataReader">
+                SelectCommand="SELECT InspectionFailures.notes, InspectionItem.item_description, Severity.severity_id, Severity.severity_description, Inspections.inspection_id, InspectionFailures.element_id FROM InspectionFailures INNER JOIN Severity ON InspectionFailures.severity_id = Severity.severity_id INNER JOIN InspectionDetail ON InspectionFailures.element_id = InspectionDetail.element_id INNER JOIN InspectionItem ON InspectionFailures.element_id = InspectionItem.item_id INNER JOIN Inspections ON InspectionFailures.inspection_id = Inspections.inspection_id WHERE (Inspections.bus_id = (SELECT bus_id FROM BusContractorNumber bcn WHERE bcn.bus_number = @bus_num and bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE())) AND repaired_date IS NULL)" DataSourceMode="DataReader">
                 <SelectParameters>
                     <asp:Parameter ConvertEmptyStringToNull="false" Name="dbnull" DefaultValue="" />
                     <asp:ControlParameter ControlID="ddl_bus" Name="bus_num" DefaultValue="0" />
-                    <asp:ControlParameter ControlID="ddl_season"  PropertyName="SelectedIndex" Name="season_id" Type="Int32" DefaultValue="0" />
+                    <%--<asp:ControlParameter ControlID="ddl_season"  PropertyName="SelectedIndex" Name="season_id" Type="Int32" DefaultValue="0" />--%>
                 </SelectParameters>
             </asp:SqlDataSource>
             <asp:Repeater ID="Repeater_repairs" runat="server" DataSourceID="SqlDataSource_repairs">
@@ -299,8 +284,8 @@
                                 <asp:TextBox class="form-control" ID="txt_repairDate" runat="server" />
                             </td>
 
-                                <%--Inspection Date Calendar -- TODO 
-                                <div class="col-sm-3">
+                                <%--Inspection Date Calendar -- TODO --%>
+<%--                                <div class="col-sm-3" style="display:none">
                                     <div class="form-group">
                                         <asp:Label ID="lbl_inspectionDate" class="control-label" runat="server" Text="Inspection Date:" style="font-weight:bold"></asp:Label>
                                         <table><tr><td>
@@ -354,6 +339,18 @@
                         <asp:TextBox type="text" pattern="[a-zA-Z0-9]{3,7}" runat="server" class="form-control" ID="txt_tag" name="txt_tag" placeholder="Letters/Numbers, No Spaces..." data-error="Invalid. Letters and Numbers only. No spaces." />
                         <div class="help-block with-errors"></div>
                    </div>
+                </div>
+                <%--Season DropDownList - TODO: add to edit page to allow updates to season--%>
+                <div class="col-sm-3">
+                    <div class="form-group" style="grid-flow: columns">
+                        <asp:Label ID="lbl_season" class="control-label" runat="server" Text="Season:" Style="font-weight: bold"></asp:Label>
+                        <asp:SqlDataSource ID="SqlDataSource_season" runat="server" ConnectionString="<%$ ConnectionStrings:BSIAConnectionString%>"
+                            SelectCommand="SELECT [season_id], [season_name] FROM [Season]" DataSourceMode="DataReader"></asp:SqlDataSource>
+                        <asp:DropDownList class="form-control" ID="ddl_season" Style="max-width: 300px" runat="server"
+                            DataSourceID="SqlDataSource_season" DataTextField="season_name" DataValueField="season_id" AppendDataBoundItems="True">
+                            <asp:ListItem>Select Season from list</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
                 </div>
                 <%--Created By--%>
                 <div class="col-sm-3" style="display:none">

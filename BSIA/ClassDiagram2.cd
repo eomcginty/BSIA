@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BSIA.Account.Confirm" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAIIAEAA=</HashCode>
+      <FileName>Account\Confirm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.ForgotPassword" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAIAAAACCAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAA=</HashCode>
+      <FileName>Account\Forgot.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.Lockout" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Account\Lockout.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.Login" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAAAACAAAAAAAAAAAAQAAAAABACAQAAAAIgAAA=</HashCode>
+      <FileName>Account\Login.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.ManageLogins" Collapsed="true">
+    <Position X="5.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAABEAAAAQAAAAABAAAAAAAAAAAAAAAAAAIEAAA=</HashCode>
+      <FileName>Account\ManageLogins.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.ManagePassword" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAhAAABAACQAAAAANAAAAAAAAAAAAAABAABAgIkAIA=</HashCode>
+      <FileName>Account\ManagePassword.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.Register">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAIAAAAAAAAAAAAAAACAQAAAAAAIAA=</HashCode>
+      <FileName>Account\Register.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.ApplicationUserManager">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.ApplicationSignInManager">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.InspectionItem" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAAAQgAAAAAAAAAAAABgABAAAAAABAAAAAAgAAoAA=</HashCode>
+      <FileName>Create.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Create" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>HkQIRCAAAEUQUgHgAAwBQEASECQAAABAgRAAAAoE0AA=</HashCode>
+      <FileName>Create.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA._Default" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAAAAAAAAAEAACAAgACAAAEgQAAAAAAAIAAAA=</HashCode>
+      <FileName>Default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.RepairItem" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAACAAAAAAAAAAAAgABAAAAAAAAAEAAAAAAgAAIAA=</HashCode>
+      <FileName>Edit.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Edit" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lEQIBCBAAEAQyAGgBAyAAlASFCQAAARFABAAAIoE0IE=</HashCode>
+      <FileName>Edit.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Global" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Reports" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAUAAAAAQAAAAAAAAAAAAAAAAAAAAAAA4AAAA=</HashCode>
+      <FileName>Reports.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.SiteMaster" Collapsed="true">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQKBCAAAIAAEAAABAAAAAAIAAAA=</HashCode>
+      <FileName>Site.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Models.ApplicationUser">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.AddPhoneNumber" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Account\AddPhoneNumber.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.Manage" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAADAgAAgUAAAAAAQABAIAAAAQABAAAAAAIkAAA=</HashCode>
+      <FileName>Account\Manage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.OpenAuthProviders" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAIAAAA=</HashCode>
+      <FileName>Account\OpenAuthProviders.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.RegisterExternalLogin" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAgAIACAAAAACAAAAAAAAAAAAIwAAA=</HashCode>
+      <FileName>Account\RegisterExternalLogin.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.ResetPassword" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAACAACAAAAAAAAAAAAAAAAAAAAACAAAAAIAAIAA=</HashCode>
+      <FileName>Account\ResetPassword.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.ResetPasswordConfirmation" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Account\ResetPasswordConfirmation.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.TwoFactorAuthenticationSignIn" Collapsed="true">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQIAgAAAIACEAAAIABAgAAAEABAAAAAAAAAAAAIIABA=</HashCode>
+      <FileName>Account\TwoFactorAuthenticationSignIn.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Account.VerifyPhoneNumber" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAABAAIAAAA=</HashCode>
+      <FileName>Account\VerifyPhoneNumber.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.BundleConfig" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.EmailService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BSIA.SmsService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BSIA.CustomUserValidator&lt;TUser&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BSIA.RouteConfig" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Startup" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\Startup.Auth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.IdentityHelper" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwSAAAAAAAAAAQAABAAgAAAAAAAAIAAgAAACAAAgAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Site_Mobile" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAACAAAAAIAAAIAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Site.Mobile.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.ViewSwitcher" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAIA=</HashCode>
+      <FileName>ViewSwitcher.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSIA.Models.ApplicationDbContext" Collapsed="true">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

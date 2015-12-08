@@ -17,7 +17,7 @@ namespace BSIA
     public partial class Reports : Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {/*
             if (!IsPostBack)
             {
                 //ReportViewer1.Reset();
@@ -40,7 +40,10 @@ namespace BSIA
                 //ReportViewer2.LocalReport.DataSources.Clear();
                 //ReportViewer2.LocalReport.DataSources.Add(datasource_failures);
             }
+         */
         }
+
+        /*
 
         OdbcConnection cn;
         OdbcCommand cmd;
@@ -83,7 +86,7 @@ namespace BSIA
             return ds_busPass;
         }
 
-
+        */
     }
 
 

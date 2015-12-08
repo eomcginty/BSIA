@@ -201,17 +201,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="BSIA_Rpts.xsc">
-      <DependentUpon>BSIA_Rpts.xsd</DependentUpon>
-    </Content>
-    <None Include="BSIA_Rpts.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BSIA_Rpts.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="BSIA_Rpts.xss">
-      <DependentUpon>BSIA_Rpts.xsd</DependentUpon>
-    </Content>
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Properties\PublishProfiles\bsia %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\bsia - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\bsia - Web Deploy.pubxml" />
@@ -271,14 +261,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BSIA_Rpts.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BSIA_Rpts.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Edit.aspx.designer.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
@@ -445,19 +429,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Buses_Passing_Inspection.rdlc">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inspection Summary.rdlc">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
-    <EmbeddedResource Include="Report4.rdlc">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

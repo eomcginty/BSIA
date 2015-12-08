@@ -73,9 +73,69 @@ namespace BSIA
         **************************************************************************/
         protected void btn_getBus_Click(object sender, EventArgs e)
         {
-            pnl_bus.Visible = true;
-            upd_pnl_repairs.Visible = true;
-        }
+            //pnl_bus.Visible = true;
+            //upd_pnl_repairs.Visible = true;
+
+            if (ddl_bus.SelectedIndex != 0)
+            {
+                int inspectionId = 0;
+                string pass_date = null;
+                DropDownList ddl = (DropDownList)sender;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BSIAConnectionString"].ConnectionString);
+                conn.Open();
+
+                System.Data.DataSet ds = new System.Data.DataSet();
+                SqlCommand cmd = new SqlCommand("Select * FROM BSIA.dbo.Inspections " +
+                 "WHERE bus_id = (SELECT bus_id from BusContractorNumber bcn WHERE bus_number = @bus_num " +
+                 "AND bcn.effective_date <= GETDATE() AND ( bcn.termination_date IS NULL OR bcn.termination_date > GETDATE()))", conn);
+
+                try
+                {
+                   // string pass_date = null;
+                    cmd.Parameters.AddWithValue("@bus_num", int.Parse(ddl_bus.SelectedItem.Text));
+                    //cmd.Parameters.AddWithValue(pass_date.ToString(), "@pass_date");
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    repeater_busInfo.DataBind();
+                    Repeater_repairs.DataBind();
+                    upd_pnl_repairs.Update();
+                }
+                catch (Exception err)
+                {
+                    System.Console.Write("somthing went wrong");
+                }
+
+                if (ds.Tables[0].Rows.Count == 0) //if there is no inspection for this bus, display alert
+                {
+                    cmd.ExecuteNonQuery();
+                    repeater_busInfo.DataBind();
+                    Repeater_repairs.DataBind();
+                    upd_pnl_repairs.Update();
+
+                    pnl_bus.Visible = false;
+                    upd_pnl_repairs.Visible = false;
+                    pnl_editInspection.Visible = false;
+                    pnl_alert_noInspection.Visible = true;
+                }
+                else
+                {
+                    pnl_bus.Visible = true;  //if there is an inspection with failures, display repairs section
+                    pnl_alert_noInspection.Visible = false;
+
+                    //if (pass_date == null)
+                    //    upd_pnl_repairs.Visible = true;
+                    if (ds.Tables[0].Rows[0].ItemArray[11].ToString() != null)
+                    {
+                        upd_pnl_repairs.Update();
+                        upd_pnl_repairs.Visible = true;
+                    }
+
+                }
+
+            }
+        } //End Get Bus Click
 
 
         /*************************************************************************
@@ -276,6 +336,11 @@ namespace BSIA
                 inspection_id = int.Parse(txt_id.Text);
                 //also, lets save it for later
                 btn_saveInspection.CommandArgument = inspection_id.ToString();
+
+                Button btn2 = (Button)item.FindControl("btn_edit_inspection");
+
+                if (btn2 == btn)
+                    break;
             }
 
             if (txt_updatedBy.Text == "")

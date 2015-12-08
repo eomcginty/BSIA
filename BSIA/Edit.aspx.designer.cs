@@ -121,49 +121,13 @@ namespace BSIA {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator_bus;
         
         /// <summary>
-        /// lbl_season control.
+        /// pnl_alert_noInspection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_season;
-        
-        /// <summary>
-        /// SqlDataSource_season control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_season;
-        
-        /// <summary>
-        /// ddl_season control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_season;
-        
-        /// <summary>
-        /// CompareValidator_season control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator_season;
-        
-        /// <summary>
-        /// btn_getBus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_getBus;
+        protected global::System.Web.UI.WebControls.Panel pnl_alert_noInspection;
         
         /// <summary>
         /// pnl_bus control.
@@ -272,6 +236,33 @@ namespace BSIA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_tag;
+        
+        /// <summary>
+        /// lbl_season control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_season;
+        
+        /// <summary>
+        /// SqlDataSource_season control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_season;
+        
+        /// <summary>
+        /// ddl_season control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_season;
         
         /// <summary>
         /// lbl_createdBy control.
